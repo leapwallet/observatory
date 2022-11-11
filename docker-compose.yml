@@ -1,0 +1,8 @@
+services:
+  observatory:
+    command: sh cmd.sh
+    build: .
+    restart: unless-stopped
+    expose: [3000]
+    ports: ['3000:3000']
+    env_file: .env

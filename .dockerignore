@@ -1,0 +1,7 @@
+*
+!src
+!package.json
+!tsconfig.json
+!yarn.lock
+!grafana-agent.yaml
+!cmd.sh

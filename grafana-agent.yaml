@@ -1,0 +1,37 @@
+server:
+  log_format: json
+logs:
+  configs:
+    - name: observatory
+      positions:
+        filename: /tmp/positions.yaml
+      scrape_configs:
+        - job_name: observatory
+          static_configs:
+            - targets: [localhost]
+              labels:
+                __path__: /app/logs/*.log* # </app/logs/default.2022-10-18.log.1> is an example <__path__>.
+                job: observatory
+                env: ${GRAFANA_ENV}
+      clients:
+        - url: ${LOKI_URL}
+          basic_auth:
+            username: ${LOKI_USERNAME}
+            password: ${GRAFANA_API_KEY}
+metrics:
+  configs:
+    - name: observatory
+      scrape_configs:
+        - job_name: observatory
+          static_configs:
+            - targets: [127.0.0.1:3000]
+              labels:
+                env: ${GRAFANA_ENV}
+      remote_write:
+        - url: ${PROMETHEUS_URL}
+          basic_auth:
+            username: ${PROMETHEUS_USERNAME}
+            password: ${GRAFANA_API_KEY}
+integrations:
+  agent:
+    enabled: true

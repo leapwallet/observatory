@@ -1,0 +1,7 @@
+- [ ] I have updated the [architecture docs](https://github.com/leapwallet/observatory-architecture/) if necessary.
+- [ ] I have updated the OpenAPI spec if necessary.
+- [ ] I have used the logger if necessary.
+- [ ] I have set up tracing if required.
+- [ ] I have set up metrics if necessary.
+- [ ] I have updated the tests if necessary.
+- [ ] I have updated the changelog if necessary.

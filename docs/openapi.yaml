@@ -1,0 +1,53 @@
+# Name `operationId`s using the format <<HTTP_METHOD><PATH>>. For example, <getTxId> for HTTP GET /tx/{id}.
+openapi: 3.1.0
+info:
+  description: The health check API for _Observatory_ as seen in [Observatory Architecture](https://github.com/leapwallet/observatory-architecture).
+  version: 0.1.0
+  title: Observatory
+  contact:
+    name: Leap Wallet
+    url: https://github.com/leapwallet/observatory
+    email: admin@leapwallet.io
+servers:
+  - url: http://localhost:3000
+    description: Default URL if you're running the server locally.
+tags:
+  - name: observability
+paths:
+  /health:
+    get:
+      tags: [observability]
+      summary: Backend health.
+      description: Check if all systems are operational.
+      operationId: getHealth
+      responses:
+        '204':
+          description: Healthy
+  /metrics:
+    get:
+      tags: [observability]
+      summary: Prometheus metrics
+      description: Metrics in the Prometheus exposition format.
+      operationId: getMetrics
+      responses:
+        '200':
+          $ref: '#/components/responses/Metrics'
+components:
+  schemas:
+    Metrics:
+      type: string
+      example: |
+        # HELP process_cpu_user_seconds_total Total user CPU time spent in seconds.
+        # TYPE process_cpu_user_seconds_total counter
+        process_cpu_user_seconds_total 3.8398559999999997
+
+        # HELP process_cpu_system_seconds_total Total system CPU time spent in seconds.
+        # TYPE process_cpu_system_seconds_total counter
+        process_cpu_system_seconds_total 0.863623
+  responses:
+    Metrics:
+      description: Metrics
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/Metrics'
