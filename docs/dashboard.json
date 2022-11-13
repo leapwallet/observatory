@@ -505,7 +505,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -543,7 +544,7 @@
             "uid": "grafanacloud-logs"
           },
           "editorMode": "code",
-          "expr": "# If opening this in \"Explore\", then replace the query with <{job=\"observatory\", filename=~\".*default.*\"} |~ `\"level\":\"(error|warning)\"`>.\nlabel_replace(\n  label_replace(\n    count_over_time(\n      {job=\"observatory\", filename=~\".*default.*\"} |~ `\"level\":\"(error|warning)\"`\n      [1m]\n    ),\n    \"filename\",\n    \"\",\n    \"filename\",\n    \".*\"\n  ),\n  \"job\",\n  \"\",\n  \"job\",\n  \".*\"\n)",
+          "expr": "label_replace(\n  label_replace(\n    count_over_time(\n      {job=\"observatory\", filename=~\".*default.*\"} |~ `\"level\":\"(error|warning)\"`\n      [1m]\n    ),\n    \"filename\",\n    \"\",\n    \"filename\",\n    \".*\"\n  ),\n  \"job\",\n  \"\",\n  \"job\",\n  \".*\"\n)",
           "queryType": "range",
           "refId": "A"
         }
@@ -597,7 +598,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -631,7 +633,7 @@
             "uid": "grafanacloud-logs"
           },
           "editorMode": "code",
-          "expr": "# If opening this in \"Explore\", then replace the query with <{job=\"observatory\", filename=~\".*default.*\"} |~ `\"level\":\"(alert|crit)\"`>.\nlabel_replace(\n  label_replace(\n    count_over_time(\n      {job=\"observatory\", filename=~\".*default.*\"} |~ `\"level\":\"(alert|crit)\"`\n      [1m]\n    ),\n    \"filename\",\n    \"\",\n    \"filename\",\n    \".*\"\n  ),\n  \"job\",\n  \"\",\n  \"job\",\n  \".*\"\n)",
+          "expr": "label_replace(\n  label_replace(\n    count_over_time(\n      {job=\"observatory\", filename=~\".*default.*\"} |~ `\"level\":\"(alert|crit)\"`\n      [1m]\n    ),\n    \"filename\",\n    \"\",\n    \"filename\",\n    \".*\"\n  ),\n  \"job\",\n  \"\",\n  \"job\",\n  \".*\"\n)",
           "queryType": "range",
           "refId": "A"
         }
@@ -685,7 +687,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -719,7 +722,7 @@
             "uid": "grafanacloud-logs"
           },
           "editorMode": "code",
-          "expr": "# If opening this in \"Explore\", then replace the query with <{job=\"observatory\", filename=~\".*default.*\"} |= `\"level\":\"emerg\"`>.\nlabel_replace(\n  label_replace(\n    count_over_time({job=\"observatory\", filename=~\".*default.*\"} |= `\"level\":\"emerg\"` [1m]),\n    \"filename\",\n    \"\",\n    \"filename\",\n    \".*\"\n  ),\n  \"job\",\n  \"\",\n  \"job\",\n  \".*\"\n)",
+          "expr": "label_replace(\n  label_replace(\n    count_over_time({job=\"observatory\", filename=~\".*default.*\"} |= `\"level\":\"emerg\"` [1m]),\n    \"filename\",\n    \"\",\n    \"filename\",\n    \".*\"\n  ),\n  \"job\",\n  \"\",\n  \"job\",\n  \".*\"\n)",
           "queryType": "range",
           "refId": "A"
         }
@@ -773,7 +776,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -807,7 +811,7 @@
             "uid": "grafanacloud-logs"
           },
           "editorMode": "code",
-          "expr": "# If opening this in \"Explore\", then replace the query with <{job=\"observatory\",filename=~\".*(rejections|exceptions).*\"} |~ \".*\">.\nlabel_replace(\n  label_replace(\n    count_over_time({job=\"observatory\",filename=~\".*(rejections|exceptions).*\"} |~ \".*\" [1m]),\n    \"filename\",\n    \"\",\n    \"filename\",\n    \".*\"\n  ),\n  \"job\",\n  \"\",\n  \"job\",\n  \".*\"\n)",
+          "expr": "label_replace(\n  label_replace(\n    count_over_time({job=\"observatory\",filename=~\".*(rejections|exceptions).*\"} |~ \".*\" [1m]),\n    \"filename\",\n    \"\",\n    \"filename\",\n    \".*\"\n  ),\n  \"job\",\n  \"\",\n  \"job\",\n  \".*\"\n)",
           "queryType": "range",
           "refId": "A"
         }
@@ -861,6 +865,6 @@
   "timezone": "",
   "title": "Dashboard",
   "uid": "qxBZU-v4k",
-  "version": 24,
+  "version": 25,
   "weekStart": ""
 }
