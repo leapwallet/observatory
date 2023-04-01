@@ -65,12 +65,12 @@ jobs:
           aws configure set region ap-south-1
       - name: Log in to Docker registry
         run: |
-          aws ecr get-login-password --region ap-south-1 \
-          | docker login --username AWS --password-stdin 482654357301.dkr.ecr.ap-south-1.amazonaws.com
+          aws ecr get-login-password \
+              | docker login --username AWS --password-stdin 482654357301.dkr.ecr.us-east-1.amazonaws.com
       - name: Build Docker image
-        run: docker build . -t 482654357301.dkr.ecr.ap-south-1.amazonaws.com/observatory:$GITHUB_REF_NAME
+        run: docker build . -t 482654357301.dkr.ecr.us-east-1.amazonaws.com/observatory:$GITHUB_REF_NAME
       - name: Push to Docker registry
-        run: docker push 482654357301.dkr.ecr.ap-south-1.amazonaws.com/observatory:$GITHUB_REF_NAME
+        run: docker push 482654357301.dkr.ecr.us-east-1.amazonaws.com/observatory:$GITHUB_REF_NAME
       - name: Deploy staging Docker image to AWS Fargate
         if: github.ref_name == 'staging'
         run: |
