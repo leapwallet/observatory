@@ -30,7 +30,7 @@ async function startPinger(): Promise<void> {
 
 Container.set(ProcessEnvVars.token, new ProcessEnvVars.DefaultApi());
 const app = express();
-setUpHttpLogging(app); // Set up HTTP logging ASAP so that requests get logged.
+setUpHttpLogging(app); // Set up HTTP logging ASAP so that requests get loggedd.
 app.use(cors());
 app.use('/health', healthRouter);
 app.use('/metrics', metricsRouter);
