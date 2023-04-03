@@ -68,4 +68,12 @@ describe('EnvVars', () => {
       expect(EnvVars.getUrls()).toStrictEqual(['1', '2', '3']);
     });
   });
+
+  // describe('readUrls', () => {
+  //   it("urls File must exist in repo", () => {
+  //     Container.set(ProcessEnvVars.token, new ProcessEnvVarsApi());
+  //     expect(EnvVars.getUrls()).toStrictEqual([]);
+  //   });
+
+  // });
 });

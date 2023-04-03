@@ -1,0 +1,538 @@
+{
+  "chainNodeList": [
+    {
+      "chainName": "COSMOS_HUB_URLS",
+      "nodeList": [
+        "https://api.cosmos.network",
+        "https://cosmos-lcd.quickapi.com/",
+        "https://api-cosmoshub-ia.cosmosia.notional.ventures/",
+        "https://cosmoshub-api.lavenderfive.com/",
+        "https://lcd.cosmos.dragonstake.io/",
+        "https://api.cosmos.silknodes.io/",
+        "https://lcd-cosmoshub.blockapsis.com/",
+        "https://lcd.cosmos.ezstaking.io/",
+        "https://rest-cosmoshub.ecostake.com/",
+        "https://api.cosmos.interbloc.org/",
+        "https://cosmos-api.polkachu.com/",
+        "https://atom-api.kleomed.es/",
+        "https://api.cosmoshub.pupmos.network/",
+        "https://lcd-cosmoshub.whispernode.com/",
+        "https://cosmos-api.cyphercore.io/"
+      ]
+    },
+    {
+      "chainName": "OSMOSIS_URLS",
+      "nodeList": [
+        "https://lcd.osmosis.zone/",
+        "https://rest-osmosis.ecostake.com/",
+        "https://osmosis-lcd.quickapi.com/",
+        "https://api.osmosis.interbloc.org/",
+        "https://osmosis-api.lavenderfive.com/",
+        "https://osmosis-api.polkachu.com/",
+        "https://lcd-osmosis.blockapsis.com/",
+        "https://api.osmosis.silknodes.io/",
+        "https://osmosis.rest.stakin-nodes.com/",
+        "https://api.osl.zone/",
+        "https://osmosis-api.lavenderfive.com:443/",
+        "https://osmosis-lcd.quickapi.com:443/",
+        "https://osmosis-mainnet-lcd.autostake.com:443/"
+      ]
+    },
+    {
+      "chainName": "SEI_URLS",
+      "nodeList": [
+        "https://rest-sei-test.ecostake.com/"
+      ]
+    },
+    {
+      "chainName": "MARS_URLS",
+      "nodeList": [
+        "https://rest.marsprotocol.io/",
+        "https://mars-api.lavenderfive.com/"
+      ]
+    },
+    {
+      "chainName": "JUNO_URLS",
+      "nodeList": [
+        "https://api-juno-ia.cosmosia.notional.ventures/",
+        "https://lcd-juno.itastakers.com/",
+        "https://lcd.junomint.com/",
+        "https://rest-juno.ecostake.com/",
+        "https://api.juno.pupmos.network/",
+        "https://juno-api.kleomed.es/",
+        "https://juno-api.polkachu.com/",
+        "https://lcd-juno.whispernode.com/",
+        "https://api.juno.silknodes.io/",
+        "https://juno-api.lavenderfive.com/",
+        "https://api.juno.interbloc.org/"
+      ]
+    },
+    {
+      "chainName": "AKASH_URLS",
+      "nodeList": [
+        "https://rest-akash.ecostake.com/",
+        "https://akash.c29r3.xyz/api",
+        "https://api-akash-ia.cosmosia.notional.ventures/",
+        "https://api.akash.forbole.com/",
+        "https://akash-api.lavenderfive.com/",
+        "https://akash-api.polkachu.com/"
+      ]
+    },
+    {
+      "chainName": "AXELAR_URLS",
+      "nodeList": [
+        "https://axelar-lcd.quickapi.com/",
+        "https://lcd-axelar.imperator.co/",
+        "https://api-1.axelar.nodes.guru/",
+        "https://axelar-rest.chainode.tech/",
+        "https://axelar-lcd.qubelabs.io/",
+        "https://axelar-api.polkachu.com/",
+        "https://api-axelar-ia.cosmosia.notional.ventures/"
+      ]
+    },
+    {
+      "chainName": "E_MONEY_URLS",
+      "nodeList": [
+        "https://emoney.validator.network/api/",
+        "https://api-emoney-ia.cosmosia.notional.ventures/",
+        "https://api.emoney.freak12techno.io/",
+        "https://e-money-api.ibs.team/",
+        "https://lcd.emoney.ezstaking.io/",
+        "https://lcd-emoney.keplr.app/"
+      ]
+    },
+    {
+      "chainName": "PERSISTENCE_URLS",
+      "nodeList": [
+        "https://api-persistence.starsquid.io/",
+        "https://rest.core.persistence.one/",
+        "https://api-persistent-ia.cosmosia.notional.ventures/"
+      ]
+    },
+    {
+      "chainName": "STARGAZE_URLS",
+      "nodeList": [
+        "https://api.stargaze.pupmos.network/",
+        "https://rest.stargaze-apis.com/",
+        "https://api.stargaze.silentvalidator.com/",
+        "https://api-stargaze-ia.cosmosia.notional.ventures/",
+        "https://api-stargaze.d-stake.xyz/",
+        "https://api.stargaze.nodestake.top/",
+        "https://stargaze-api.ibs.team/",
+        "https://api.stargaze.ezstaking.io/",
+        "https://stargaze-rapipc.polkachu.com/",
+        "https://api.stars.kingnodes.com/"
+      ]
+    },
+    {
+      "chainName": "SIFCHAIN_URLS",
+      "nodeList": [
+        "https://sifchain-api.polkachu.com/",
+        "https://rest-sifchain.ecostake.com/",
+        "https://api-sifchain-ia.cosmosia.notional.ventures/",
+        "https://lcd.sifchain.posthuman.digital/",
+        "https://sif-api.kleomed.es/",
+        "https://api.sifchain.chaintools.tech/",
+        "https://sifchain-api.ibs.team/",
+        "https://sifchain.api.consensus.one/"
+      ]
+    },
+    {
+      "chainName": "SOMMELIER_URLS",
+      "nodeList": [
+        "https://api.sommelier.pupmos.network/",
+        "https://sommelier-api.lavenderfive.com/",
+        "https://sommelier-api.polkachu.com/",
+        "https://lcd-sommelier.keplr.app/"
+      ]
+    },
+    {
+      "chainName": "UMEE_URLS",
+      "nodeList": [
+        "https://api.barnacle.mainnet.network.umee.cc/",
+        "https://api-umee-ia.cosmosia.notional.ventures/",
+        "https://umee-api.polkachu.com/"
+      ]
+    },
+    {
+      "chainName": "ASSET_MANTLE_URLS",
+      "nodeList": [
+        "https://rest.assetmantle.one/",
+        "https://rest-assetmantle.ecostake.com/",
+        "https://api-assetmantle-ia.cosmosia.notional.ventures/",
+        "https://assetmantle-api.polkachu.com/",
+        "https://api.assetmantle.nodestake.top/",
+        "https://api-assetmanle.d-stake.xyz/",
+        "https://lcd.asset-mantle.ezstaking.io/"
+      ]
+    },
+    {
+      "chainName": "KUJIRA_URLS",
+      "nodeList": [
+        "https://rest-kujira.ecostake.com/",
+        "https://kujira-lcd.wildsage.io/",
+        "https://api-kujira.nodeist.net/",
+        "https://api-kujira-ia.cosmosia.notional.ventures/",
+        "https://lcd.kaiyo.kujira.setten.io/",
+        "https://kujira-api.polkachu.com/",
+        "https://kujira-api.lavenderfive.com/",
+        "https://lcd-kujira.whispernode.com/",
+        "https://kujira-api.ibs.team/",
+        "https://api-bitsong.starsquid.io/",
+        "https://api.kujira.chaintools.tech/"
+      ]
+    },
+    {
+      "chainName": "INJECTIVE_URLS",
+      "nodeList": [
+        "https://injective-lcd.quickapi.com/",
+        "https://injective-api.polkachu.com/",
+        "https://public.lcd.injective.network/",
+        "https://api-injective-ia.cosmosia.notional.ventures/"
+      ]
+    },
+    {
+      "chainName": "STRIDE_URLS",
+      "nodeList": [
+        "https://stride-api.lavenderfive.com/",
+        "https://stride-api.polkachu.com/",
+        "https://api.stride.silentvalidator.com/",
+        "http://api-stride.nodeist.net/",
+        "https://api.stride.bh.rocks/",
+        "https://api-stride.d-stake.xyz/",
+        "https://stride.api.chandrastation.com/",
+        "https://api.stride.nodestake.top/"
+      ]
+    },
+    {
+      "chainName": "CHEQD_URLS",
+      "nodeList": [
+        "https://cheqd-api.lavenderfive.com/",
+        "https://api.cheqd.nodestake.top/",
+        "https://api.cheqd.net/",
+        "https://lcd.cheqd.ezstaking.io/",
+        "https://api-cheqd-ia.cosmosia.notional.ventures/"
+      ]
+    },
+    {
+      "chainName": "LIKE_COIN_URLS",
+      "nodeList": [
+        "https://mainnet-node.like.co/",
+        "https://api-likecoin-ia.cosmosia.notional.ventures/"
+      ]
+    },
+    {
+      "chainName": "CHIHUAHUA_URLS",
+      "nodeList": [
+        "https://api.chihuahua.wtf/",
+        "https://rest-chihuahua.ecostake.com/",
+        "https://chihuahua-api.polkachu.com/",
+        "https://chihuahua-api.lavenderfive.com/",
+        "https://api-chihuahua-ia.cosmosia.notional.ventures/"
+      ]
+    },
+    {
+      "chainName": "GRAVITY_BRIDGE_URLS",
+      "nodeList": [
+        "https://gravity-api.polkachu.com/",
+        "https://gravitybridge-api.lavenderfive.com/",
+        "https://api.gravity-bridge.nodestake.top/",
+        "https://gravitychain.io:1317/",
+        "https://lcd.gravity-bridge.ezstaking.io/",
+        "https://api-gravitybridge-ia.cosmosia.notional.ventures/"
+      ]
+    },
+    {
+      "chainName": "IRIS_NET_URLS",
+      "nodeList": [
+        "https://api-irisnet-ia.cosmosia.notional.ventures/",
+        "https://lcd-iris.keplr.app/"
+      ]
+    },
+    {
+      "chainName": "STARNAME_URLS",
+      "nodeList": [
+        "https://starname.nodejumper.io:1317/",
+        "https://api-starname-ia.cosmosia.notional.ventures/",
+        "https://lcd-iov.keplr.app/"
+      ]
+    },
+    {
+      "chainName": "FETCH_URLS",
+      "nodeList": [
+        "https://api-fetchhub-ia.cosmosia.notional.ventures/",
+        "https://fetch-api.polkachu.com/",
+        "https://rest-fetchhub.fetch.ai/"
+      ]
+    },
+    {
+      "chainName": "DESMOS_URLS",
+      "nodeList": [
+        "https://desmos.nodejumper.io:1317/",
+        "https://desmos-api.ibs.team/",
+        "https://desmos-api.panthea.eu/",
+        "https://desmos-api.lavenderfive.com/",
+        "https://api.mainnet.desmos.network/"
+      ]
+  },
+  {
+      "chainName": "TERITORI_URLS",
+      "nodeList": [
+        "https://teritori-api.lavenderfive.com/",
+        "https://teritori.nodejumper.io:1317/",
+        "https://api-teritori.nodeist.net/",
+        "https://api.teritori.silentvalidator.com/",
+        "https://teritori-api.ibs.team/",
+        "https://teritori-api.polkachu.com/",
+        "https://teritori-rest.brocha.in/",
+        "https://api.teritori.nodestake.top/"
+      ]
+  },
+  {
+      "chainName": "AGORIC_URLS",
+      "nodeList": [
+        "https://main.api.agoric.net/",
+        "https://agoric-api.polkachu.com/",
+        "https://api.agoric.nodestake.top/"
+      ]
+  },
+  {
+      "chainName": "TERRA_2_URLS",
+      "nodeList": [
+        "https://fcd.terrav2.ccvalidators.com/",
+        "https://terra.mainnet.lcd.autostake.net/",
+        "https://lcd-terra.wildsage.io/",
+        "https://terra-api.lavenderfive.com/",
+        "https://terra-api.polkachu.com/"
+      ]
+  },
+  {
+      "chainName": "SECRET_URLS",
+      "nodeList": [
+        "https://secret-api.lavenderfive.com/",
+        "https://secret-4.api.trivium.network:1317/",
+        "https://api.scrt.network/",
+        "https://secret.api.consensus.one/",
+        "https://secretnetwork-lcd.stakely.io/",
+        "https://scrt-lcd.blockpane.com/",
+        "https://api.secret.forbole.com/"
+      ]
+  },
+  {
+      "chainName": "EVMOS_URLS",
+      "nodeList": [
+        "https://api.evmos.interbloc.org/",
+        "https://rest.evmos.tcnetwork.io/",
+        "https://evmos.rest.stakin.com/",
+        "https://lcd.evmos.bh.rocks/",
+        "https://lcd.evmos.posthuman.digital/",
+        "https://api.evmos.nodestake.top/",
+        "https://api.evmos.testnet.run/",
+        "https://evmos-api.polkachu.com/",
+        "https://evmos-rest.agoranodes.com/",
+        "https://evmos-api.lavenderfive.com/",
+        "https://rest-evmos.ecostake.com/",
+        "https://rest.bd.evmos.org:1317/",
+        "https://rest-evmos.architectnodes.com/",
+        "https://evmos.rest.interchain.ivaldilabs.xyz/",
+        "https://lcd-evmos.whispernode.com/",
+        "https://rpc.evmos.chaintools.tech/",
+        "https://api-evmos-ia.cosmosia.notional.ventures/",
+        "https://api.evmos.silknodes.io/",
+        "https://api.evmos.silentvalidator.com/"
+      ]
+  },
+  {
+      "chainName": "BIT_CANNA_URLS",
+      "nodeList": [
+        "https://bitcanna.nodejumper.io:1317/",
+        "https://api-bitcanna-ia.cosmosia.notional.ventures/",
+        "https://bitcanna-api.polkachu.com/",
+        "https://lcd.bitcanna.io/",
+        "https://bitcanna-api.panthea.eu/",
+        "https://bcna-api.ibs.team/",
+        "https://bitcanna-api.lavenderfive.com/",
+        "https://api-bcna.kjinc.io/"
+      ]
+  },
+  {
+      "chainName": "CANTO_URLS",
+      "nodeList": [
+        "https://api.canto.silentvalidator.com/",
+        "https://canto-api.polkachu.com/",
+        "http://164.90.154.41:1317/",
+        "https://api.canto.nodestake.top/",
+        "https://canto-api.lavenderfive.com/"
+      ]
+  },
+  {
+      "chainName": "KAVA_URLS",
+      "nodeList": [
+        "https://kava-api.polkachu.com/",
+        "https://kava.mainnet.lcd.autostake.net/",
+        "https://api-kava-ia.cosmosia.notional.ventures/",
+        "https://api.data.kava.io/"
+      ]
+  },
+  {
+      "chainName": "CRESCENT_URLS",
+      "nodeList": [
+        "https://mainnet.crescent.network:1317/",
+        "https://crescent-api.polkachu.com/",
+        "https://crescent.rest.stakin-nodes.com/",
+        "https://crescent.mainnet.lcd.autostake.net/",
+        "https://api-crescent.pupmos.network/"
+      ]
+  },
+  {
+      "chainName": "OMNI_FLIX_URLS",
+      "nodeList": [
+        "https://omniflix.nodejumper.io:1317/",
+        "https://api-omniflixhub-ia.cosmosia.notional.ventures/",
+        "https://omniflix-api.lavenderfive.com/",
+        "https://api.omniflix.silentvalidator.com/",
+        "https://api.omniflix.nodestake.top/",
+        "https://api.omniflix.kingnodes.com/",
+        "https://api.omniflix.chaintools.tech/",
+        "https://omniflixhub-api.skynetvalidators.com/",
+        "https://api.omniflix.huginn.tech/"
+      ]
+  },
+  {
+      "chainName": "CARBON_URLS",
+      "nodeList": [
+        "https://rest.carbon.bh.rocks/",
+        "https://api.carbon.network/"
+      ]
+  },
+  {
+      "chainName": "CUDOS_URLS",
+      "nodeList": [
+        "http://mainnet-full-node-01.hosts.cudos.org:1317/",
+        "https://mainnet-full-node-02.hosts.cudos.org:31317/"
+      ]
+  },
+  {
+      "chainName": "DECENTR_URLS",
+      "nodeList": [
+        "https://rest.mainnet.decentr.xyz/",
+        "https://decentr-api.ibs.team/",
+        "https://api.decentr.chaintools.tech/",
+        "https://api.decentr.nodestake.top/"
+      ]
+  },
+  {
+      "chainName": "COMDEX_URLS",
+      "nodeList": [
+        "https://api-comdex.zenchainlabs.io/",
+        "https://comdex-api.polkachu.com/",
+        "https://api.comdex.chaintools.tech/",
+        "https://rest.comdex.one/",
+        "https://comdex-api.lavenderfive.com/",
+        "https://api-comdex-ia.cosmosia.notional.ventures/",
+        "https://api.comdex.audit.one/rest",
+        "http://comdex.node.vitwit.com:1317/"
+      ]
+  },
+  {
+      "chainName": "BIT_SONG_URLS",
+      "nodeList": [
+        "https://bitsong-api.panthea.eu/",
+        "https://bitsong-api.lavenderfive.com/",
+        "https://lcd-bitsong.itastakers.com/",
+        "https://lcd.explorebitsong.com/",
+        "https://api-bitsong.starsquid.io/",
+        "https://api.bitsong.chaintools.tech/",
+        "https://bitsong-api.validatrium.club/",
+        "https://api.bitsong.freak12techno.io/",
+        "https://rest-bitsong.architectnodes.com/",
+        "https://api.bitsong.interbloc.org/",
+        "https://api-bitsong-ia.cosmosia.notional.ventures/"
+      ]
+  },
+  {
+      "chainName": "NEAR_URLS",
+      "nodeList": [
+        "https://rpc.mainnet.near.org",
+        "https://rpc.ankr.com/near",
+        "https://public-rpc.blockpi.io/http/near",
+        "https://near-mainnet-rpc.allthatnode.com:3030"
+      ]
+  },
+  {
+      "chainName": "COREUM_URLS",
+      "nodeList": [
+        "https://full-node.mainnet-1.coreum.dev:1317",
+        "https://full-node-californium.mainnet-1.coreum.dev:1317",
+        "https://full-node-curium.mainnet-1.coreum.dev:1317",
+        "https://full-node-uranium.mainnet-1.coreum.dev:1317"
+      ]
+  },
+  {
+      "chainName": "KYVE_URLS",
+      "nodeList": [
+        "https://api-eu-1.kyve.network",
+        "https://kyve-api.lavenderfive.com:443",
+        "https://rest-kyve.ecostake.com",
+        "https://lcd-kyve.imperator.co",
+        "https://kyve-api.ibs.team",
+        "https://api.kyve.nodestake.top",
+        "https://api-kyve.nodeist.net",
+        "https://www.kyve-lcd.enigma-validator.com"
+      ]
+  },
+  {
+      "chainName": "MIGALOO_URLS",
+      "nodeList": [
+        "https://whitewhale-api.lavenderfive.com",
+        "https://whitewhale-mainnet-lcd.autostake.com:443",
+        "https://rest-whitewhale.carbonzero.zone:443",
+        "https://lcd-whitewhale.whispernode.com:443",
+        "https://migaloo-api.kleomedes.network:443"
+      ]
+  },
+  {
+      "chainName": "NEUTRON_URLS",
+      "nodeList": ["https://rest.baryon.ntrn.info/"]},
+  {
+      "chainName": "ONOMY_URLS",
+      "nodeList": ["https://rest-mainnet.onomy.io"]},
+  {
+      "chainName": "QUASAR_URLS",
+      "nodeList": ["https://quasar-api.polkachu.com"]},
+  {
+      "chainName": "QUICKSILVER_URLS",
+      "nodeList": [
+        "https://api-quicksilver-ia.cosmosia.notional.ventures:443",
+        "https://quicksilver-api.lavenderfive.com:443",
+        "https://quicksilver-mainnet-lcd.autostake.com:443",
+        "https://m-quicksilver.api.utsa.tech",
+        "https://api-quicksilver.nodeist.net"
+      ]
+  }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ]
+}
