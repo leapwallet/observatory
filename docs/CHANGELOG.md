@@ -10,6 +10,7 @@ The server and HTTP API use the same version number. Major and minor versions ge
 ## [0.2.0](https://github.com/leapwallet/observatory/releases/tag/v0.2.0) - 2023-04-03
 
 ### Added
+
 - Support to query all nodes of a given chain
 
 ### Changed
