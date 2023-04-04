@@ -40,16 +40,11 @@
     },
     {
       "chainName": "SEI_URLS",
-      "nodeList": [
-        "https://rest-sei-test.ecostake.com/"
-      ]
+      "nodeList": ["https://rest-sei-test.ecostake.com/"]
     },
     {
       "chainName": "MARS_URLS",
-      "nodeList": [
-        "https://rest.marsprotocol.io/",
-        "https://mars-api.lavenderfive.com/"
-      ]
+      "nodeList": ["https://rest.marsprotocol.io/", "https://mars-api.lavenderfive.com/"]
     },
     {
       "chainName": "JUNO_URLS",
@@ -216,10 +211,7 @@
     },
     {
       "chainName": "LIKE_COIN_URLS",
-      "nodeList": [
-        "https://mainnet-node.like.co/",
-        "https://api-likecoin-ia.cosmosia.notional.ventures/"
-      ]
+      "nodeList": ["https://mainnet-node.like.co/", "https://api-likecoin-ia.cosmosia.notional.ventures/"]
     },
     {
       "chainName": "CHIHUAHUA_URLS",
@@ -244,10 +236,7 @@
     },
     {
       "chainName": "IRIS_NET_URLS",
-      "nodeList": [
-        "https://api-irisnet-ia.cosmosia.notional.ventures/",
-        "https://lcd-iris.keplr.app/"
-      ]
+      "nodeList": ["https://api-irisnet-ia.cosmosia.notional.ventures/", "https://lcd-iris.keplr.app/"]
     },
     {
       "chainName": "STARNAME_URLS",
@@ -274,8 +263,8 @@
         "https://desmos-api.lavenderfive.com/",
         "https://api.mainnet.desmos.network/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "TERITORI_URLS",
       "nodeList": [
         "https://teritori-api.lavenderfive.com/",
@@ -287,16 +276,16 @@
         "https://teritori-rest.brocha.in/",
         "https://api.teritori.nodestake.top/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "AGORIC_URLS",
       "nodeList": [
         "https://main.api.agoric.net/",
         "https://agoric-api.polkachu.com/",
         "https://api.agoric.nodestake.top/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "TERRA_2_URLS",
       "nodeList": [
         "https://fcd.terrav2.ccvalidators.com/",
@@ -305,8 +294,8 @@
         "https://terra-api.lavenderfive.com/",
         "https://terra-api.polkachu.com/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "SECRET_URLS",
       "nodeList": [
         "https://secret-api.lavenderfive.com/",
@@ -317,8 +306,8 @@
         "https://scrt-lcd.blockpane.com/",
         "https://api.secret.forbole.com/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "EVMOS_URLS",
       "nodeList": [
         "https://api.evmos.interbloc.org/",
@@ -341,8 +330,8 @@
         "https://api.evmos.silknodes.io/",
         "https://api.evmos.silentvalidator.com/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "BIT_CANNA_URLS",
       "nodeList": [
         "https://bitcanna.nodejumper.io:1317/",
@@ -354,8 +343,8 @@
         "https://bitcanna-api.lavenderfive.com/",
         "https://api-bcna.kjinc.io/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "CANTO_URLS",
       "nodeList": [
         "https://api.canto.silentvalidator.com/",
@@ -364,8 +353,8 @@
         "https://api.canto.nodestake.top/",
         "https://canto-api.lavenderfive.com/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "KAVA_URLS",
       "nodeList": [
         "https://kava-api.polkachu.com/",
@@ -373,8 +362,8 @@
         "https://api-kava-ia.cosmosia.notional.ventures/",
         "https://api.data.kava.io/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "CRESCENT_URLS",
       "nodeList": [
         "https://mainnet.crescent.network:1317/",
@@ -383,8 +372,8 @@
         "https://crescent.mainnet.lcd.autostake.net/",
         "https://api-crescent.pupmos.network/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "OMNI_FLIX_URLS",
       "nodeList": [
         "https://omniflix.nodejumper.io:1317/",
@@ -397,22 +386,19 @@
         "https://omniflixhub-api.skynetvalidators.com/",
         "https://api.omniflix.huginn.tech/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "CARBON_URLS",
-      "nodeList": [
-        "https://rest.carbon.bh.rocks/",
-        "https://api.carbon.network/"
-      ]
-  },
-  {
+      "nodeList": ["https://rest.carbon.bh.rocks/", "https://api.carbon.network/"]
+    },
+    {
       "chainName": "CUDOS_URLS",
       "nodeList": [
         "http://mainnet-full-node-01.hosts.cudos.org:1317/",
         "https://mainnet-full-node-02.hosts.cudos.org:31317/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "DECENTR_URLS",
       "nodeList": [
         "https://rest.mainnet.decentr.xyz/",
@@ -420,8 +406,8 @@
         "https://api.decentr.chaintools.tech/",
         "https://api.decentr.nodestake.top/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "COMDEX_URLS",
       "nodeList": [
         "https://api-comdex.zenchainlabs.io/",
@@ -433,8 +419,8 @@
         "https://api.comdex.audit.one/rest",
         "http://comdex.node.vitwit.com:1317/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "BIT_SONG_URLS",
       "nodeList": [
         "https://bitsong-api.panthea.eu/",
@@ -449,8 +435,8 @@
         "https://api.bitsong.interbloc.org/",
         "https://api-bitsong-ia.cosmosia.notional.ventures/"
       ]
-  },
-  {
+    },
+    {
       "chainName": "NEAR_URLS",
       "nodeList": [
         "https://rpc.mainnet.near.org",
@@ -458,8 +444,8 @@
         "https://public-rpc.blockpi.io/http/near",
         "https://near-mainnet-rpc.allthatnode.com:3030"
       ]
-  },
-  {
+    },
+    {
       "chainName": "COREUM_URLS",
       "nodeList": [
         "https://full-node.mainnet-1.coreum.dev:1317",
@@ -467,8 +453,8 @@
         "https://full-node-curium.mainnet-1.coreum.dev:1317",
         "https://full-node-uranium.mainnet-1.coreum.dev:1317"
       ]
-  },
-  {
+    },
+    {
       "chainName": "KYVE_URLS",
       "nodeList": [
         "https://api-eu-1.kyve.network",
@@ -480,8 +466,8 @@
         "https://api-kyve.nodeist.net",
         "https://www.kyve-lcd.enigma-validator.com"
       ]
-  },
-  {
+    },
+    {
       "chainName": "MIGALOO_URLS",
       "nodeList": [
         "https://whitewhale-api.lavenderfive.com",
@@ -490,17 +476,20 @@
         "https://lcd-whitewhale.whispernode.com:443",
         "https://migaloo-api.kleomedes.network:443"
       ]
-  },
-  {
+    },
+    {
       "chainName": "NEUTRON_URLS",
-      "nodeList": ["https://rest.baryon.ntrn.info/"]},
-  {
+      "nodeList": ["https://rest.baryon.ntrn.info/"]
+    },
+    {
       "chainName": "ONOMY_URLS",
-      "nodeList": ["https://rest-mainnet.onomy.io"]},
-  {
+      "nodeList": ["https://rest-mainnet.onomy.io"]
+    },
+    {
       "chainName": "QUASAR_URLS",
-      "nodeList": ["https://quasar-api.polkachu.com"]},
-  {
+      "nodeList": ["https://quasar-api.polkachu.com"]
+    },
+    {
       "chainName": "QUICKSILVER_URLS",
       "nodeList": [
         "https://api-quicksilver-ia.cosmosia.notional.ventures:443",
@@ -509,30 +498,6 @@
         "https://m-quicksilver.api.utsa.tech",
         "https://api-quicksilver.nodeist.net"
       ]
-  }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
   ]
 }
