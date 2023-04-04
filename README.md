@@ -7,7 +7,7 @@ See the [architecture](https://github.com/leapwallet/observatory-architecture) f
 Here are the guides for running this microservice using:
 
 - [Docker Compose](docs/docker-compose.md) (recommended for local development)
-- [Cloud](docs/cloud.md) (recommended for production)
+- [Cloud](docs/cloud.md) (recommended for production).
 
 ## Usage
 
