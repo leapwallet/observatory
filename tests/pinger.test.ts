@@ -27,7 +27,7 @@ describe('Pinger', () => {
       it('must handle failed network requests', async () => {
         setUpBadNetworkTest();
         const pinger = Container.get(Pinger.token);
-        await pinger.ping('');
+        await pinger.ping('', '');
       });
 
       const setUpStatusTest = () => {
@@ -49,7 +49,7 @@ describe('Pinger', () => {
       it('must handle non-200 HTTP status codes', async () => {
         setUpStatusTest();
         const pinger = Container.get(Pinger.token);
-        await pinger.ping('');
+        await pinger.ping('', '');
       });
     });
   });

@@ -21,11 +21,13 @@ function setUpHttpLogging(app: Express): void {
 async function startPinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
   const pinger = Container.get(Pinger.token);
-  const urls = EnvVars.getUrls();
-  while (true) {
-    urls.forEach((url) => pinger.ping(url));
-    await sleep({ ms: 60_000 });
+  const chainNodeList = EnvVars.readUrls();
+  for (const chainNodeMap of chainNodeList) {
+    for (const nodeUrl of chainNodeMap.nodeList) {
+      pinger.ping(nodeUrl, chainNodeMap.chainName);
+    }
   }
+  await sleep({ ms: 60_000 });
 }
 
 Container.set(ProcessEnvVars.token, new ProcessEnvVars.DefaultApi());
