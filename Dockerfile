@@ -16,6 +16,7 @@ WORKDIR /app
 COPY --from=observatory /app/dist/ dist
 COPY --from=observatory /app/node_modules/ node_modules
 COPY --from=observatory /app/package.json .
+COPY --from=observatory /app/src/chainNodeList.json ./dist/
 COPY grafana-agent.yaml .
 COPY --from=grafana-agent /app/agent-linux-amd64 .
 COPY cmd.sh .
