@@ -22,12 +22,14 @@ async function startPinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
   const pinger = Container.get(Pinger.token);
   const chainNodeList = EnvVars.readUrls();
-  for (const chainNodeMap of chainNodeList) {
-    for (const nodeUrl of chainNodeMap.nodeList) {
-      pinger.ping(nodeUrl, chainNodeMap.chainName);
+  while (true) {
+    for (const chainNodeMap of chainNodeList) {
+      for (const nodeUrl of chainNodeMap.nodeList) {
+        pinger.ping(nodeUrl, chainNodeMap.chainName);
+      }
     }
+    await sleep({ ms: 60_000 });
   }
-  await sleep({ ms: 60_000 });
 }
 
 Container.set(ProcessEnvVars.token, new ProcessEnvVars.DefaultApi());

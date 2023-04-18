@@ -10,26 +10,40 @@ export namespace Pinger {
     /** @param url - The REST API base URL of a Cosmos blockchain node. */
     async ping(url: string, chainName: string): Promise<void> {
       const logger = getLogger(__filename);
-      const chainUrl = `${chainName}|${url}`;
-      logger.informational(`Pinging ${chainUrl}.`);
+      // const chainUrl = `${chainName}|${url}`;
+      let isEcostakeUrl = 0;
+      if (url.endsWith('.ecostake.com/')) {
+        isEcostakeUrl = 1;
+      }
+      const chainUrl = url;
+      logger.informational(`Pinging ${chainName}: ${isEcostakeUrl}: ${url}.`);
       const fetch = Container.get(fetchToken);
       let response: Response;
-      const end = httpRequestDurationSecondsHistogram.startTimer({ url: chainUrl });
+      const end = httpRequestDurationSecondsHistogram.startTimer({
+        url: chainUrl,
+        chainName: chainName,
+        isEcostakeUrl: isEcostakeUrl,
+      });
       try {
         response = await fetch(`${url}/blocks/latest`);
+        logger.debug(`Successful ping:${chainName}: ${isEcostakeUrl}: ${url}`);
       } catch (err) {
         end();
-        httpRequestsFailedTotal.inc({ url: chainUrl });
-        logger.error(`Failed to ping:${chainUrl}: ${err}`);
+        httpRequestsFailedTotal.inc({ url: chainUrl, chainName: chainName, isEcostakeUrl: isEcostakeUrl });
+        logger.error(`Failed to ping:${chainName}: ${isEcostakeUrl}: ${url}: ${err}`);
         return;
       }
       end();
-      if (response.status === 200) httpRequestsSucceededTotal.inc({ url: chainUrl });
-      else {
-        httpRequestsFailedTotal.inc({ url: chainUrl });
-        logger.error(`Non-OK HTTP status code (${response.status}) returned on ${chainUrl}.`);
+      if (response.status === 200) {
+        httpRequestsSucceededTotal.inc({ url: chainUrl, chainName: chainName, isEcostakeUrl: isEcostakeUrl });
+        logger.debug(`OK HTTP status code (${response.status}) returned on ${chainName}: ${isEcostakeUrl}: ${url}.`);
+      } else {
+        httpRequestsFailedTotal.inc({ url: chainUrl, chainName: chainName, isEcostakeUrl: isEcostakeUrl });
+        logger.error(
+          `Non-OK HTTP status code (${response.status}) returned on ${chainName}: ${isEcostakeUrl}: ${url}.`,
+        );
       }
-      // logger.informational(`Done Pinging ${chainUrl}.`);
+      // logger.informational(`Done Pinging ${chainName}: ${isEcostakeUrl}: ${url}.`);
     }
   }
 

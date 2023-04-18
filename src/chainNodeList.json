@@ -459,7 +459,7 @@
       "nodeList": [
         "https://api-eu-1.kyve.network",
         "https://kyve-api.lavenderfive.com:443",
-        "https://rest-kyve.ecostake.com",
+        "https://rest-kyve.ecostake.com/",
         "https://lcd-kyve.imperator.co",
         "https://kyve-api.ibs.team",
         "https://api.kyve.nodestake.top",
