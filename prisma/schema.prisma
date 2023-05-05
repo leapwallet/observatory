@@ -16,6 +16,8 @@ model ResponseCode {
   httpResponseCode Int
   url              String
 
+  @@index([chainName, type])
+  @@index([createdAt])
   @@map("response_codes")
 }
 
