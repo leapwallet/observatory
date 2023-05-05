@@ -26,4 +26,3 @@ EXPOSE $PORT
 HEALTHCHECK \
     CMD curl -f http://localhost:$PORT/health
 CMD sh cmd.sh
-# ENTRYPOINT ["tail", "-f", "/dev/null"]
