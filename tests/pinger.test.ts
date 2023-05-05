@@ -1,4 +1,5 @@
 import { Container } from 'typedi';
+import prismaToken from '../src/db/prisma-token';
 import { ProcessEnvVars } from '../src/env-vars';
 import fetchToken from '../src/fetch-token';
 import { Pinger } from '../src/pinger';
@@ -22,6 +23,7 @@ describe('Pinger', () => {
         Container.set(Pinger.token, new Pinger.DefaultApi());
         Container.set(ProcessEnvVars.token, new MockProcessEnvVars());
         Container.set(fetchToken, mockFetch);
+        Container.set(prismaToken, prismaToken);
       };
 
       it('must handle failed network requests', async () => {
@@ -44,6 +46,7 @@ describe('Pinger', () => {
         Container.set(Pinger.token, new Pinger.DefaultApi());
         Container.set(ProcessEnvVars.token, new MockProcessEnvVars());
         Container.set(fetchToken, mockFetch);
+        Container.set(prismaToken, prismaToken);
       };
 
       it('must handle non-200 HTTP status codes', async () => {

@@ -52,6 +52,7 @@ export namespace Pinger {
 
     private async logResponseCode(chainName: string, httpResponseCode: number, type: Types, chainUrl: string) {
       const prisma = Container.get(prismaToken);
+      const logger = getLogger(__filename);
       try {
         const data: Prisma.ResponseCodeCreateInput = {
           type: type,
@@ -64,7 +65,8 @@ export namespace Pinger {
         // @ts-ignore: TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Exception'.
         // span.recordException(err);
         // span.setStatus({ code: SpanStatusCode.ERROR, message: 'Failed to create DB entry.' });
-        throw new DbError(err);
+        // throw new DbError(err);
+        logger.error(`Failed to log response code in db:${err}`);
       }
     }
   }
