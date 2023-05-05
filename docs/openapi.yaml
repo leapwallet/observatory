@@ -2,7 +2,7 @@
 openapi: 3.1.0
 info:
   description: The health check API for _Observatory_ as seen in [Observatory Architecture](https://github.com/leapwallet/observatory-architecture).
-  version: 0.2.1
+  version: 0.2.2
   title: Observatory
   contact:
     name: Leap Wallet
