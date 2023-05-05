@@ -1,8 +1,35 @@
 services:
   observatory:
+    entrypoint: /dockerize -wait tcp://postgres:5432 -timeout 30s
     command: sh cmd.sh
     build: .
     restart: unless-stopped
+    volumes:
+      - type: bind
+        source: ./dockerize
+        target: /dockerize
+        read_only: true
     expose: [3000]
     ports: ['3000:3000']
+    networks: [postgres]
     env_file: .env
+    environment:
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/postgres
+    profiles: [prod]
+  postgres:
+    image: postgres:14.4
+    restart: unless-stopped
+    expose: [5433]
+    ports: ['5433:5432'] # The user may have port 5432 allocated to a local Postgres instance.
+    networks: [postgres]
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - type: volume
+        source: postgres
+        target: /var/lib/postgresql/data
+    profiles: [dev, prod]
+volumes:
+  postgres:
+networks:
+  postgres:

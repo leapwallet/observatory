@@ -9,6 +9,7 @@ import metricsRouter from './routes/metrics';
 import { Pinger } from './pinger';
 import sleep from './sleep';
 import prometheus from 'prom-client';
+import { CosmosBlockchain } from './types';
 
 function setUpHttpLogging(app: Express): void {
   const logger = getLogger('Express.js');
@@ -18,6 +19,7 @@ function setUpHttpLogging(app: Express): void {
   app.use(handler);
 }
 
+// @ts-ignore
 async function startPinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
   const pinger = Container.get(Pinger.token);
@@ -32,12 +34,73 @@ async function startPinger(): Promise<void> {
   }
 }
 
+async function startEcostakePinger(): Promise<void> {
+  if (EnvVars.getNodeEnv() === 'test') return;
+  const pinger = Container.get(Pinger.token);
+  const ecostakeChains = [
+    CosmosBlockchain.CosmosHub,
+    CosmosBlockchain.Osmosis,
+    CosmosBlockchain.Mars,
+    CosmosBlockchain.Juno,
+    CosmosBlockchain.Akash,
+    CosmosBlockchain.Axelar,
+    CosmosBlockchain.EMoney,
+    CosmosBlockchain.Persistence,
+    CosmosBlockchain.Stargaze,
+    CosmosBlockchain.Sifchain,
+    CosmosBlockchain.Sommelier,
+    CosmosBlockchain.Umee,
+    CosmosBlockchain.AssetMantle,
+    CosmosBlockchain.Kujira,
+    CosmosBlockchain.Injective,
+    CosmosBlockchain.Stride,
+    CosmosBlockchain.Cheqd,
+    CosmosBlockchain.LikeCoin,
+    CosmosBlockchain.Chihuahua,
+    CosmosBlockchain.GravityBridge,
+    CosmosBlockchain.IrisNet,
+    CosmosBlockchain.Starname,
+    CosmosBlockchain.Desmos,
+    CosmosBlockchain.Teritori,
+    CosmosBlockchain.Agoric,
+    CosmosBlockchain.Terra2,
+    CosmosBlockchain.Evmos,
+    CosmosBlockchain.Canto,
+    CosmosBlockchain.Kava,
+    CosmosBlockchain.Crescent,
+    CosmosBlockchain.Cudos,
+    CosmosBlockchain.Carbon,
+    CosmosBlockchain.Decentr,
+    CosmosBlockchain.BitCanna,
+    CosmosBlockchain.BitSong,
+    CosmosBlockchain.Coreum,
+    CosmosBlockchain.Kyve,
+    CosmosBlockchain.Migaloo,
+    CosmosBlockchain.Onomy,
+    CosmosBlockchain.Quasar,
+    CosmosBlockchain.Quicksilver,
+  ];
+  const logger = getLogger(__filename);
+  while (true) {
+    for (const chain of ecostakeChains) {
+      // const url = `https://rest-${chain.toLowerCase()}.ecostake.com/`
+      const url = `https://rest.cosmos.directory/${chain.toLowerCase()}`;
+      // console.log(url)
+      pinger.ping(url, chain);
+    }
+    const t = 3_00_000;
+    await sleep({ ms: t });
+    logger.informational(`Waiting for ${t} ms`);
+  }
+}
+
 Container.set(ProcessEnvVars.token, new ProcessEnvVars.DefaultApi());
 const app = express();
 setUpHttpLogging(app); // Set up HTTP logging ASAP so that requests get loggedd.
 app.use(cors());
 app.use('/health', healthRouter);
 app.use('/metrics', metricsRouter);
-startPinger();
+// startPinger();
+startEcostakePinger();
 prometheus.collectDefaultMetrics();
 export default app;
