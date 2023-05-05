@@ -88,7 +88,7 @@ async function startEcostakePinger(): Promise<void> {
       // console.log(url)
       pinger.ping(url, chain);
     }
-    const t = 3_00_000;
+    const t = 60_000;
     await sleep({ ms: t });
     logger.informational(`Waiting for ${t} ms`);
   }
