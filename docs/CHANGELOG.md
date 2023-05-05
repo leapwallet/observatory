@@ -13,6 +13,7 @@ The server and HTTP API use the same version number. Major and minor versions ge
 
 - Dumping data to postgres
 - Only querying cosmos directory proxy of all urls
+- running every 1 minute
 
 ## [0.2.1](https://github.com/leapwallet/observatory/releases/tag/v0.2.1) - 2023-04-18
 
