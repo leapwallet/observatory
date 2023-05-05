@@ -17,7 +17,7 @@ COPY --from=observatory /app/dist/ dist
 COPY --from=observatory /app/node_modules/ node_modules
 COPY --from=observatory /app/package.json .
 COPY --from=observatory /app/src/chainNodeList.json ./dist/
-COPY --from=transaction-ingester /app/prisma prisma
+COPY --from=observatory /app/prisma prisma
 COPY grafana-agent.yaml .
 COPY --from=grafana-agent /app/agent-linux-amd64 .
 COPY cmd.sh .
@@ -26,3 +26,4 @@ EXPOSE $PORT
 HEALTHCHECK \
     CMD curl -f http://localhost:$PORT/health
 CMD sh cmd.sh
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
