@@ -19,7 +19,8 @@ export namespace CosmosPinger {
         chainName,
         BlockchainNodeUrlGetter.CosmosApiEndpoint.LatestBlock,
       );
-      logger.informational(`Pinging ${chainName}: ${url}.`); console.log(`Pinging ${chainName}: ${url}.`)
+      logger.informational(`Pinging ${chainName}: ${url}.`);
+      console.log(`Pinging ${chainName}: ${url}.`);
       const fetch = Container.get(fetchToken);
       let response: Response;
       const end = httpRequestDurationSecondsHistogram.startTimer({

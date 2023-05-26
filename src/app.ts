@@ -8,7 +8,7 @@ import healthRouter from './routes/health';
 import metricsRouter from './routes/metrics';
 import { Pinger } from './pinger';
 import { CosmosPinger } from './blockchain-node-urls/pinger';
-import { HealthyNodes } from './blockchain-node-urls/healthyNodes'
+import { HealthyNodes } from './blockchain-node-urls/healthyNodes';
 import sleep from './sleep';
 import prometheus from 'prom-client';
 import { CosmosBlockchain } from './types';
@@ -97,6 +97,9 @@ async function startEcostakePinger(): Promise<void> {
 }
 
 async function startCosmosPinger(): Promise<void> {
+  const healthyNodesFetcher = Container.get(HealthyNodes.token);
+  healthyNodesFetcher.startHealthyNodeFetcher();
+
   const pinger = Container.get(CosmosPinger.token);
   const cosmosBlockchains = [
     CosmosBlockchain.CosmosHub,
@@ -161,7 +164,5 @@ app.use('/metrics', metricsRouter);
 // startPinger();
 startEcostakePinger();
 startCosmosPinger();
-const healthyNodesFetcher = Container.get(HealthyNodes.token);
-healthyNodesFetcher.startHealthyNodeFetcher();
 prometheus.collectDefaultMetrics();
 export default app;
