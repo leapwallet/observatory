@@ -97,6 +97,7 @@ async function startEcostakePinger(): Promise<void> {
 }
 
 async function startCosmosPinger(): Promise<void> {
+  if (EnvVars.getNodeEnv() === 'test') return;
   const healthyNodesFetcher = Container.get(HealthyNodes.token);
   healthyNodesFetcher.startHealthyNodeFetcher();
 

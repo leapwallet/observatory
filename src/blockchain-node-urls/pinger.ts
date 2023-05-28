@@ -2,7 +2,6 @@ import { Container, Token } from 'typedi';
 import { getLogger } from '../logger';
 import { Response } from 'node-fetch';
 import fetchToken from '../fetch-token';
-import { httpRequestDurationSecondsHistogram, httpRequestsFailedTotal, httpRequestsSucceededTotal } from '../metrics';
 import { Types, Prisma } from '@prisma/client';
 import prismaToken from '../db/prisma-token';
 import { BlockchainNodeUrlGetter } from './getter';
@@ -23,32 +22,32 @@ export namespace CosmosPinger {
       console.log(`Pinging ${chainName}: ${url}.`);
       const fetch = Container.get(fetchToken);
       let response: Response;
-      const end = httpRequestDurationSecondsHistogram.startTimer({
-        url: url,
-        chainName: chainName,
-      });
+      const startTime = Date.now();
       try {
         response = await fetch(`${url}/cosmos/base/tendermint/v1beta1/blocks/latest`);
         logger.debug(`Successful ping:${chainName}: ${url}`);
       } catch (err) {
-        end();
-        await this.logResponseCode(chainName, 0, this.type, url);
-        httpRequestsFailedTotal.inc({ url: url, chainName: chainName });
+        const endTime = Date.now();
+        await this.logResponseCode(chainName, 0, this.type, url, endTime - startTime);
         logger.error(`Failed to ping:${chainName} ${url}: ${err}`);
         return;
       }
-      end();
-      await this.logResponseCode(chainName, response.status, this.type, url);
+      const endTime = Date.now();
+      await this.logResponseCode(chainName, response.status, this.type, url, endTime - startTime);
       if (response.status === 200) {
-        httpRequestsSucceededTotal.inc({ url: url, chainName: chainName });
         logger.debug(`OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
       } else {
-        httpRequestsFailedTotal.inc({ url: url, chainName: chainName });
         logger.error(`Non-OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
       }
     }
 
-    private async logResponseCode(chainName: string, httpResponseCode: number, type: Types, chainUrl: string) {
+    private async logResponseCode(
+      chainName: string,
+      httpResponseCode: number,
+      type: Types,
+      chainUrl: string,
+      responseTime: number,
+    ) {
       const prisma = Container.get(prismaToken);
       const logger = getLogger(__filename);
       try {
@@ -57,6 +56,7 @@ export namespace CosmosPinger {
           chainName: chainName,
           httpResponseCode: httpResponseCode,
           url: chainUrl,
+          responseTime: responseTime,
         };
         await prisma.responseCode.create({ data });
       } catch (err) {

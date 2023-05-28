@@ -154,7 +154,7 @@ export namespace HealthyNodes {
     }
 
     /**
-     * Periodically updates the nodes for the {@link blockchain}
+     * Periodically updates the nodes for the blockchain
      */
     startHealthyNodeFetcher() {
       [
