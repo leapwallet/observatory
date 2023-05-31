@@ -15,6 +15,7 @@ export namespace CosmosPinger {
     async ping(chainName: CosmosBlockchain): Promise<void> {
       const logger = getLogger(__filename);
       const blockchainNodeUrlGetter = Container.get(BlockchainNodeUrlGetter.token);
+      const healthyNodesFetcher = Container.get(HealthyNodes.token);
       let tries = 0;
       while (true) {
         const url = blockchainNodeUrlGetter.getCosmosUrl(chainName);
@@ -28,6 +29,7 @@ export namespace CosmosPinger {
           logger.debug(`Successful ping:${chainName}: ${url}`);
         } catch (err) {
           logger.error(`Failed to ping:${chainName} ${url}: ${err}`);
+          healthyNodesFetcher.report({ chainID: chainName, lcdURL: url, responseCode: 0 });
           if (tries === 3) {
             const endTime = Date.now();
             await this.logResponseCode(chainName, 0, this.type, url, endTime - startTime);
@@ -43,7 +45,6 @@ export namespace CosmosPinger {
           return;
         } else {
           if (!url.startsWith('https://rest.cosmos.directory/')) {
-            const healthyNodesFetcher = Container.get(HealthyNodes.token);
             healthyNodesFetcher.report({ chainID: chainName, lcdURL: url, responseCode: response.status });
           }
           logger.error(`Non-OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
