@@ -15,22 +15,20 @@ export namespace CosmosPinger {
     async ping(chainName: CosmosBlockchain): Promise<void> {
       const logger = getLogger(__filename);
       const blockchainNodeUrlGetter = Container.get(BlockchainNodeUrlGetter.token);
-      const url = blockchainNodeUrlGetter.getCosmosUrl(
-        chainName,
-      );
+      const url = blockchainNodeUrlGetter.getCosmosUrl(chainName);
       logger.informational(`Pinging ${chainName}: ${url}.`);
       const fetch = Container.get(fetchToken);
       let response: Response;
       const startTime = Date.now();
       var tries = 0;
-      while(true) {
+      while (true) {
         try {
           response = await fetch(`${url}/cosmos/base/tendermint/v1beta1/blocks/latest`);
           logger.debug(`Successful ping:${chainName}: ${url}`);
           break;
         } catch (err) {
           tries++;
-          if(tries === 3) {
+          if (tries === 3) {
             const endTime = Date.now();
             await this.logResponseCode(chainName, 0, this.type, url, endTime - startTime);
             logger.error(`Failed to ping:${chainName} ${url}: ${err}`);
