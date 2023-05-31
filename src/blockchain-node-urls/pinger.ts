@@ -20,7 +20,7 @@ export namespace CosmosPinger {
       const fetch = Container.get(fetchToken);
       let response: Response;
       const startTime = Date.now();
-      var tries = 0;
+      let tries = 0;
       while (true) {
         try {
           response = await fetch(`${url}/cosmos/base/tendermint/v1beta1/blocks/latest`);
