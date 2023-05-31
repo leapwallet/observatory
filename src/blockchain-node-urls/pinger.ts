@@ -42,7 +42,7 @@ export namespace CosmosPinger {
           await this.logResponseCode(chainName, response.status, this.type, url, endTime - startTime);
           return;
         } else {
-          if (!url.endsWith('.ecostake.com/')) {
+          if (!url.startsWith('https://rest.cosmos.directory/')) {
             const healthyNodesFetcher = Container.get(HealthyNodes.token);
             healthyNodesFetcher.report({ chainID: chainName, lcdURL: url, responseCode: response.status });
           }
