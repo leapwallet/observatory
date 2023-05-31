@@ -15,37 +15,43 @@ export namespace CosmosPinger {
     async ping(chainName: CosmosBlockchain): Promise<void> {
       const logger = getLogger(__filename);
       const blockchainNodeUrlGetter = Container.get(BlockchainNodeUrlGetter.token);
-      const url = blockchainNodeUrlGetter.getCosmosUrl(chainName);
-      logger.informational(`Pinging ${chainName}: ${url}.`);
-      const fetch = Container.get(fetchToken);
-      let response: Response;
-      const startTime = Date.now();
       let tries = 0;
-      while (true) {
+      while(true) {
+        const url = blockchainNodeUrlGetter.getCosmosUrl(chainName);
+        logger.informational(`Pinging ${chainName}: ${url}.`);
+        const fetch = Container.get(fetchToken);
+        let response: Response;
+        const startTime = Date.now();
         try {
+          tries++;
           response = await fetch(`${url}/cosmos/base/tendermint/v1beta1/blocks/latest`);
           logger.debug(`Successful ping:${chainName}: ${url}`);
-          break;
         } catch (err) {
-          tries++;
+          logger.error(`Failed to ping:${chainName} ${url}: ${err}`);
           if (tries === 3) {
             const endTime = Date.now();
             await this.logResponseCode(chainName, 0, this.type, url, endTime - startTime);
-            logger.error(`Failed to ping:${chainName} ${url}: ${err}`);
+            return;
+          }
+          continue;
+        }
+
+        const endTime = Date.now();
+        if (response.status === 200) {
+          logger.debug(`OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
+          await this.logResponseCode(chainName, response.status, this.type, url, endTime - startTime);
+          return;
+        } else {
+          if (!url.endsWith('.ecostake.com/')) {
+            const healthyNodesFetcher = Container.get(HealthyNodes.token);
+            healthyNodesFetcher.report({ chainID: chainName, lcdURL: url, responseCode: response.status });
+          }
+          logger.error(`Non-OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
+          if(tries === 3) {
+            await this.logResponseCode(chainName, response.status, this.type, url, endTime - startTime);
             return;
           }
         }
-      }
-      const endTime = Date.now();
-      await this.logResponseCode(chainName, response.status, this.type, url, endTime - startTime);
-      if (response.status === 200) {
-        logger.debug(`OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
-      } else {
-        if (!url.endsWith('.ecostake.com/')) {
-          const healthyNodesFetcher = Container.get(HealthyNodes.token);
-          healthyNodesFetcher.report({ chainID: chainName, lcdURL: url, responseCode: response.status });
-        }
-        logger.error(`Non-OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
       }
     }
 
