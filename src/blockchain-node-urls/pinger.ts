@@ -16,7 +16,7 @@ export namespace CosmosPinger {
       const logger = getLogger(__filename);
       const blockchainNodeUrlGetter = Container.get(BlockchainNodeUrlGetter.token);
       let tries = 0;
-      while(true) {
+      while (true) {
         const url = blockchainNodeUrlGetter.getCosmosUrl(chainName);
         logger.informational(`Pinging ${chainName}: ${url}.`);
         const fetch = Container.get(fetchToken);
@@ -47,7 +47,7 @@ export namespace CosmosPinger {
             healthyNodesFetcher.report({ chainID: chainName, lcdURL: url, responseCode: response.status });
           }
           logger.error(`Non-OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
-          if(tries === 3) {
+          if (tries === 3) {
             await this.logResponseCode(chainName, response.status, this.type, url, endTime - startTime);
             return;
           }
