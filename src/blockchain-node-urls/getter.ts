@@ -171,7 +171,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getCosmosHubUrls(): string[] {
       const urls = [
-        'https://rest-cosmoshub.ecostake.com/',
+        'https://rest.cosmos.directory/cosmoshub',
         'https://cosmoshub-api.lavenderfive.com:443',
         'https://cosmos-lcd.quickapi.com:443',
         'https://lcd.cosmos.dragonstake.io',
@@ -186,7 +186,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getOsmosisUrls(): string[] {
       const urls = [
-        'https://rest-osmosis.ecostake.com/',
+        'https://rest.cosmos.directory/osmosis',
         'https://lcd.osmosis.zone/',
         'https://osmosis-lcd.quickapi.com/',
         'https://api.osmosis.interbloc.org/',
@@ -209,13 +209,17 @@ export namespace BlockchainNodeUrlGetter {
     }
 
     getMarsUrls(): string[] {
-      const urls = ['https://rest.marsprotocol.io/', 'https://mars-api.lavenderfive.com/'];
+      const urls = [
+        'https://rest.cosmos.directory/mars',
+        'https://rest.marsprotocol.io/',
+        'https://mars-api.lavenderfive.com/',
+      ];
       return urls;
     }
 
     getJunoUrls(): string[] {
       const urls = [
-        'https://rest-juno.ecostake.com/',
+        'https://rest.cosmos.directory/juno',
         'https://api-juno-ia.cosmosia.notional.ventures/',
         'https://lcd-juno.itastakers.com/',
         'https://lcd.junomint.com/',
@@ -232,7 +236,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getAkashUrls(): string[] {
       const urls = [
-        'https://rest-akash.ecostake.com/',
+        'https://rest.cosmos.directory/akash',
         'https://akash.c29r3.xyz/api',
         'https://api-akash-ia.cosmosia.notional.ventures/',
         'https://api.akash.forbole.com/',
@@ -244,6 +248,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getAxelarUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/axelar',
         'https://axelar-lcd.quickapi.com/',
         'https://lcd-axelar.imperator.co/',
         'https://api-1.axelar.nodes.guru/',
@@ -257,6 +262,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getEMoneyUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/emoney',
         'https://emoney.validator.network/api/',
         'https://api-emoney-ia.cosmosia.notional.ventures/',
         'https://api.emoney.freak12techno.io/',
@@ -269,6 +275,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getPersistenceUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/persistence',
         'https://api-persistence.starsquid.io/',
         'https://rest.core.persistence.one/',
         'https://api-persistent-ia.cosmosia.notional.ventures/',
@@ -278,6 +285,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getStargazeUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/stargaze',
         'https://api.stargaze.pupmos.network/',
         'https://rest.stargaze-apis.com/',
         'https://api.stargaze.silentvalidator.com/',
@@ -294,7 +302,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getSifchainUrls(): string[] {
       const urls = [
-        'https://rest-sifchain.ecostake.com/',
+        'https://rest.cosmos.directory/sifchain',
         'https://sifchain-api.polkachu.com/',
         'https://api-sifchain-ia.cosmosia.notional.ventures/',
         'https://lcd.sifchain.posthuman.digital/',
@@ -308,6 +316,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getSommelierUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/sommelier',
         'https://api.sommelier.pupmos.network/',
         'https://sommelier-api.lavenderfive.com/',
         'https://sommelier-api.polkachu.com/',
@@ -318,6 +327,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getUmeeUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/umee',
         'https://api.barnacle.mainnet.network.umee.cc/',
         'https://api-umee-ia.cosmosia.notional.ventures/',
         'https://umee-api.polkachu.com/',
@@ -327,7 +337,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getAssetMantleUrls(): string[] {
       const urls = [
-        'https://rest-assetmantle.ecostake.com/',
+        'https://rest.cosmos.directory/assetmantle',
         'https://rest.assetmantle.one/',
         'https://api-assetmantle-ia.cosmosia.notional.ventures/',
         'https://assetmantle-api.polkachu.com/',
@@ -340,7 +350,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getKujiraUrls(): string[] {
       const urls = [
-        'https://rest-kujira.ecostake.com/',
+        'https://rest.cosmos.directory/kujira',
         'https://kujira-lcd.wildsage.io/',
         'https://api-kujira.nodeist.net/',
         'https://api-kujira-ia.cosmosia.notional.ventures/',
@@ -357,6 +367,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getInjectiveUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/injective',
         'https://injective-lcd.quickapi.com/',
         'https://injective-api.polkachu.com/',
         'https://public.lcd.injective.network/',
@@ -367,6 +378,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getStrideUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/stride',
         'https://stride-api.lavenderfive.com/',
         'https://stride-api.polkachu.com/',
         'https://api.stride.silentvalidator.com/',
@@ -381,6 +393,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getCheqdUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/cheqd',
         'https://cheqd-api.lavenderfive.com/',
         'https://api.cheqd.nodestake.top/',
         'https://api.cheqd.net/',
@@ -391,13 +404,17 @@ export namespace BlockchainNodeUrlGetter {
     }
 
     getLikeCoinUrls(): string[] {
-      const urls = ['https://mainnet-node.like.co/', 'https://api-likecoin-ia.cosmosia.notional.ventures/'];
+      const urls = [
+        'https://rest.cosmos.directory/likecoin',
+        'https://mainnet-node.like.co/',
+        'https://api-likecoin-ia.cosmosia.notional.ventures/',
+      ];
       return urls;
     }
 
     getChihuahuaUrls(): string[] {
       const urls = [
-        'https://rest-chihuahua.ecostake.com/',
+        'https://rest.cosmos.directory/chihuahua',
         'https://api.chihuahua.wtf/',
         'https://chihuahua-api.polkachu.com/',
         'https://chihuahua-api.lavenderfive.com/',
@@ -408,6 +425,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getGravityBridgeUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/gravitybridge',
         'https://gravity-api.polkachu.com/',
         'https://gravitybridge-api.lavenderfive.com/',
         'https://api.gravity-bridge.nodestake.top/',
@@ -419,12 +437,17 @@ export namespace BlockchainNodeUrlGetter {
     }
 
     getIrisNetUrls(): string[] {
-      const urls = ['https://api-irisnet-ia.cosmosia.notional.ventures/', 'https://lcd-iris.keplr.app/'];
+      const urls = [
+        'https://rest.cosmos.directory/irisnet',
+        'https://api-irisnet-ia.cosmosia.notional.ventures/',
+        'https://lcd-iris.keplr.app/',
+      ];
       return urls;
     }
 
     getStarnameUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/starname',
         'https://starname.nodejumper.io:1317/',
         'https://api-starname-ia.cosmosia.notional.ventures/',
         'https://lcd-iov.keplr.app/',
@@ -443,6 +466,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getDesmosUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/desmos',
         'https://desmos.nodejumper.io:1317/',
         'https://desmos-api.ibs.team/',
         'https://desmos-api.panthea.eu/',
@@ -454,6 +478,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getTeritoriUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/teritori',
         'https://teritori-api.lavenderfive.com/',
         'https://teritori.nodejumper.io:1317/',
         'https://api-teritori.nodeist.net/',
@@ -468,6 +493,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getAgoricUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/agoric',
         'https://main.api.agoric.net/',
         'https://agoric-api.polkachu.com/',
         'https://api.agoric.nodestake.top/',
@@ -477,6 +503,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getTerra2Urls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/terra2',
         'https://fcd.terrav2.ccvalidators.com/',
         'https://terra.mainnet.lcd.autostake.net/',
         'https://lcd-terra.wildsage.io/',
@@ -501,7 +528,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getEvmosUrls(): string[] {
       const urls = [
-        'https://rest-evmos.ecostake.com/',
+        'https://rest.cosmos.directory/evmos',
         'https://api.evmos.interbloc.org/',
         'https://rest.evmos.tcnetwork.io/',
         'https://evmos.rest.stakin.com/',
@@ -526,6 +553,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getBitCannaUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/bitcanna',
         'https://bitcanna.nodejumper.io:1317/',
         'https://api-bitcanna-ia.cosmosia.notional.ventures/',
         'https://bitcanna-api.polkachu.com/',
@@ -540,6 +568,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getCantoUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/canto',
         'https://api.canto.silentvalidator.com/',
         'https://canto-api.polkachu.com/',
         'http://164.90.154.41:1317/',
@@ -551,6 +580,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getKavaUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/kava',
         'https://kava-api.polkachu.com/',
         'https://kava.mainnet.lcd.autostake.net/',
         'https://api-kava-ia.cosmosia.notional.ventures/',
@@ -561,6 +591,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getCrescentUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/crescent',
         'https://mainnet.crescent.network:1317/',
         'https://crescent-api.polkachu.com/',
         'https://api-crescent.pupmos.network/',
@@ -585,12 +616,17 @@ export namespace BlockchainNodeUrlGetter {
     }
 
     getCarbonUrls(): string[] {
-      const urls = ['https://rest.carbon.bh.rocks/', 'https://api.carbon.network/'];
+      const urls = [
+        'https://rest.cosmos.directory/carbon',
+        'https://rest.carbon.bh.rocks/',
+        'https://api.carbon.network/',
+      ];
       return urls;
     }
 
     getCudosUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/cudos',
         'http://mainnet-full-node-01.hosts.cudos.org:1317/',
         'https://mainnet-full-node-02.hosts.cudos.org:31317/',
       ];
@@ -599,6 +635,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getDecentrUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/decentr',
         'https://rest.mainnet.decentr.xyz/',
         'https://decentr-api.ibs.team/',
         'https://api.decentr.chaintools.tech/',
@@ -623,6 +660,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getBitSongUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/bitsong',
         'https://bitsong-api.panthea.eu/',
         'https://bitsong-api.lavenderfive.com/',
         'https://lcd-bitsong.itastakers.com/',
@@ -650,6 +688,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getCoreumUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/coreum',
         'https://full-node.mainnet-1.coreum.dev:1317',
         'https://full-node-californium.mainnet-1.coreum.dev:1317',
         'https://full-node-curium.mainnet-1.coreum.dev:1317',
@@ -660,7 +699,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getKyveUrls(): string[] {
       const urls = [
-        'https://rest-kyve.ecostake.com/',
+        'https://rest.cosmos.directory/kyve',
         'https://lcd-kyve.imperator.co/',
         'https://api-eu-1.kyve.network/',
         'https://kyve-api.lavenderfive.com:443/',
@@ -673,6 +712,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getMigalooUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/migaloo',
         'https://whitewhale-api.lavenderfive.com/',
         'https://rest-whitewhale.carbonzero.zone:443/',
         'https://migaloo.api.kjnodes.com/',
@@ -690,17 +730,18 @@ export namespace BlockchainNodeUrlGetter {
     }
 
     getOnomyUrls(): string[] {
-      const urls = ['https://rest-mainnet.onomy.io'];
+      const urls = ['https://rest.cosmos.directory/onomy', 'https://rest-mainnet.onomy.io'];
       return urls;
     }
 
     getQuasarUrls(): string[] {
-      const urls = ['https://quasar-api.polkachu.com'];
+      const urls = ['https://rest.cosmos.directory/quasar', 'https://quasar-api.polkachu.com'];
       return urls;
     }
 
     getQuicksilverUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/quicksilver',
         'https://m-quicksilver.api.utsa.tech/',
         'https://quicksilver.api.kjnodes.com/',
         'https://quicksilver-mainnet-lcd.autostake.com:443/',
