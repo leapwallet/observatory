@@ -15,6 +15,7 @@ model ResponseCode {
   type             Types
   httpResponseCode Int
   url              String
+  responseTime     Int?
 
   @@index([chainName, type])
   @@index([createdAt])
@@ -23,6 +24,7 @@ model ResponseCode {
 
 enum Types {
   ECOSTAKE         @map("ecostake")
+  INGESTER         @map("ingester")
   FALLBACK_FALOODA @map("fallback_falooda")
   LOAD_BALANCER_1  @map("load_balancer_1")
 

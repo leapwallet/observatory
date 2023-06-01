@@ -21,6 +21,7 @@ export namespace Pinger {
       logger.informational(`Pinging ${chainName}: ${isEcostakeUrl}: ${url}.`);
       const fetch = Container.get(fetchToken);
       let response: Response;
+      const startTime = Date.now();
       const end = httpRequestDurationSecondsHistogram.startTimer({
         url: chainUrl,
         chainName: chainName,
@@ -31,13 +32,15 @@ export namespace Pinger {
         logger.debug(`Successful ping:${chainName}: ${isEcostakeUrl}: ${url}`);
       } catch (err) {
         end();
-        await this.logResponseCode(chainName, 0, this.type, chainUrl);
+        const endTime = Date.now();
+        await this.logResponseCode(chainName, 0, this.type, chainUrl, endTime - startTime);
         httpRequestsFailedTotal.inc({ url: chainUrl, chainName: chainName, isEcostakeUrl: isEcostakeUrl });
         logger.error(`Failed to ping:${chainName}: ${isEcostakeUrl}: ${url}: ${err}`);
         return;
       }
       end();
-      await this.logResponseCode(chainName, response.status, this.type, chainUrl);
+      const endTime = Date.now();
+      await this.logResponseCode(chainName, response.status, this.type, chainUrl, endTime - startTime);
       if (response.status === 200) {
         httpRequestsSucceededTotal.inc({ url: chainUrl, chainName: chainName, isEcostakeUrl: isEcostakeUrl });
         logger.debug(`OK HTTP status code (${response.status}) returned on ${chainName}: ${isEcostakeUrl}: ${url}.`);
@@ -50,7 +53,13 @@ export namespace Pinger {
       // logger.informational(`Done Pinging ${chainName}: ${isEcostakeUrl}: ${url}.`);
     }
 
-    private async logResponseCode(chainName: string, httpResponseCode: number, type: Types, chainUrl: string) {
+    private async logResponseCode(
+      chainName: string,
+      httpResponseCode: number,
+      type: Types,
+      chainUrl: string,
+      responseTime: number,
+    ) {
       const prisma = Container.get(prismaToken);
       const logger = getLogger(__filename);
       try {
@@ -59,6 +68,7 @@ export namespace Pinger {
           chainName: chainName,
           httpResponseCode: httpResponseCode,
           url: chainUrl,
+          responseTime: responseTime,
         };
         await prisma.responseCode.create({ data });
       } catch (err) {
