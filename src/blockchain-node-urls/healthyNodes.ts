@@ -82,6 +82,10 @@ export namespace HealthyNodes {
       if (!options.chainID || !options.lcdURL || !options.responseCode) {
         return;
       }
+      if (options.lcdURL.startsWith('https://rest.cosmos.directory/')) {
+        getLogger(__filename).debug(`skipping reporting as ecostake/proxy url: ${options.lcdURL}`);
+        return;
+      }
 
       const nodes = this.getNodes(options.chainID);
 

@@ -44,9 +44,7 @@ export namespace CosmosPinger {
           await this.logResponseCode(chainName, response.status, this.type, url, endTime - startTime);
           return;
         } else {
-          if (!url.startsWith('https://rest.cosmos.directory/')) {
-            healthyNodesFetcher.report({ chainID: chainName, lcdURL: url, responseCode: response.status });
-          }
+          healthyNodesFetcher.report({ chainID: chainName, lcdURL: url, responseCode: response.status });
           logger.error(`Non-OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
           if (tries === 3) {
             await this.logResponseCode(chainName, response.status, this.type, url, endTime - startTime);
