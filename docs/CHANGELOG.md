@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 The server and HTTP API use the same version number. Major and minor versions get based off of the HTTP API. For example, if the server has a backward incompatible change but the APIs haven't changed, then only the patch number gets bumped.
 
+## [0.3.1](https://github.com/leapwallet/observatory/releases/tag/v0.3.1) - 2023-06-07
+
+### Fixed
+
+- Fixed the issue with prisma migration
+
 ## [0.3.0](https://github.com/leapwallet/observatory/releases/tag/v0.3.0) - 2023-05-30
 
 ### Added
