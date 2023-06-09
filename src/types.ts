@@ -57,4 +57,11 @@ export enum CosmosBlockchain {
   Quasar = 'quasar',
   Quicksilver = 'quicksilver',
   SeiAtlantic2TestNet = 'seiAtlantic2TestNet',
+  Gitopia = 'gitopia',
+  Ixo = 'impacthub',
+  Jackal = 'jackal',
+  Noble = 'noble',
+  Nolus = 'nolus',
+  Planq = 'planq',
+  Chain4Energy = 'chain4energy',
 }
