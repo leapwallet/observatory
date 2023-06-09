@@ -81,6 +81,11 @@ async function startEcostakePinger(): Promise<void> {
     CosmosBlockchain.Onomy,
     CosmosBlockchain.Quasar,
     CosmosBlockchain.Quicksilver,
+    CosmosBlockchain.Secret,
+    CosmosBlockchain.Comdex,
+    CosmosBlockchain.Fetch,
+    CosmosBlockchain.Neutron,
+    CosmosBlockchain.OmniFlix,
   ];
   const logger = getLogger(__filename);
   while (true) {
@@ -144,6 +149,11 @@ async function startCosmosPinger(): Promise<void> {
     CosmosBlockchain.Onomy,
     CosmosBlockchain.Quasar,
     CosmosBlockchain.Quicksilver,
+    CosmosBlockchain.Secret,
+    CosmosBlockchain.Comdex,
+    CosmosBlockchain.Fetch,
+    CosmosBlockchain.Neutron,
+    CosmosBlockchain.OmniFlix,
   ];
   const logger = getLogger(__filename);
   while (true) {

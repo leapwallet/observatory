@@ -457,6 +457,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getFetchUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/fetchhub',
         'https://api-fetchhub-ia.cosmosia.notional.ventures/',
         'https://fetch-api.polkachu.com/',
         'https://rest-fetchhub.fetch.ai/',
@@ -515,6 +516,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getSecretUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/secretnetwork',
         'https://secret-api.lavenderfive.com/',
         'https://secret-4.api.trivium.network:1317/',
         'https://api.scrt.network/',
@@ -602,6 +604,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getOmniFlixUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/omniflixhub',
         'https://omniflix.nodejumper.io:1317/',
         'https://api-omniflixhub-ia.cosmosia.notional.ventures/',
         'https://omniflix-api.lavenderfive.com/',
@@ -646,6 +649,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getComdexUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/comdex',
         'https://api-comdex.zenchainlabs.io/',
         'https://comdex-api.polkachu.com/',
         'https://api.comdex.chaintools.tech/',
@@ -725,7 +729,7 @@ export namespace BlockchainNodeUrlGetter {
     }
 
     getNeutronUrls(): string[] {
-      const urls = ['https://rest.baryon.ntrn.info/'];
+      const urls = ['https://rest.cosmos.directory/neutron', 'https://rest.baryon.ntrn.info/'];
       return urls;
     }
 
