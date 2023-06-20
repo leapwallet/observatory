@@ -53,6 +53,13 @@ export namespace BlockchainNodeUrlGetter {
       [CosmosBlockchain.Quasar]: 0,
       [CosmosBlockchain.Quicksilver]: 0,
       [CosmosBlockchain.SeiAtlantic2TestNet]: 0,
+      [CosmosBlockchain.Gitopia]: 0,
+      [CosmosBlockchain.Ixo]: 0,
+      [CosmosBlockchain.Jackal]: 0,
+      [CosmosBlockchain.Noble]: 0,
+      [CosmosBlockchain.Nolus]: 0,
+      [CosmosBlockchain.Planq]: 0,
+      [CosmosBlockchain.Chain4Energy]: 0,
     };
 
     getCosmosUrl(blockchain: CosmosBlockchain): string {
@@ -166,6 +173,20 @@ export namespace BlockchainNodeUrlGetter {
           return this.getQuicksilverUrls();
         case CosmosBlockchain.SeiAtlantic2TestNet:
           return this.getSeiAtlantic2TestNetUrls();
+        case CosmosBlockchain.Gitopia:
+          return this.getGitopiaUrls();
+        case CosmosBlockchain.Ixo:
+          return this.getIxoUrls();
+        case CosmosBlockchain.Jackal:
+          return this.getJackalUrls();
+        case CosmosBlockchain.Noble:
+          return this.getNobleUrls();
+        case CosmosBlockchain.Nolus:
+          return this.getNolusUrls();
+        case CosmosBlockchain.Planq:
+          return this.getPlanqUrls();
+        case CosmosBlockchain.Chain4Energy:
+          return this.getChain4EnergyUrls();
       }
     }
 
@@ -457,6 +478,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getFetchUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/fetchhub',
         'https://api-fetchhub-ia.cosmosia.notional.ventures/',
         'https://fetch-api.polkachu.com/',
         'https://rest-fetchhub.fetch.ai/',
@@ -515,6 +537,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getSecretUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/secretnetwork',
         'https://secret-api.lavenderfive.com/',
         'https://secret-4.api.trivium.network:1317/',
         'https://api.scrt.network/',
@@ -602,6 +625,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getOmniFlixUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/omniflixhub',
         'https://omniflix.nodejumper.io:1317/',
         'https://api-omniflixhub-ia.cosmosia.notional.ventures/',
         'https://omniflix-api.lavenderfive.com/',
@@ -646,6 +670,7 @@ export namespace BlockchainNodeUrlGetter {
 
     getComdexUrls(): string[] {
       const urls = [
+        'https://rest.cosmos.directory/comdex',
         'https://api-comdex.zenchainlabs.io/',
         'https://comdex-api.polkachu.com/',
         'https://api.comdex.chaintools.tech/',
@@ -725,7 +750,7 @@ export namespace BlockchainNodeUrlGetter {
     }
 
     getNeutronUrls(): string[] {
-      const urls = ['https://rest.baryon.ntrn.info/'];
+      const urls = ['https://rest.cosmos.directory/neutron', 'https://rest.baryon.ntrn.info/'];
       return urls;
     }
 
@@ -753,6 +778,41 @@ export namespace BlockchainNodeUrlGetter {
 
     getSeiAtlantic2TestNetUrls(): string[] {
       const urls = ['https://rest.atlantic-2.seinetwork.io'];
+      return urls;
+    }
+
+    getGitopiaUrls(): string[] {
+      const urls = ['https://rest.cosmos.directory/gitopia'];
+      return urls;
+    }
+
+    getIxoUrls(): string[] {
+      const urls = ['https://rest.cosmos.directory/impacthub'];
+      return urls;
+    }
+
+    getJackalUrls(): string[] {
+      const urls = ['https://rest.cosmos.directory/jackal'];
+      return urls;
+    }
+
+    getNobleUrls(): string[] {
+      const urls = ['https://rest.cosmos.directory/noble'];
+      return urls;
+    }
+
+    getNolusUrls(): string[] {
+      const urls = ['https://rest.cosmos.directory/nolus'];
+      return urls;
+    }
+
+    getPlanqUrls(): string[] {
+      const urls = ['https://rest.cosmos.directory/planq'];
+      return urls;
+    }
+
+    getChain4EnergyUrls(): string[] {
+      const urls = ['https://rest.cosmos.directory/chain4energy'];
       return urls;
     }
   }
