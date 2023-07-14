@@ -2,6 +2,7 @@
 export type chainNodeList = {
   chainName: string;
   nodeList: string[];
+  isEcostakeChain: boolean;
 };
 
 export type chainNodeListJSON = {
