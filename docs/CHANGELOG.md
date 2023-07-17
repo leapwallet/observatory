@@ -7,6 +7,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 The server and HTTP API use the same version number. Major and minor versions get based off of the HTTP API. For example, if the server has a backward incompatible change but the APIs haven't changed, then only the patch number gets bumped.
 
+## [0.3.4](https://github.com/leapwallet/observatory/releases/tag/v0.3.4) - 2023-07-14
+
+### Added
+
+- Remove retry logic from CosmosPinger
+- Read blockhain data from config JSON
+
 ## [0.3.3](https://github.com/leapwallet/observatory/releases/tag/v0.3.3) - 2023-06-13
 
 ### Added

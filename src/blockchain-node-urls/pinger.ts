@@ -16,41 +16,32 @@ export namespace CosmosPinger {
       const logger = getLogger(__filename);
       const blockchainNodeUrlGetter = Container.get(BlockchainNodeUrlGetter.token);
       const healthyNodesFetcher = Container.get(HealthyNodes.token);
-      let tries = 0;
-      while (true) {
-        const url = blockchainNodeUrlGetter.getCosmosUrl(chainName);
-        logger.informational(`Pinging ${chainName}: ${url}.`);
-        const fetch = Container.get(fetchToken);
-        let response: Response;
-        const startTime = Date.now();
-        try {
-          tries++;
-          response = await fetch(`${url}/cosmos/base/tendermint/v1beta1/blocks/latest`);
-          logger.debug(`Successful ping:${chainName}: ${url}`);
-        } catch (err) {
-          logger.error(`Failed to ping:${chainName} ${url}: ${err}`);
-          healthyNodesFetcher.report({ chainID: chainName, lcdURL: url, responseCode: 0 });
-          if (tries === 3) {
-            const endTime = Date.now();
-            await this.logResponseCode(chainName, 0, this.type, url, endTime - startTime);
-            return;
-          }
-          continue;
-        }
-
+      const url = blockchainNodeUrlGetter.getCosmosUrl(chainName);
+      logger.informational(`Pinging ${chainName}: ${url}.`);
+      const fetch = Container.get(fetchToken);
+      let response: Response;
+      const startTime = Date.now();
+      try {
+        response = await fetch(`${url}/cosmos/base/tendermint/v1beta1/blocks/latest`);
+        logger.debug(`Successful ping:${chainName}: ${url}`);
+      } catch (err) {
         const endTime = Date.now();
-        if (response.status === 200) {
-          logger.debug(`OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
-          await this.logResponseCode(chainName, response.status, this.type, url, endTime - startTime);
-          return;
-        } else {
-          healthyNodesFetcher.report({ chainID: chainName, lcdURL: url, responseCode: response.status });
-          logger.error(`Non-OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
-          if (tries === 3) {
-            await this.logResponseCode(chainName, response.status, this.type, url, endTime - startTime);
-            return;
-          }
-        }
+        logger.error(`Failed to ping:${chainName} ${url}: ${err}`);
+        healthyNodesFetcher.report({ chainID: chainName, lcdURL: url, responseCode: 0 });
+        await this.logResponseCode(chainName, 0, this.type, url, endTime - startTime);
+        return;
+      }
+
+      const endTime = Date.now();
+      if (response.status === 200) {
+        logger.debug(`OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
+        await this.logResponseCode(chainName, response.status, this.type, url, endTime - startTime);
+        return;
+      } else {
+        healthyNodesFetcher.report({ chainID: chainName, lcdURL: url, responseCode: response.status });
+        logger.error(`Non-OK HTTP status code (${response.status}) returned on ${chainName} ${url}.`);
+        await this.logResponseCode(chainName, response.status, this.type, url, endTime - startTime);
+        return;
       }
     }
 

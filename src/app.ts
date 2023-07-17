@@ -12,6 +12,7 @@ import { HealthyNodes } from './blockchain-node-urls/healthyNodes';
 import sleep from './sleep';
 import prometheus from 'prom-client';
 import { CosmosBlockchain } from './types';
+import { BlockchainNodeUrlGetter } from './blockchain-node-urls/getter';
 
 function setUpHttpLogging(app: Express): void {
   const logger = getLogger('Express.js');
@@ -39,68 +40,16 @@ async function startPinger(): Promise<void> {
 async function startEcostakePinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
   const pinger = Container.get(Pinger.token);
-  const ecostakeChains = [
-    CosmosBlockchain.CosmosHub,
-    CosmosBlockchain.Osmosis,
-    CosmosBlockchain.Mars,
-    CosmosBlockchain.Juno,
-    CosmosBlockchain.Akash,
-    CosmosBlockchain.Axelar,
-    CosmosBlockchain.EMoney,
-    CosmosBlockchain.Persistence,
-    CosmosBlockchain.Stargaze,
-    CosmosBlockchain.Sifchain,
-    CosmosBlockchain.Sommelier,
-    CosmosBlockchain.Umee,
-    CosmosBlockchain.AssetMantle,
-    CosmosBlockchain.Kujira,
-    CosmosBlockchain.Injective,
-    CosmosBlockchain.Stride,
-    CosmosBlockchain.Cheqd,
-    CosmosBlockchain.LikeCoin,
-    CosmosBlockchain.Chihuahua,
-    CosmosBlockchain.GravityBridge,
-    CosmosBlockchain.IrisNet,
-    CosmosBlockchain.Starname,
-    CosmosBlockchain.Desmos,
-    CosmosBlockchain.Teritori,
-    CosmosBlockchain.Agoric,
-    CosmosBlockchain.Terra2,
-    CosmosBlockchain.Evmos,
-    CosmosBlockchain.Canto,
-    CosmosBlockchain.Kava,
-    CosmosBlockchain.Crescent,
-    CosmosBlockchain.Cudos,
-    CosmosBlockchain.Carbon,
-    CosmosBlockchain.Decentr,
-    CosmosBlockchain.BitCanna,
-    CosmosBlockchain.BitSong,
-    CosmosBlockchain.Coreum,
-    CosmosBlockchain.Kyve,
-    CosmosBlockchain.Migaloo,
-    CosmosBlockchain.Onomy,
-    CosmosBlockchain.Quasar,
-    CosmosBlockchain.Quicksilver,
-    CosmosBlockchain.Secret,
-    CosmosBlockchain.Comdex,
-    CosmosBlockchain.Fetch,
-    CosmosBlockchain.Neutron,
-    CosmosBlockchain.OmniFlix,
-    CosmosBlockchain.Gitopia,
-    CosmosBlockchain.Ixo,
-    CosmosBlockchain.Jackal,
-    CosmosBlockchain.Noble,
-    CosmosBlockchain.Nolus,
-    CosmosBlockchain.Planq,
-    CosmosBlockchain.Chain4Energy,
-  ];
+  const chainNodeList = EnvVars.readUrls();
+  const ecostakeChains = chainNodeList.filter((chain) => chain.isEcostakeChain);
   const logger = getLogger(__filename);
   while (true) {
     for (const chain of ecostakeChains) {
+      const chainName = chain.chainName as CosmosBlockchain;
       // const url = `https://rest-${chain.toLowerCase()}.ecostake.com/`
-      const url = `https://rest.cosmos.directory/${chain.toLowerCase()}`;
+      const url = `https://rest.cosmos.directory/${chainName.toLowerCase()}`;
       // console.log(url)
-      pinger.ping(url, chain);
+      pinger.ping(url, chainName);
     }
     const t = 60_000;
     await sleep({ ms: t });
@@ -111,68 +60,16 @@ async function startEcostakePinger(): Promise<void> {
 async function startCosmosPinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
   const healthyNodesFetcher = Container.get(HealthyNodes.token);
-  healthyNodesFetcher.startHealthyNodeFetcher();
+  const chainNodeList = EnvVars.readUrls();
+  healthyNodesFetcher.startHealthyNodeFetcher(chainNodeList);
 
   const pinger = Container.get(CosmosPinger.token);
-  const cosmosBlockchains = [
-    CosmosBlockchain.CosmosHub,
-    CosmosBlockchain.Osmosis,
-    CosmosBlockchain.Mars,
-    CosmosBlockchain.Juno,
-    CosmosBlockchain.Akash,
-    CosmosBlockchain.Axelar,
-    CosmosBlockchain.EMoney,
-    CosmosBlockchain.Persistence,
-    CosmosBlockchain.Stargaze,
-    CosmosBlockchain.Sifchain,
-    CosmosBlockchain.Sommelier,
-    CosmosBlockchain.Umee,
-    CosmosBlockchain.AssetMantle,
-    CosmosBlockchain.Kujira,
-    CosmosBlockchain.Injective,
-    CosmosBlockchain.Stride,
-    CosmosBlockchain.Cheqd,
-    CosmosBlockchain.LikeCoin,
-    CosmosBlockchain.Chihuahua,
-    CosmosBlockchain.GravityBridge,
-    CosmosBlockchain.IrisNet,
-    CosmosBlockchain.Starname,
-    CosmosBlockchain.Desmos,
-    CosmosBlockchain.Teritori,
-    CosmosBlockchain.Agoric,
-    CosmosBlockchain.Terra2,
-    CosmosBlockchain.Evmos,
-    CosmosBlockchain.Canto,
-    CosmosBlockchain.Kava,
-    CosmosBlockchain.Crescent,
-    CosmosBlockchain.Cudos,
-    CosmosBlockchain.Carbon,
-    CosmosBlockchain.Decentr,
-    CosmosBlockchain.BitCanna,
-    CosmosBlockchain.BitSong,
-    CosmosBlockchain.Coreum,
-    CosmosBlockchain.Kyve,
-    CosmosBlockchain.Migaloo,
-    CosmosBlockchain.Onomy,
-    CosmosBlockchain.Quasar,
-    CosmosBlockchain.Quicksilver,
-    CosmosBlockchain.Secret,
-    CosmosBlockchain.Comdex,
-    CosmosBlockchain.Fetch,
-    CosmosBlockchain.Neutron,
-    CosmosBlockchain.OmniFlix,
-    CosmosBlockchain.Gitopia,
-    CosmosBlockchain.Ixo,
-    CosmosBlockchain.Jackal,
-    CosmosBlockchain.Noble,
-    CosmosBlockchain.Nolus,
-    CosmosBlockchain.Planq,
-    CosmosBlockchain.Chain4Energy,
-  ];
+  const blockchainNodeUrlGetter = Container.get(BlockchainNodeUrlGetter.token);
+  blockchainNodeUrlGetter.setUrlIndices(chainNodeList);
   const logger = getLogger(__filename);
   while (true) {
-    for (const blockchain of cosmosBlockchains) {
-      pinger.ping(blockchain);
+    for (const chainNodeMap of chainNodeList) {
+      pinger.ping(chainNodeMap.chainName as CosmosBlockchain);
     }
     const t = 60_000;
     await sleep({ ms: t });

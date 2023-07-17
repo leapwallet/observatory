@@ -1,7 +1,7 @@
 import { Response } from 'node-fetch';
 import { Container, Token } from 'typedi';
 import fetchToken from '../fetch-token';
-import { CosmosBlockchain } from '../types';
+import { CosmosBlockchain, chainNodeList } from '../types';
 import { getLogger } from '../logger';
 import { BlockchainNodeUrlGetter } from './getter';
 import { EnvVars } from '../env-vars';
@@ -160,50 +160,55 @@ export namespace HealthyNodes {
     /**
      * Periodically updates the nodes for the blockchain
      */
-    startHealthyNodeFetcher() {
-      [
-        CosmosBlockchain.CosmosHub,
-        CosmosBlockchain.Osmosis,
-        CosmosBlockchain.Mars,
-        CosmosBlockchain.Juno,
-        CosmosBlockchain.Akash,
-        CosmosBlockchain.Axelar,
-        CosmosBlockchain.EMoney,
-        CosmosBlockchain.Persistence,
-        CosmosBlockchain.Stargaze,
-        CosmosBlockchain.Sifchain,
-        CosmosBlockchain.Sommelier,
-        CosmosBlockchain.Umee,
-        CosmosBlockchain.AssetMantle,
-        CosmosBlockchain.Kujira,
-        CosmosBlockchain.Injective,
-        CosmosBlockchain.Stride,
-        CosmosBlockchain.Cheqd,
-        CosmosBlockchain.LikeCoin,
-        CosmosBlockchain.Chihuahua,
-        CosmosBlockchain.GravityBridge,
-        CosmosBlockchain.IrisNet,
-        CosmosBlockchain.Starname,
-        CosmosBlockchain.Desmos,
-        CosmosBlockchain.Teritori,
-        CosmosBlockchain.Agoric,
-        CosmosBlockchain.Terra2,
-        CosmosBlockchain.Evmos,
-        CosmosBlockchain.Canto,
-        CosmosBlockchain.Kava,
-        CosmosBlockchain.Crescent,
-        CosmosBlockchain.Cudos,
-        CosmosBlockchain.Carbon,
-        CosmosBlockchain.Decentr,
-        CosmosBlockchain.BitCanna,
-        CosmosBlockchain.BitSong,
-        CosmosBlockchain.Coreum,
-        CosmosBlockchain.Kyve,
-        CosmosBlockchain.Migaloo,
-        CosmosBlockchain.Onomy,
-        CosmosBlockchain.Quasar,
-        CosmosBlockchain.Quicksilver,
-      ].forEach((blockchain) => this.fetchHealthyNode(blockchain));
+    startHealthyNodeFetcher(chainNodeList: chainNodeList[]) {
+      // [
+      //   CosmosBlockchain.CosmosHub,
+      //   CosmosBlockchain.Osmosis,
+      //   CosmosBlockchain.Mars,
+      //   CosmosBlockchain.Juno,
+      //   CosmosBlockchain.Akash,
+      //   CosmosBlockchain.Axelar,
+      //   CosmosBlockchain.EMoney,
+      //   CosmosBlockchain.Persistence,
+      //   CosmosBlockchain.Stargaze,
+      //   CosmosBlockchain.Sifchain,
+      //   CosmosBlockchain.Sommelier,
+      //   CosmosBlockchain.Umee,
+      //   CosmosBlockchain.AssetMantle,
+      //   CosmosBlockchain.Kujira,
+      //   CosmosBlockchain.Injective,
+      //   CosmosBlockchain.Stride,
+      //   CosmosBlockchain.Cheqd,
+      //   CosmosBlockchain.LikeCoin,
+      //   CosmosBlockchain.Chihuahua,
+      //   CosmosBlockchain.GravityBridge,
+      //   CosmosBlockchain.IrisNet,
+      //   CosmosBlockchain.Starname,
+      //   CosmosBlockchain.Desmos,
+      //   CosmosBlockchain.Teritori,
+      //   CosmosBlockchain.Agoric,
+      //   CosmosBlockchain.Terra2,
+      //   CosmosBlockchain.Evmos,
+      //   CosmosBlockchain.Canto,
+      //   CosmosBlockchain.Kava,
+      //   CosmosBlockchain.Crescent,
+      //   CosmosBlockchain.Cudos,
+      //   CosmosBlockchain.Carbon,
+      //   CosmosBlockchain.Decentr,
+      //   CosmosBlockchain.BitCanna,
+      //   CosmosBlockchain.BitSong,
+      //   CosmosBlockchain.Coreum,
+      //   CosmosBlockchain.Kyve,
+      //   CosmosBlockchain.Migaloo,
+      //   CosmosBlockchain.Onomy,
+      //   CosmosBlockchain.Quasar,
+      //   CosmosBlockchain.Quicksilver,
+      //]
+      chainNodeList.forEach((chain) => {
+        if (chain.isEcostakeChain) {
+          this.fetchHealthyNode(chain.chainName as CosmosBlockchain);
+        }
+      });
     }
   }
 
