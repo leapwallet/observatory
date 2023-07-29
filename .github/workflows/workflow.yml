@@ -46,7 +46,7 @@ jobs:
             -n "[Changelog](https://github.com/leapwallet/observatory/blob/v$VERSION/docs/CHANGELOG.md)" \
             $([[ $VERSION = 0* ]] && echo '-p')
   deploy:
-    if: github.ref_name == 'migration/gcp'
+    # if: github.ref_name == 'migration/gcp'
     needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
