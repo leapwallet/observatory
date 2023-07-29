@@ -12,7 +12,7 @@
     "lint:tsc": "tsc --noEmit",
     "lint:spectral": "spectral lint docs/openapi.yaml -F hint",
     "lint:prisma": "prisma format",
-    "lint:check": "yarn lint:prettier:check && yarn lint:spectral && yarn lint:tsc",
+    "lint:check": "yarn lint:eslint:check && yarn lint:prettier:check && yarn lint:spectral && yarn lint:tsc",
     "lint:fix": "yarn lint:eslint:fix && yarn lint:prettier:fix && yarn lint:prisma  && yarn lint:spectral && yarn lint:tsc",
     "dev:server": "NODE_ENV=dev nodemon -e ts --exec 'node --inspect -r dotenv/config -r ts-node/register src/server.ts'",
     "dev:start": "docker compose --profile dev -f docker-compose.yml up --build -d && yarn prisma migrate dev && yarn dev:server",
