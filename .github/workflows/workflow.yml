@@ -55,7 +55,7 @@ jobs:
       - name: Login to Artifact Registry
         uses: google-github-actions/auth@v1.1.1
         with:
-          service_account_key: ${{ secrets.ARTIFACT_REGISTRY_KEY }}
+          credentials_json: ${{ secrets.ARTIFACT_REGISTRY_KEY }}
       - name: Build and push image
         uses: docker/build-push-action@v2
         with:
