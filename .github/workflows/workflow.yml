@@ -62,4 +62,4 @@ jobs:
           context: .
           push: true
           tags: |
-            asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:$GITHUB_REF_NAME
+            asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:dummy_branch
