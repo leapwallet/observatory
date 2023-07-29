@@ -59,6 +59,9 @@ jobs:
         uses: google-github-actions/auth@v1.1.1
         with:
           credentials_json: ${{ secrets.ARTIFACT_REGISTRY_KEY }}
+      - name: Set Gcloud as credential helper for Docker
+        run: |
+          gcloud auth configure-docker asia-south1-docker.pkg.dev
       - name: Build and push image
         uses: docker/build-push-action@v2
         with:
