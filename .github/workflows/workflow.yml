@@ -46,7 +46,7 @@ jobs:
             -n "[Changelog](https://github.com/leapwallet/observatory/blob/v$VERSION/docs/CHANGELOG.md)" \
             $([[ $VERSION = 0* ]] && echo '-p')
   build:
-    # if: github.ref_name == 'migration/gcp'
+    if: github.ref_name == 'staging'
     needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
@@ -68,9 +68,10 @@ jobs:
           context: .
           push: true
           tags: |
-            asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:dummy_branch
+            asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:${{ github.ref_name }}
 
   deploy:
+    if: github.ref_name == 'staging'
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -82,4 +83,4 @@ jobs:
         uses: google-github-actions/deploy-cloudrun@v1
         with:
           service: 'observatory'
-          image: 'asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:dummy_branch'
+          image: 'asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:${{ github.ref_name }}'
