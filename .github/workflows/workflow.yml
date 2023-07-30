@@ -46,7 +46,7 @@ jobs:
             -n "[Changelog](https://github.com/leapwallet/observatory/blob/v$VERSION/docs/CHANGELOG.md)" \
             $([[ $VERSION = 0* ]] && echo '-p')
   build:
-    if: github.ref_name == 'staging'
+    # if: github.ref_name == 'staging'
     needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
@@ -58,7 +58,7 @@ jobs:
       - name: Login to GCP
         uses: google-github-actions/auth@v1.1.1
         with:
-          credentials_json: ${{ secrets.ARTIFACT_REGISTRY_KEY }}
+          credentials_json: ${{ secrets.GCP_CICD_SERVICE_ACCOUNT }}
       - name: Set Gcloud as credential helper for Docker
         run: |
           gcloud auth configure-docker asia-south1-docker.pkg.dev
@@ -71,14 +71,14 @@ jobs:
             asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:${{ github.ref_name }}
 
   deploy:
-    if: github.ref_name == 'staging'
+    # if: github.ref_name == 'staging'
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Login to GCP
         uses: google-github-actions/auth@v1.1.1
         with:
-          credentials_json: ${{ secrets.ARTIFACT_REGISTRY_KEY }}
+          credentials_json: ${{ secrets.GCP_CICD_SERVICE_ACCOUNT }}
       - name: Deploy to GCP Cloud Run
         uses: google-github-actions/deploy-cloudrun@v1
         with:
