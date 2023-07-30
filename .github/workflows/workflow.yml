@@ -45,7 +45,7 @@ jobs:
             -t v$VERSION \
             -n "[Changelog](https://github.com/leapwallet/observatory/blob/v$VERSION/docs/CHANGELOG.md)" \
             $([[ $VERSION = 0* ]] && echo '-p')
-  deploy:
+  build:
     # if: github.ref_name == 'migration/gcp'
     needs: [lint, test]
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
         with:
           node-version: '16'
           cache: yarn
-      - name: Login to Artifact Registry
+      - name: Login to GCP
         uses: google-github-actions/auth@v1.1.1
         with:
           credentials_json: ${{ secrets.ARTIFACT_REGISTRY_KEY }}
@@ -69,3 +69,17 @@ jobs:
           push: true
           tags: |
             asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:dummy_branch
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to GCP
+        uses: google-github-actions/auth@v1.1.1
+        with:
+          credentials_json: ${{ secrets.ARTIFACT_REGISTRY_KEY }}
+      - name: Deploy to Cloud Run
+        uses: google-github-actions/deploy-cloudrun@v1
+        with:
+          service: 'observatory'
+          image: 'asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:dummy_branch'
