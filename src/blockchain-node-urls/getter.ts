@@ -17,7 +17,8 @@ export namespace BlockchainNodeUrlGetter {
       // let urlList = this.getUrls(blockchain);
       const healthyNodesFetcher = Container.get(HealthyNodes.token);
       const urlList = healthyNodesFetcher.getNodes(blockchain);
-      if(this.urlIndices[blockchain] >= urlList.length){ // patch for error condition, when unhealthy nodes are removed from HealthyNodes using report(), it needs to update here as well and update the index accordingly
+      if (this.urlIndices[blockchain] >= urlList.length) {
+        // patch for error condition, when unhealthy nodes are removed from HealthyNodes using report(), it needs to update here as well and update the index accordingly
         this.urlIndices[blockchain] = 0;
       }
       const url = urlList[this.urlIndices[blockchain]]!;
