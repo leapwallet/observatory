@@ -68,7 +68,7 @@ jobs:
           context: .
           push: true
           tags: |
-            asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:${{ github.ref_name }}
+            asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:dummy_branch
 
   deploy:
     # if: github.ref_name == 'staging'
@@ -83,4 +83,4 @@ jobs:
         uses: google-github-actions/deploy-cloudrun@v1
         with:
           service: 'observatory'
-          image: 'asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:${{ github.ref_name }}'
+          image: 'asia-south1-docker.pkg.dev/leap-393508/observatory/observatory:dummy_branch
