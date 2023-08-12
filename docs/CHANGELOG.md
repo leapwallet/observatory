@@ -11,7 +11,7 @@ The server and HTTP API use the same version number. Major and minor versions ge
 
 ### Added
 
-- Remove retry logic from CosmosPinger
+- Remove retry logic from CosmosPinger.
 - Read blockhain data from config JSON
 
 ## [0.3.3](https://github.com/leapwallet/observatory/releases/tag/v0.3.3) - 2023-06-13
