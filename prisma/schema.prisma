@@ -11,11 +11,12 @@ model ResponseCode {
   id               Int      @id @default(autoincrement())
   createdAt        DateTime @default(now()) @db.Timestamptz(3)
   updatedAt        DateTime @updatedAt @db.Timestamptz(3)
-  chainName        String   @map("chain_name")
+  chainName        String?  @map("chain_name")
   type             Types
   httpResponseCode Int
   url              String
   responseTime     Int?
+  chainId          String?  @map("chain_id")
 
   @@index([chainName, type])
   @@index([createdAt])
@@ -27,6 +28,7 @@ enum Types {
   INGESTER         @map("ingester")
   FALLBACK_FALOODA @map("fallback_falooda")
   LOAD_BALANCER_1  @map("load_balancer_1")
+  NMS              @map("nms")
 
   @@map("types")
 }
