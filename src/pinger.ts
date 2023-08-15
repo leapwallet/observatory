@@ -10,7 +10,7 @@ export namespace Pinger {
   // interface responseObject  {chainName:string, responseCode: number, responseType:Types, chainUrl:string, duration:number}
   /** Must be retrieved from the {@link Container}, and not instantiated directly. */
   export class DefaultApi {
-    private type: Types = 'ECOSTAKE';
+    // private type: Types = 'ECOSTAKE';
     /** @param url - The REST API base URL of a Cosmos blockchain node. */
     async ping(
       url: string,
@@ -19,7 +19,7 @@ export namespace Pinger {
       chainId: string | null = null,
     ): Promise<Prisma.ResponseCodeCreateInput> {
       // Return prisma write query back from the loop
-      this.type = newType;
+      // this.type = newType;
       const logger = getLogger(__filename);
       let isEcostakeUrl = 0;
       logger.informational(url);
@@ -45,7 +45,7 @@ export namespace Pinger {
         const responseCode = 0;
         // let resp = {chainName:chainName, responseCode:0, responseType:this.type, chainUrl:chainUrl, duration:endTime-startTime}
         const data: Prisma.ResponseCodeCreateInput = {
-          type: this.type,
+          type: newType,
           chainName: chainName,
           httpResponseCode: responseCode,
           url: chainUrl,
@@ -61,7 +61,7 @@ export namespace Pinger {
       const endTime = Date.now();
       // let resp = {chainName:chainName, responseCode: response.status, responseType:this.type, chainUrl:chainUrl, duration:endTime-startTime}
       const data: Prisma.ResponseCodeCreateInput = {
-        type: this.type,
+        type: newType,
         chainName: chainName,
         httpResponseCode: response.status,
         url: chainUrl,

@@ -85,8 +85,7 @@ async function startNMSPinger(): Promise<void> {
   while (true) {
     for (let i = 0; i < chainIds.length; i++) {
       const chainId = chainIds[i] || null;
-      let nodes = jsonData[chainId!];
-      nodes = [];
+      const nodes = jsonData[chainId!];
       const url = nodes[0] ? nodes[0]['nodeUrl'] : '';
       const resp = await pinger.ping(url, null, Types.NMS, chainId);
       arr.push(resp);
