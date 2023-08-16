@@ -44,13 +44,13 @@ const BATCH_SIZE = 20;
 const t = 60_000;
 async function startEcostakePinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
-  const pinger = Container.get(Pinger.token);
   const chainNodeList = EnvVars.readUrls();
   const ecostakeChains = chainNodeList.filter((chain) => chain.isEcostakeChain);
   const logger = getLogger(__filename);
   let arr = [];
   const prisma = Container.get(prismaToken);
   while (true) {
+    const pinger = Container.get(Pinger.token);
     for (let i = 0; i < ecostakeChains.length; i++) {
       const chain = ecostakeChains[i];
       const chainName = chain?.chainName as CosmosBlockchain;
@@ -73,16 +73,16 @@ const s3File =
   'https://leap-wallet-assets.s3.us-east-1.amazonaws.com/cosmos-registry/v1/node-management-service/nms-REST.json';
 async function startNMSPinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
-  const pinger = Container.get(Pinger.token);
   const fetch = Container.get(fetchToken);
-  const response = await fetch(s3File);
-  const jsonData = await response.json();
   // const ecostakeChains = chainNodeList.filter((chain) => chain.isEcostakeChain);
   const logger = getLogger(__filename);
   let arr = [];
   const prisma = Container.get(prismaToken);
-  const chainIds = Object.keys(jsonData);
   while (true) {
+    const pinger = Container.get(Pinger.token);
+    const response = await fetch(s3File);
+    const jsonData = await response.json();
+    const chainIds = Object.keys(jsonData);
     for (let i = 0; i < chainIds.length; i++) {
       const chainId = chainIds[i] || null;
       const nodes = jsonData[chainId!];
