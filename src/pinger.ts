@@ -16,7 +16,7 @@ export namespace Pinger {
       url: string,
       chainName: string | null,
       newType: Types = 'ECOSTAKE',
-      chainId: string | null = null,
+      chainId: string,
     ): Promise<Prisma.ResponseCodeCreateInput> {
       // Return prisma write query back from the loop
       // this.type = newType;

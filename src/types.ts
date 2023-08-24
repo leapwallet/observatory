@@ -3,6 +3,7 @@ export type chainNodeList = {
   chainName: string;
   nodeList: string[];
   isEcostakeChain: boolean;
+  chainId: string;
 };
 
 export type chainNodeList2 = {
