@@ -1,6 +1,6 @@
 import { Container, Token } from 'typedi';
 import fs from 'fs';
-import { chainNodeList } from './types';
+import { chainNodeList, chainNodeList2 } from './types';
 export namespace ProcessEnvVars {
   /** Must be retrieved from the {@link Container}, and not instantiated directly. */
   export class DefaultApi {
@@ -42,8 +42,14 @@ export namespace EnvVars {
     return isUnset(value) ? [] : value.split(',');
   }
 
-  export function readUrls(): chainNodeList[] {
-    const configFile = fs.readFileSync(__dirname + '/chainNodeList.json');
+  export function readUrls(fileName = '/chainNodeList.json'): chainNodeList[] {
+    const configFile = fs.readFileSync(__dirname + fileName);
+    const chainNodeListJSON = JSON.parse(configFile.toString());
+    return chainNodeListJSON.chainNodeList;
+  }
+
+  export function readUrls2(fileName = '/chainNodeList.json'): chainNodeList2[] {
+    const configFile = fs.readFileSync(__dirname + fileName);
     const chainNodeListJSON = JSON.parse(configFile.toString());
     return chainNodeListJSON.chainNodeList;
   }
