@@ -20,7 +20,8 @@
         "https://lcd-cosmoshub.whispernode.com/",
         "https://cosmos-api.cyphercore.io/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "cosmoshub-4"
     },
     {
       "chainEnvVar": "OSMOSIS_URLS",
@@ -40,19 +41,22 @@
         "https://osmosis-lcd.quickapi.com:443/",
         "https://osmosis-mainnet-lcd.autostake.com:443/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "osmosis-1"
     },
     {
       "chainEnvVar": "SEI_URLS",
       "chainName": "sei",
       "nodeList": ["https://rest-sei-test.ecostake.com/"],
-      "isEcostakeChain": false
+      "isEcostakeChain": false,
+      "chainId": "atlantic-1"
     },
     {
       "chainEnvVar": "MARS_URLS",
       "chainName": "mars",
       "nodeList": ["https://rest.marsprotocol.io/", "https://mars-api.lavenderfive.com/"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "mars-1"
     },
     {
       "chainEnvVar": "JUNO_URLS",
@@ -70,7 +74,8 @@
         "https://juno-api.lavenderfive.com/",
         "https://api.juno.interbloc.org/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "juno-1"
     },
     {
       "chainEnvVar": "AKASH_URLS",
@@ -83,7 +88,8 @@
         "https://akash-api.lavenderfive.com/",
         "https://akash-api.polkachu.com/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "akashnet-2"
     },
     {
       "chainEnvVar": "AXELAR_URLS",
@@ -97,7 +103,8 @@
         "https://axelar-api.polkachu.com/",
         "https://api-axelar-ia.cosmosia.notional.ventures/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "axelar-dojo-1"
     },
     {
       "chainEnvVar": "E_MONEY_URLS",
@@ -110,7 +117,8 @@
         "https://lcd.emoney.ezstaking.io/",
         "https://lcd-emoney.keplr.app/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "emoney-3"
     },
     {
       "chainEnvVar": "PERSISTENCE_URLS",
@@ -120,7 +128,8 @@
         "https://rest.core.persistence.one/",
         "https://api-persistent-ia.cosmosia.notional.ventures/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "core-1"
     },
     {
       "chainEnvVar": "STARGAZE_URLS",
@@ -137,7 +146,8 @@
         "https://stargaze-rapipc.polkachu.com/",
         "https://api.stars.kingnodes.com/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "stargaze-1"
     },
     {
       "chainEnvVar": "SIFCHAIN_URLS",
@@ -152,7 +162,8 @@
         "https://sifchain-api.ibs.team/",
         "https://sifchain.api.consensus.one/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "sifchain-1"
     },
     {
       "chainEnvVar": "SOMMELIER_URLS",
@@ -163,7 +174,8 @@
         "https://sommelier-api.polkachu.com/",
         "https://lcd-sommelier.keplr.app/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "sommelier-3"
     },
     {
       "chainEnvVar": "UMEE_URLS",
@@ -173,7 +185,8 @@
         "https://api-umee-ia.cosmosia.notional.ventures/",
         "https://umee-api.polkachu.com/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "umee-1"
     },
     {
       "chainEnvVar": "ASSET_MANTLE_URLS",
@@ -187,7 +200,8 @@
         "https://api-assetmanle.d-stake.xyz/",
         "https://lcd.asset-mantle.ezstaking.io/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "mantle-1"
     },
     {
       "chainEnvVar": "KUJIRA_URLS",
@@ -205,7 +219,8 @@
         "https://api-bitsong.starsquid.io/",
         "https://api.kujira.chaintools.tech/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "kaiyo-1"
     },
     {
       "chainEnvVar": "INJECTIVE_URLS",
@@ -216,7 +231,8 @@
         "https://public.lcd.injective.network/",
         "https://api-injective-ia.cosmosia.notional.ventures/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "injective-1"
     },
     {
       "chainEnvVar": "STRIDE_URLS",
@@ -231,7 +247,8 @@
         "https://stride.api.chandrastation.com/",
         "https://api.stride.nodestake.top/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "stride-1"
     },
     {
       "chainEnvVar": "CHEQD_URLS",
@@ -243,13 +260,15 @@
         "https://lcd.cheqd.ezstaking.io/",
         "https://api-cheqd-ia.cosmosia.notional.ventures/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "cheqd-mainnet-1"
     },
     {
       "chainEnvVar": "LIKE_COIN_URLS",
       "chainName": "likeCoin",
       "nodeList": ["https://mainnet-node.like.co/", "https://api-likecoin-ia.cosmosia.notional.ventures/"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "likecoin-mainnet-2"
     },
     {
       "chainEnvVar": "CHIHUAHUA_URLS",
@@ -261,7 +280,8 @@
         "https://chihuahua-api.lavenderfive.com/",
         "https://api-chihuahua-ia.cosmosia.notional.ventures/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "chihuahua-1"
     },
     {
       "chainEnvVar": "GRAVITY_BRIDGE_URLS",
@@ -274,13 +294,15 @@
         "https://lcd.gravity-bridge.ezstaking.io/",
         "https://api-gravitybridge-ia.cosmosia.notional.ventures/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "gravity-bridge-3"
     },
     {
       "chainEnvVar": "IRIS_NET_URLS",
       "chainName": "irisNet",
       "nodeList": ["https://api-irisnet-ia.cosmosia.notional.ventures/", "https://lcd-iris.keplr.app/"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "irishub-1"
     },
     {
       "chainEnvVar": "STARNAME_URLS",
@@ -290,7 +312,8 @@
         "https://api-starname-ia.cosmosia.notional.ventures/",
         "https://lcd-iov.keplr.app/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "iov-mainnet-ibc"
     },
     {
       "chainEnvVar": "FETCH_URLS",
@@ -300,7 +323,8 @@
         "https://fetch-api.polkachu.com/",
         "https://rest-fetchhub.fetch.ai/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "fetchhub-4"
     },
     {
       "chainEnvVar": "DESMOS_URLS",
@@ -312,7 +336,8 @@
         "https://desmos-api.lavenderfive.com/",
         "https://api.mainnet.desmos.network/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "desmos-mainnet"
     },
     {
       "chainEnvVar": "TERITORI_URLS",
@@ -327,7 +352,8 @@
         "https://teritori-rest.brocha.in/",
         "https://api.teritori.nodestake.top/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "teritori-1"
     },
     {
       "chainEnvVar": "AGORIC_URLS",
@@ -337,7 +363,8 @@
         "https://agoric-api.polkachu.com/",
         "https://api.agoric.nodestake.top/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "agoric-3"
     },
     {
       "chainEnvVar": "TERRA_2_URLS",
@@ -349,7 +376,8 @@
         "https://terra-api.lavenderfive.com/",
         "https://terra-api.polkachu.com/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "phoenix-1"
     },
     {
       "chainEnvVar": "SECRET_URLS",
@@ -363,7 +391,8 @@
         "https://scrt-lcd.blockpane.com/",
         "https://api.secret.forbole.com/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "secret-4"
     },
     {
       "chainEnvVar": "EVMOS_URLS",
@@ -389,7 +418,8 @@
         "https://api.evmos.silknodes.io/",
         "https://api.evmos.silentvalidator.com/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "evmos_9001-2"
     },
     {
       "chainEnvVar": "BIT_CANNA_URLS",
@@ -404,7 +434,8 @@
         "https://bitcanna-api.lavenderfive.com/",
         "https://api-bcna.kjinc.io/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "bitcanna-1"
     },
     {
       "chainEnvVar": "CANTO_URLS",
@@ -416,7 +447,8 @@
         "https://api.canto.nodestake.top/",
         "https://canto-api.lavenderfive.com/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "canto_7700-1"
     },
     {
       "chainEnvVar": "KAVA_URLS",
@@ -427,7 +459,8 @@
         "https://api-kava-ia.cosmosia.notional.ventures/",
         "https://api.data.kava.io/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "kava_2222-10"
     },
     {
       "chainEnvVar": "CRESCENT_URLS",
@@ -439,7 +472,8 @@
         "https://crescent.mainnet.lcd.autostake.net/",
         "https://api-crescent.pupmos.network/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "crescent-1"
     },
     {
       "chainEnvVar": "OMNI_FLIX_URLS",
@@ -455,13 +489,15 @@
         "https://omniflixhub-api.skynetvalidators.com/",
         "https://api.omniflix.huginn.tech/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "omniflixhub-1"
     },
     {
       "chainEnvVar": "CARBON_URLS",
       "chainName": "carbon",
       "nodeList": ["https://rest.carbon.bh.rocks/", "https://api.carbon.network/"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "carbon-1"
     },
     {
       "chainEnvVar": "CUDOS_URLS",
@@ -470,7 +506,8 @@
         "http://mainnet-full-node-01.hosts.cudos.org:1317/",
         "https://mainnet-full-node-02.hosts.cudos.org:31317/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "cudos-1"
     },
     {
       "chainEnvVar": "DECENTR_URLS",
@@ -481,7 +518,8 @@
         "https://api.decentr.chaintools.tech/",
         "https://api.decentr.nodestake.top/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "mainnet-3"
     },
     {
       "chainEnvVar": "COMDEX_URLS",
@@ -496,7 +534,8 @@
         "https://api.comdex.audit.one/rest",
         "http://comdex.node.vitwit.com:1317/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "comdex-1"
     },
     {
       "chainEnvVar": "BIT_SONG_URLS",
@@ -514,7 +553,8 @@
         "https://api.bitsong.interbloc.org/",
         "https://api-bitsong-ia.cosmosia.notional.ventures/"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "bitsong-2b"
     },
     {
       "chainEnvVar": "NEAR_URLS",
@@ -525,7 +565,8 @@
         "https://public-rpc.blockpi.io/http/near",
         "https://near-mainnet-rpc.allthatnode.com:3030"
       ],
-      "isEcostakeChain": false
+      "isEcostakeChain": false,
+      "chainId": "near"
     },
     {
       "chainEnvVar": "COREUM_URLS",
@@ -536,7 +577,8 @@
         "https://full-node-curium.mainnet-1.coreum.dev:1317",
         "https://full-node-uranium.mainnet-1.coreum.dev:1317"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "coreum-mainnet-1"
     },
     {
       "chainEnvVar": "KYVE_URLS",
@@ -551,7 +593,8 @@
         "https://api-kyve.nodeist.net",
         "https://www.kyve-lcd.enigma-validator.com"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "kyve-1"
     },
     {
       "chainEnvVar": "MIGALOO_URLS",
@@ -563,25 +606,29 @@
         "https://lcd-whitewhale.whispernode.com:443",
         "https://migaloo-api.kleomedes.network:443"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "migaloo-1"
     },
     {
       "chainEnvVar": "NEUTRON_URLS",
       "chainName": "neutron",
       "nodeList": ["https://rest.baryon.ntrn.info/"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "baryon-1"
     },
     {
       "chainEnvVar": "ONOMY_URLS",
       "chainName": "onomy",
       "nodeList": ["https://rest-mainnet.onomy.io"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "onomy-mainnet-1"
     },
     {
       "chainEnvVar": "QUASAR_URLS",
       "chainName": "quasar",
       "nodeList": ["https://quasar-api.polkachu.com"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "qsr-questnet-04"
     },
     {
       "chainEnvVar": "QUICKSILVER_URLS",
@@ -593,55 +640,64 @@
         "https://m-quicksilver.api.utsa.tech",
         "https://api-quicksilver.nodeist.net"
       ],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "quicksilver-2"
     },
     {
       "chainEnvVar": "SEI_ATLANTIC_2_URLS",
       "chainName": "seiAtlantic2TestNet",
       "nodeList": ["https://rest.atlantic-2.seinetwork.io"],
-      "isEcostakeChain": false
+      "isEcostakeChain": false,
+      "chainId": "atlantic-2"
     },
     {
       "chainEnvVar": "GITOPIA_URLS",
       "chainName": "seiAtlantic2TestNet",
       "nodeList": ["https://rest.cosmos.directory/gitopia"],
-      "isEcostakeChain": false
+      "isEcostakeChain": false,
+      "chainId": "atlantic-2"
     },
     {
       "chainEnvVar": "IXO_URLS",
       "chainName": "impacthub",
       "nodeList": ["https://rest.cosmos.directory/impacthub"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "impacthub"
     },
     {
       "chainEnvVar": "JACKAL_URLS",
       "chainName": "jackal",
       "nodeList": ["https://rest.cosmos.directory/jackal"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "jackal-1"
     },
     {
       "chainEnvVar": "NOBLE_URLS",
       "chainName": "noble",
       "nodeList": ["https://rest.cosmos.directory/noble"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "noble-1"
     },
     {
       "chainEnvVar": "NOLUS_URLS",
       "chainName": "nolus",
       "nodeList": ["https://rest.cosmos.directory/nolus"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "pirin-1"
     },
     {
       "chainEnvVar": "PLANQ_URLS",
       "chainName": "planq",
       "nodeList": ["https://rest.cosmos.directory/planq"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "planq_7070-2"
     },
     {
       "chainEnvVar": "CHAIN4_ENERGY_URLS",
       "chainName": "chain4energy",
       "nodeList": ["https://rest.cosmos.directory/chain4energy"],
-      "isEcostakeChain": true
+      "isEcostakeChain": true,
+      "chainId": "perun-1"
     }
   ]
 }

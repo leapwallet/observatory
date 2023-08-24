@@ -26,19 +26,19 @@ function setUpHttpLogging(app: Express): void {
 }
 
 // @ts-ignore
-async function startPinger(): Promise<void> {
-  if (EnvVars.getNodeEnv() === 'test') return;
-  const pinger = Container.get(Pinger.token);
-  const chainNodeList = EnvVars.readUrls();
-  while (true) {
-    for (const chainNodeMap of chainNodeList) {
-      for (const nodeUrl of chainNodeMap.nodeList) {
-        pinger.ping(nodeUrl, chainNodeMap.chainName);
-      }
-    }
-    await sleep({ ms: 60_000 });
-  }
-}
+// async function startPinger(): Promise<void> {
+//   if (EnvVars.getNodeEnv() === 'test') return;
+//   const pinger = Container.get(Pinger.token);
+//   const chainNodeList = EnvVars.readUrls();
+//   while (true) {
+//     for (const chainNodeMap of chainNodeList) {
+//       for (const nodeUrl of chainNodeMap.nodeList) {
+//         pinger.ping(nodeUrl, chainNodeMap.chainName);//not sure of type of node
+//       }
+//     }
+//     await sleep({ ms: 60_000 });
+//   }
+// }
 
 let BATCH_SIZE = 20;
 const t = 60_000;
@@ -56,7 +56,8 @@ async function startIndividualNodePinger(): Promise<void> {
     // const response = await fetch(s3File);
     // const jsonData = await response.json();
     // const promises = []
-    for (const nodeData of jsonData) {
+    // for (let j=0;j<jsonData.length;j++){
+    for (const [j, nodeData] of jsonData.entries()) {
       // for (let i = 0; i < chainIds.length; i++) {
       const chainId = nodeData.chainId;
       const nodes = nodeData.nodeList;
@@ -69,7 +70,7 @@ async function startIndividualNodePinger(): Promise<void> {
         const url = nodes[i] || '';
         const resp = pinger.ping(url, null, Types.SINGULAR, chainId);
         arr.push(resp);
-        if (arr.length == BATCH_SIZE || i === nodes.length - 1) {
+        if (arr.length === BATCH_SIZE || (i === nodes.length - 1 && j === jsonData.length - 1)) {
           // await for promises to complete
           const result = await Promise.all(arr);
 
@@ -98,13 +99,15 @@ async function startEcostakePinger(): Promise<void> {
     for (let i = 0; i < ecostakeChains.length; i++) {
       const chain = ecostakeChains[i];
       const chainName = chain?.chainName as CosmosBlockchain;
+      const chainId = chain?.chainId as string;
       // const url = `https://rest-${chain.toLowerCase()}.ecostake.com/`
       const url = `https://rest.cosmos.directory/${chainName.toLowerCase()}`;
       // console.log(url)
-      const resp = await pinger.ping(url, chainName);
+      const resp = pinger.ping(url, chainName, Types.ECOSTAKE, chainId);
       arr.push(resp);
       if (arr.length == BATCH_SIZE || i === ecostakeChains.length - 1) {
-        const createCommandResponse = await prisma.responseCode.createMany({ data: arr, skipDuplicates: true });
+        const result = await Promise.all(arr);
+        const createCommandResponse = await prisma.responseCode.createMany({ data: result, skipDuplicates: true });
         logger.informational(createCommandResponse);
         arr = [];
       }
@@ -128,7 +131,7 @@ async function startNMSPinger(): Promise<void> {
     const jsonData = await response.json();
     const chainIds = Object.keys(jsonData);
     for (let i = 0; i < chainIds.length; i++) {
-      const chainId = chainIds[i] || null;
+      const chainId = chainIds[i] || '';
       const nodes = jsonData[chainId!];
       const url = nodes[0] ? nodes[0]['nodeUrl'] : '';
       const resp = await pinger.ping(url, null, Types.NMS, chainId);
