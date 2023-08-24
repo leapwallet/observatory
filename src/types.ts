@@ -5,6 +5,11 @@ export type chainNodeList = {
   isEcostakeChain: boolean;
 };
 
+export type chainNodeList2 = {
+  chainId: string;
+  nodeList: string[];
+};
+
 export type chainNodeListJSON = {
   chainNodeList: chainNodeList[];
 };

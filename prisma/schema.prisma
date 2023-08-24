@@ -29,6 +29,7 @@ enum Types {
   FALLBACK_FALOODA @map("fallback_falooda")
   LOAD_BALANCER_1  @map("load_balancer_1")
   NMS              @map("nms")
+  SINGULAR         @map("singular")
 
   @@map("types")
 }

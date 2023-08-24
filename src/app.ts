@@ -40,8 +40,52 @@ async function startPinger(): Promise<void> {
   }
 }
 
-const BATCH_SIZE = 20;
+let BATCH_SIZE = 20;
 const t = 60_000;
+async function startIndividualNodePinger(): Promise<void> {
+  if (EnvVars.getNodeEnv() === 'test') return;
+  // const fetch = Container.get(fetchToken);
+  // const ecostakeChains = chainNodeList.filter((chain) => chain.isEcostakeChain);
+  const logger = getLogger(__filename);
+  let arr = [];
+  const prisma = Container.get(prismaToken);
+  const FILE_NAME = '/individualChainNodeList.json';
+  const jsonData = EnvVars.readUrls2(FILE_NAME);
+  while (true) {
+    const pinger = Container.get(Pinger.token);
+    // const response = await fetch(s3File);
+    // const jsonData = await response.json();
+    // const promises = []
+    for (const nodeData of jsonData) {
+      // for (let i = 0; i < chainIds.length; i++) {
+      const chainId = nodeData.chainId;
+      const nodes = nodeData.nodeList;
+      for (let i = 0; i < nodes.length; i++) {
+        // const chainId = node["chainId"]
+        // const nodeList = node["nodeList"]
+
+        // for (const nodeUrl of nodeList){
+        // for(let i=0;i<nodeList.length;i++){
+        const url = nodes[i] || '';
+        const resp = pinger.ping(url, null, Types.SINGULAR, chainId);
+        arr.push(resp);
+        if (arr.length == BATCH_SIZE || i === nodes.length - 1) {
+          // await for promises to complete
+          const result = await Promise.all(arr);
+
+          const createCommandResponse = await prisma.responseCode.createMany({ data: result, skipDuplicates: true });
+          logger.informational(createCommandResponse);
+          arr = [];
+        }
+      }
+    }
+    logger.informational(`Waiting for ${t} ms`);
+    await sleep({ ms: t });
+  }
+}
+
+BATCH_SIZE = 20;
+60_000;
 async function startEcostakePinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
   const chainNodeList = EnvVars.readUrls();
