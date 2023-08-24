@@ -173,6 +173,6 @@ app.use('/metrics', metricsRouter);
 // startPinger();
 startEcostakePinger();
 // startCosmosPinger();
-startNMSPinger();
+startIndividualNodePinger();
 prometheus.collectDefaultMetrics();
 export default app;
