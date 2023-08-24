@@ -11,11 +11,6 @@ export type chainNodeList2 = {
   nodeList: string[];
 };
 
-export type chainNodeList2 = {
-  chainId: string;
-  nodeList: string[];
-};
-
 export type chainNodeListJSON = {
   chainNodeList: chainNodeList[];
 };
