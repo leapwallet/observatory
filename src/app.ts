@@ -116,30 +116,95 @@ async function startEcostakePinger(): Promise<void> {
     logger.informational(`Waiting for ${t} ms`);
   }
 }
-const s3File =
-  'https://leap-wallet-assets.s3.us-east-1.amazonaws.com/cosmos-registry/v1/node-management-service/nms-REST.json';
-async function startNMSPinger(): Promise<void> {
+
+const NMS_URL = 'https://assets.leapwallet.io/cosmos-registry/v1/node-management-service/';
+const REST_CDN_URL = `${NMS_URL}nms-REST.json`;
+// const RPC_CDN_URL = `${NMS_URL}nms-RPC.json`;
+const REST_STAGING_CDN_URL = `${NMS_URL}staging-nms-REST.json`;
+// const RPC_STAGING_CDN_URL = `${NMS_URL}nms-staging-RPC.json`;
+
+async function custom1Filter(nodes: any): Promise<string> {
+  for (const node of nodes) {
+    if (
+      node.nodeUrl.startsWith('https://leap-node-proxy.numia.xyz') ||
+      node.nodeUrl.startsWith('https://rpc.cosmos.directory/')
+    ) {
+      continue;
+    }
+
+    return node.nodeUrl;
+  }
+
+  return '';
+}
+
+async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<string> {
+  const logger = getLogger(__filename);
+  const url = nodes[0] ? nodes[0]['nodeUrl'] : '';
+  switch (nmsRunType) {
+    case Types.NMS:
+      return url;
+    case Types.NMS_CUSTOM1:
+      return custom1Filter(nodes);
+    case Types.NMS_STAGING:
+      return url;
+    case Types.NMS_STAGING_CUSTOM1:
+      return custom1Filter(nodes);
+    default:
+      logger.error('Invalid nmsRunType, exiting');
+      return '';
+  }
+}
+
+async function startNMSPinger(nmsRunType: Types): Promise<void> {
+  const logger = getLogger(__filename);
+  let CDNfileName = '';
+  switch (nmsRunType) {
+    case Types.NMS:
+      CDNfileName = REST_CDN_URL;
+      break;
+    case Types.NMS_CUSTOM1:
+      CDNfileName = REST_CDN_URL;
+      break;
+    case Types.NMS_STAGING:
+      CDNfileName = REST_STAGING_CDN_URL;
+      break;
+    case Types.NMS_STAGING_CUSTOM1:
+      CDNfileName = REST_STAGING_CDN_URL;
+      break;
+    default:
+      logger.error('Invalid nmsRunType, exiting');
+      return;
+  }
   if (EnvVars.getNodeEnv() === 'test') return;
   const fetch = Container.get(fetchToken);
   // const ecostakeChains = chainNodeList.filter((chain) => chain.isEcostakeChain);
-  const logger = getLogger(__filename);
-  let arr = [];
+
+  // let arr = [];
+  let promisesArr = [];
   const prisma = Container.get(prismaToken);
   while (true) {
     const pinger = Container.get(Pinger.token);
-    const response = await fetch(s3File);
+    const response = await fetch(CDNfileName);
     const jsonData = await response.json();
     const chainIds = Object.keys(jsonData);
     for (let i = 0; i < chainIds.length; i++) {
       const chainId = chainIds[i] || '';
       const nodes = jsonData[chainId!];
-      const url = nodes[0] ? nodes[0]['nodeUrl'] : '';
-      const resp = await pinger.ping(url, null, Types.NMS, chainId);
-      arr.push(resp);
-      if (arr.length == BATCH_SIZE || i === chainIds.length - 1) {
-        const createCommandResponse = await prisma.responseCode.createMany({ data: arr, skipDuplicates: true });
+      // const url = nodes[0] ? nodes[0]['nodeUrl'] : '';
+      const url = await nmsGetNodeURL(nodes, nmsRunType);
+      // const resp = await pinger.ping(url, null, nmsRunType, chainId);
+      // arr.push(resp);
+      promisesArr.push(pinger.ping(url, null, nmsRunType, chainId));
+      if (promisesArr.length == BATCH_SIZE || i === chainIds.length - 1) {
+        const promiseResult = await Promise.all(promisesArr);
+
+        const createCommandResponse = await prisma.responseCode.createMany({
+          data: promiseResult,
+          skipDuplicates: true,
+        });
         logger.informational(createCommandResponse);
-        arr = [];
+        promisesArr = [];
       }
     }
     await sleep({ ms: t });
@@ -176,7 +241,10 @@ app.use('/metrics', metricsRouter);
 // startPinger();
 startEcostakePinger();
 // startCosmosPinger();
-startNMSPinger();
+startNMSPinger(Types.NMS);
+startNMSPinger(Types.NMS_CUSTOM1);
+startNMSPinger(Types.NMS_STAGING);
+startNMSPinger(Types.NMS_STAGING_CUSTOM1);
 startIndividualNodePinger();
 prometheus.collectDefaultMetrics();
 export default app;
