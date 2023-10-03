@@ -10,7 +10,7 @@ import { PrismaClient } from '@prisma/client';
 import { HealthyNodes } from './blockchain-node-urls/healthyNodes';
 
 function defaultFetch(url: RequestInfo, init?: RequestInit): Promise<Response> {
-  const defaultTimeout = 10_000;
+  const defaultTimeout = 3_000;
   if (!init) {
     init = {
       timeout: defaultTimeout,
