@@ -121,6 +121,7 @@ const NMS_URL = 'https://assets.leapwallet.io/cosmos-registry/v1/node-management
 const REST_CDN_URL = `${NMS_URL}nms-REST.json`;
 // const RPC_CDN_URL = `${NMS_URL}nms-RPC.json`;
 const REST_STAGING_CDN_URL = `${NMS_URL}staging-nms-REST.json`;
+const REST_STAGING_DASHBOARD = `${NMS_URL}tenants/nms-staging-REST-dashboard.json`;
 // const RPC_STAGING_CDN_URL = `${NMS_URL}nms-staging-RPC.json`;
 
 async function custom1Filter(nodes: any): Promise<string> {
@@ -171,6 +172,9 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
       break;
     case Types.NMS_STAGING_CUSTOM1:
       CDNfileName = REST_STAGING_CDN_URL;
+      break;
+    case Types.NMS_STAGING_DASHBOARD:
+      CDNfileName = REST_STAGING_DASHBOARD;
       break;
     default:
       logger.error('Invalid nmsRunType, exiting');
@@ -243,6 +247,7 @@ startEcostakePinger();
 // startCosmosPinger();
 startNMSPinger(Types.NMS);
 startNMSPinger(Types.NMS_CUSTOM1);
+startNMSPinger(Types.NMS_STAGING_DASHBOARD);
 // startNMSPinger(Types.NMS_STAGING);
 // startNMSPinger(Types.NMS_STAGING_CUSTOM1);
 startIndividualNodePinger();
