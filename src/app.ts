@@ -151,6 +151,8 @@ async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<string> {
       return url;
     case Types.NMS_STAGING_CUSTOM1:
       return custom1Filter(nodes);
+    case Types.NMS_STAGING_DASHBOARD:
+      return url;
     default:
       logger.error('Invalid nmsRunType, exiting');
       return '';
