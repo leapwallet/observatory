@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 async function deletionTask() {
   try {
     console.log('\x1b[36m%s\x1b[0m', '--- Deletion job started ---');
-    const deleteAfterDays = EnvVars.getDeleteAfterDays();
+    const deleteAfterDays = EnvVars.getDeleteResponseDataAfterDays();
     const dateThreshold = new Date();
     dateThreshold.setDate(dateThreshold.getDate() - deleteAfterDays);
 
