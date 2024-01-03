@@ -4,7 +4,7 @@ import { EnvVars } from '../env-vars';
 
 const prisma = new PrismaClient();
 
-cron.schedule('0 0 * * *', async () => {
+async function deletionTask() {
   try {
     console.log('\x1b[36m%s\x1b[0m', '--- Deletion job started ---');
     const deleteAfterDays = EnvVars.getDeleteAfterDays();
@@ -35,4 +35,12 @@ cron.schedule('0 0 * * *', async () => {
       console.error('\x1b[31m%s\x1b[0m', 'An unknown error occurred');
     }
   }
+}
+
+// Run the task at startup
+deletionTask();
+
+// Schedule the task to run every 24 hours (at midnight)
+cron.schedule('0 0 * * *', () => {
+  deletionTask();
 });
