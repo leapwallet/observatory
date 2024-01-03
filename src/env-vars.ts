@@ -53,4 +53,9 @@ export namespace EnvVars {
     const chainNodeListJSON = JSON.parse(configFile.toString());
     return chainNodeListJSON.chainNodeList;
   }
+
+  export function getDeleteAfterDays(): number {
+    const value = getEnvVar('DELETE_AFTER_DAYS');
+    return isUnset(value) ? 30 : Number(value);
+  }
 }
