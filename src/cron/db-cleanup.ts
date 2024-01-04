@@ -1,13 +1,12 @@
 import * as cron from 'node-cron';
 import { PrismaClient } from '@prisma/client';
-import { EnvVars } from '../env-vars';
 
 const prisma = new PrismaClient();
 
 async function deletionTask() {
   try {
     console.log('\x1b[36m%s\x1b[0m', '--- Deletion job started ---');
-    const deleteAfterDays = EnvVars.getDeleteResponseDataAfterDays();
+    const deleteAfterDays = 30;
     const dateThreshold = new Date();
     dateThreshold.setDate(dateThreshold.getDate() - deleteAfterDays);
 
