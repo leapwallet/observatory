@@ -6,6 +6,7 @@ import { getLogger } from './logger';
 import cors from 'cors';
 import healthRouter from './routes/health';
 import metricsRouter from './routes/metrics';
+import './cron/db-cleanup';
 import { Pinger } from './pinger';
 import sleep from './sleep';
 import prometheus from 'prom-client';
