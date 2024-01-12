@@ -20,6 +20,10 @@ model ResponseCode {
 
   @@index([chainName, type])
   @@index([createdAt])
+  @@index([chainId])
+  @@index([type])
+  @@index([httpResponseCode])
+  @@index([responseTime])
   @@map("response_codes")
 }
 
