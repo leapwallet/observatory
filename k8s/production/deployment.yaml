@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: observatory-service-prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: observatory-service-prod
+  template:
+    metadata:
+      labels:
+        app: observatory-service-prod
+    spec:
+      containers:
+        - name: observatory-service-prod
+          image: gcr.io/PROJECT_ID/observatory-service:TAG
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: observatory-service-prod-secrets
+                  key: DATABASE_URL
+            - name: GRAFANA_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: observatory-service-prod-secrets
+                  key: GRAFANA_API_KEY
+            - name: NODE_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: observatory-service-prod-config
+                  key: NODE_ENV
+            - name: LOKI_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: observatory-service-prod-config
+                  key: LOKI_URL
+            - name: URLS
+              valueFrom:
+                configMapKeyRef:
+                  name: observatory-service-prod-config
+                  key: URLS
+            - name: PROMETHEUS_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: observatory-service-prod-config
+                  key: PROMETHEUS_URL
+            - name: PROMETHEUS_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: observatory-service-prod-config
+                  key: PROMETHEUS_USERNAME
+            - name: GRAFANA_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: observatory-service-prod-config
+                  key: GRAFANA_ENV
+            - name: GRAFANA_CLOUD_ENABLED
+              valueFrom:
+                configMapKeyRef:
+                  name: observatory-service-prod-config
+                  key: GRAFANA_CLOUD_ENABLED
+            - name: LOKI_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: observatory-service-prod-config
+                  key: LOKI_USERNAME
