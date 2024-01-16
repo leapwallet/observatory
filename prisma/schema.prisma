@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ResponseCode {
+  id               Int      @id @default(autoincrement())
+  createdAt        DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt        DateTime @updatedAt @db.Timestamptz(3)
+  chainName        String?  @map("chain_name")
+  type             Types
+  httpResponseCode Int
+  url              String
+  responseTime     Int?
+  chainId          String?  @map("chain_id")
+
+  @@index([chainName, type])
+  @@index([createdAt])
+  @@index([chainId])
+  @@index([type])
+  @@index([httpResponseCode])
+  @@index([responseTime])
+  @@map("response_codes")
+}
+
+enum Types {
+  ECOSTAKE              @map("ecostake")
+  INGESTER              @map("ingester")
+  FALLBACK_FALOODA      @map("fallback_falooda")
+  LOAD_BALANCER_1       @map("load_balancer_1")
+  NMS                   @map("nms")
+  NMS_CUSTOM1           @map("nms_custom1")
+  NMS_STAGING           @map("nms(staging)")
+  NMS_STAGING_CUSTOM1   @map("nms(staging)_custom1")
+  NMS_STAGING_DASHBOARD @map("nms(staging)_dashboard")
+  NMS_DASHBOARD         @map("nms_dashboard")
+  SINGULAR              @map("singular")
+
+  @@map("types")
+}

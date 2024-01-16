@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: observatory-service-stage-service
+spec:
+  selector:
+    app: observatory-service-stage
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000

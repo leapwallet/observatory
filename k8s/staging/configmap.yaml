@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: observatory-service-stage-config
+data:
+  NODE_ENV: 'staging'
+  LOKI_URL: 'https://logs-prod3.grafana.net/loki/api/v1/push'
+  URLS: 'https://rest-cosmoshub.ecostake.com/,https://lcd.osmosis.zone/,https://rpc.juno.bh.rocks/'
+  PROMETHEUS_URL: 'https://prometheus-prod-10-prod-us-central-0.grafana.net/api/prom/push'
+  PROMETHEUS_USERNAME: '504968'
+  GRAFANA_ENV: 'staging'
+  GRAFANA_CLOUD_ENABLED: 'false'
+  LOKI_USERNAME: '251454'

@@ -1,0 +1,194 @@
+{
+  "chainNodeList": [
+    {
+      "chainEnvVar": "COMDEX_URLS",
+      "chainId": "comdex-1",
+      "nodeList": [
+        "https://rest.comdex.one",
+        "https://api.comdex.chaintools.tech",
+        "https://comdex-api.polkachu.com",
+        "https://comdex-api.lavenderfive.com",
+        "https://comdex-mainnet-lcd.autostake.com:443",
+        "https://lcd-comdex.whispernode.com:443",
+        "https://rest-comdex.carbonZERO.zone:443",
+        "https://comdex-api.w3coins.io",
+        "https://comdex-rest.stakerhouse.com",
+        "https://comdex-rest.publicnode.com",
+        "https://api-comdex-01.stakeflow.io"
+      ]
+    },
+    {
+      "chainEnvVar": "COMDEX_URLS",
+      "chainId": "osmosis-1",
+      "nodeList": [
+        "https://osmosis-rest.publicnode.com",
+        "https://lcd.osmosis.zone",
+        "https://osmosis-lcd.quickapi.com:443",
+        "https://lcd-osmosis.blockapsis.com",
+        "https://osmosis-api.lavenderfive.com:443",
+        "https://api-osmosis-ia.cosmosia.notional.ventures",
+        "https://api.osmosis.interbloc.org",
+        "https://api-osmosis.cosmos-spaces.cloud",
+        "https://osmosis-api.polkachu.com",
+        "https://osmosis.rest.stakin-nodes.com",
+        "https://api.osl.zone",
+        "https://osmosis-mainnet-lcd.autostake.com:443",
+        "https://osmosis.rest.interchain.ivaldilabs.xyz",
+        "https://osmosis.api.kjnodes.com",
+        "https://api-osmosis-01.stakeflow.io",
+        "https://osmosis-rest.staketab.org",
+        "https://osmosis-api.w3coins.io",
+        "https://lcd-osmosis.whispernode.com:443",
+        "https://api-osmosis.mms.team",
+        "https://community.nuxian-node.ch:6797/osmosis/crpc"
+      ]
+    },
+    {
+      "chainEnvVar": "COMDEX_URLS",
+      "chainId": "secret-4",
+      "nodeList": [
+        "http://secretnetwork-mainnet-lcd.autostake.com:1317",
+        "https://secret-api.bharvest.io",
+        "https://lcd.secret.express",
+        "https://secretnetwork-api.lavenderfive.com:443",
+        "https://lcd-secret.whispernode.com:443",
+        "https://1rpc.io/scrt-lcd",
+        "https://secretnetwork-api.highstakes.ch:1317"
+      ],
+      "isEcostakeChain": true
+    },
+    {
+      "chainEnvVar": "COMDEX_URLS",
+      "chainId": "cosmoshub-4",
+      "nodeList": [
+        "https://api-cosmoshub.cosmos-spaces.cloud",
+        "https://cosmos-lcd.easy2stake.com",
+        "https://cosmos-rest.publicnode.com",
+        "https://cosmoshub-api.lavenderfive.com",
+        "https://lcd-cosmoshub.blockapsis.com",
+        "https://cosmos-lcd.quickapi.com:443",
+        "https://rest-cosmoshub.goldenratiostaking.net",
+        "https://cosmoshub-api.lavenderfive.com:443",
+        "https://api-cosmoshub.pupmos.network",
+        "https://api-cosmoshub-ia.cosmosia.notional.ventures",
+        "https://cosmos-rest.staketab.org",
+        "https://api.cosmos.interbloc.org",
+        "https://lcd.cosmos.dragonstake.io",
+        "https://cosmoshub.rest.stakin-nodes.com",
+        "https://rest-cosmoshub.architectnodes.com",
+        "https://cosmoshub.rest.interchain.ivaldilabs.xyz",
+        "https://lcd-cosmoshub.whispernode.com:443",
+        "https://api.cosmos.nodestake.top",
+        "https://cosmos.api.silknodes.io",
+        "https://cosmoshub.api.kjnodes.com",
+        "https://api-cosmos-hub-01.stakeflow.io",
+        "https://cosmos-api.w3coins.io",
+        "https://api-cosmoshub.mms.team",
+        "https://cosmos-api.tienthuattoan.ventures",
+        "https://community.nuxian-node.ch:6797/gaia/crpc",
+        "https://cosmos-api.highstakes.ch:1317"
+      ],
+      "isEcostakeChain": true
+    },
+    {
+      "chainEnvVar": "COMDEX_URLS",
+      "chainId": "migaloo-1",
+      "nodeList": [
+        "https://lcd-whitewhale.whispernode.com",
+        "https://migaloo-api.kleomedes.network",
+        "https://migaloo.api.kjnodes.com",
+        "https://migaloo-api.lavenderfive.com",
+        "https://whitewhale-mainnet-lcd.autostake.com:443",
+        "https://rest-whitewhale.carbonzero.zone:443",
+        "https://lcd-whitewhale.whispernode.com:443",
+        "https://api-migaloo.cosmos-spaces.cloud",
+        "https://migaloo-api.kleomedes.network:443",
+        "https://api.whitewhale.nodestake.top",
+        "https://migaloo-api.cosmosrescue.com"
+      ],
+      "isEcostakeChain": true
+    },
+    {
+      "chainEnvVar": "COMDEX_URLS",
+      "chainId": "sommelier-3",
+      "nodeList": [
+        "https://sommelier-api.polkachu.com",
+        "https://somm-api.kleomedes.network",
+        "https://api-sommelier.pupmos.network",
+        "https://sommelier-mainnet-lcd.autostake.com",
+        "https://sommelier-api.lavenderfive.com",
+        "https://sommelier-mainnet-lcd.autostake.com:443",
+        "https://rest.sommelier.nodexcapital.com",
+        "https://sommelier-api.w3coins.io"
+      ],
+      "isEcostakeChain": true
+    },
+    {
+      "chainEnvVar": "COMDEX_URLS",
+      "chainId": "kaiyo-1",
+      "nodeList": [
+        "https://kujira-api.w3coins.io",
+        "https://lcd-kujira.whispernode.com",
+        "https://kujira-lcd.wildsage.io",
+        "https://kujira-api.theamsolutions.info",
+        "https://kujira-rest.publicnode.com",
+        "https://kujira-api.ibs.team",
+        "https://kuji-api.kleomedes.network",
+        "https://kujira-api.lavenderfive.com",
+        "https://kujira-api.polkachu.com",
+        "https://api.kujira.rektdao.club",
+        "https://kujira.api.kjnodes.com",
+        "https://api-kujira.mms.team",
+        "https://kujira-mainnet-lcd.autostake.com",
+        "https://rest-kujira.goldenratiostaking.net",
+        "https://lcd-kujira.whispernode.com:443",
+        "https://lcd.kaiyo.kujira.setten.io",
+        "https://kujira-api.lavenderfive.com:443",
+        "https://api-kujira-ia.cosmosia.notional.ventures",
+        "https://api-kujira.starsquid.io",
+        "https://kujira-mainnet-lcd.autostake.com:443"
+      ],
+      "isEcostakeChain": true
+    },
+    {
+      "chainEnvVar": "COMDEX_URLS",
+      "chainId": "stargaze-1",
+      "nodeList": [
+        "https://lcd-stargaze.whispernode.com",
+        "https://rest.stargaze-apis.com",
+        "https://stargaze-api.w3coins.io",
+        "https://stargaze-api.ramuchi.tech",
+        "https://stargaze-mainnet-lcd.autostake.com",
+        "https://stargaze-rest.stakerhouse.com",
+        "https://stargaze-api.polkachu.com",
+        "https://api-stargaze.cosmos-spaces.cloud",
+        "https://api-stargaze.pupmos.network",
+        "https://api-stargaze.d-stake.xyz",
+        "https://api.stargaze.silentvalidator.com",
+        "https://stargaze-rest.staketab.org",
+        "https://stargaze-api.ibs.team",
+        "https://stargaze-rest.publicnode.com",
+        "https://api-stargaze.ezstaking.dev",
+        "https://api-stargaze-ia.cosmosia.notional.ventures",
+        "https://stargaze.c29r3.xyz:443/api",
+        "https://stargaze-mainnet-lcd.autostake.com:443",
+        "https://lcd-stargaze.whispernode.com:443"
+      ],
+      "isEcostakeChain": true
+    },
+    {
+      "chainEnvVar": "COMDEX_URLS",
+      "chainId": "sifchain-1",
+      "nodeList": [
+        "https://sifchain-rest.publicnode.com",
+        "https://sifchain-mainnet-lcd.autostake.com",
+        "https://api.sifchain.finance:443",
+        "https://api-sifchain-ia.cosmosia.notional.ventures",
+        "https://sifchain-api.polkachu.com",
+        "https://sif-api.kleomedes.network",
+        "https://sifchain-mainnet-lcd.autostake.com:443"
+      ],
+      "isEcostakeChain": true
+    }
+  ]
+}
