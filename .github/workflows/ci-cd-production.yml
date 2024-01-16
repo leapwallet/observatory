@@ -17,7 +17,6 @@ jobs:
     name: Setup, Build, Publish, and Deploy
     runs-on: ubuntu-latest
     environment: prod
-
     permissions:
       contents: 'read'
       id-token: 'write'
