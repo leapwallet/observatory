@@ -19,11 +19,11 @@ spec:
             - containerPort: 3000
           resources:
             requests:
-              cpu: '1'
-              memory: '2Gi'
+              cpu: '0.5'
+              memory: '1Gi'
             limits:
-              cpu: '1'
-              memory: '2Gi'
+              cpu: '0.5'
+              memory: '1Gi'
           env:
             - name: DATABASE_URL
               valueFrom:
