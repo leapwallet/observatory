@@ -13,7 +13,7 @@ import prometheus from 'prom-client';
 import { CosmosBlockchain } from './types';
 import prismaToken from './db/prisma-token';
 import fetchToken from './fetch-token';
-import { Types } from '@prisma/client';
+import { Prisma, Types } from '@prisma/client';
 
 function setUpHttpLogging(app: Express): void {
   const logger = getLogger('Express.js');
@@ -91,20 +91,33 @@ const NMS_URL = 'https://assets.leapwallet.io/cosmos-registry/v1/node-management
 const REST_CDN_URL = `${NMS_URL}nms-REST.json`;
 const REST_DASHBOARD = `${NMS_URL}tenants/nms-REST-dashboard.json`;
 
-
-async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<string> {
+async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<{ url: string; priority: number }[]> {
   const logger = getLogger(__filename);
-  const url = nodes[0] ? nodes[0]['nodeUrl'] : '';
+
+  // Check if nodes is null or has no elements
+  if (!nodes || nodes.length === 0) {
+    logger.error('Nodes are null or empty, exiting');
+    return [];
+  }
+
+  // Map nodes to URLs with priority, ensuring to handle fewer than 3 nodes gracefully
+  let urls = nodes
+    .map((node: { [x: string]: any; }, index: any) => ({
+      url: node['nodeUrl'] ?? '',
+      priority: index+1,
+    }))
+    .slice(0, 3); // Ensures we take at most the first three
+
   switch (nmsRunType) {
     case Types.NMS:
-      return url;
     case Types.NMS_DASHBOARD:
-      return url;
+      return urls;
     default:
       logger.error('Invalid nmsRunType, exiting');
-      return '';
+      return [];
   }
 }
+
 
 async function startNMSPinger(nmsRunType: Types): Promise<void> {
   const logger = getLogger(__filename);
@@ -122,7 +135,7 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
   }
   if (EnvVars.getNodeEnv() === 'test') return;
   const fetch = Container.get(fetchToken);
-  let promisesArr = [];
+  let promisesArr: Promise<Prisma.ResponseCodeCreateInput>[] = [];
   const prisma = Container.get(prismaToken);
   while (true) {
     const pinger = Container.get(Pinger.token);
@@ -132,8 +145,13 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
     for (let i = 0; i < chainIds.length; i++) {
       const chainId = chainIds[i] || '';
       const nodes = jsonData[chainId!];
-      const url = await nmsGetNodeURL(nodes, nmsRunType);
-      promisesArr.push(pinger.ping(url, null, nmsRunType, chainId));
+      const urls = await nmsGetNodeURL(nodes, nmsRunType);
+      urls.forEach(({ url, priority }) => {
+        promisesArr.push(
+          pinger.ping(url, null, nmsRunType, chainId, '/cosmos/base/tendermint/v1beta1/blocks/latest', priority),
+        ); 
+      });
+
       if (promisesArr.length == BATCH_SIZE || i === chainIds.length - 1) {
         const promiseResult = await Promise.all(promisesArr);
 

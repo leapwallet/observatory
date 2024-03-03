@@ -18,6 +18,7 @@ export namespace Pinger {
       newType: Types = 'ECOSTAKE',
       chainId: string,
       endpoint: string = '/cosmos/base/tendermint/v1beta1/blocks/latest',
+      priority: number = 0, // Add priority here with a default value
     ): Promise<Prisma.ResponseCodeCreateInput> {
       // Return prisma write query back from the loop
       // this.type = newType;
@@ -45,6 +46,7 @@ export namespace Pinger {
           url: chainUrl,
           responseTime: endTime - startTime,
           chainId: chainId,
+          priority: priority,
         };
         logger.error(`Failed to ping:${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}: ${err}`);
         return data;
@@ -57,6 +59,7 @@ export namespace Pinger {
         url: chainUrl,
         responseTime: endTime - startTime,
         chainId: chainId,
+        priority: priority,
       };
       if (response.status === 200) {
         logger.debug(
