@@ -39,6 +39,6 @@ enum Types {
   NMS_STAGING_DASHBOARD @map("nms(staging)_dashboard")
   NMS_DASHBOARD         @map("nms_dashboard")
   SINGULAR              @map("singular")
-
+  SINGULAR_PAID         @map("singular_paid")
   @@map("types")
 }
