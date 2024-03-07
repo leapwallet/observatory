@@ -29,43 +29,47 @@ const t = 60_000;
 async function startIndividualNodePinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
   const logger = getLogger(__filename);
-  let arr = [];
   const prisma = Container.get(prismaToken);
   const FILE_NAME = '/individualChainNodeListV2.json';
   const jsonData = EnvVars.readUrls2(FILE_NAME);
+  const chainIdToNameMap = new Map(jsonData.map((node) => [node.chainId, node.chainName]));
 
   while (true) {
-    const pinger = Container.get(Pinger.token);
+    try {
+      logger.informational('Starting a new iteration of Individual Node Pinger.');
+      const pinger = Container.get(Pinger.token);
 
-    const handlePing = async (url: string, chainId: string) => {
-      return pinger.ping(url, null, Types.SINGULAR, chainId).catch((error) => {
-        logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
-        return null; // Return a value to keep the array's structure consistent
-      });
-    };
-    for (const [j, nodeData] of jsonData.entries()) {
-      const chainId = nodeData.chainId;
-      const nodes = nodeData.nodeList;
-      for (let i = 0; i < nodes.length; i++) {
-        const url = nodes[i] || '';
-        arr.push(handlePing(url, chainId));
-        
+      const handlePing = async (url: string, chainId: string, chainName: string | undefined) => {
+        return pinger.ping(url, chainName, Types.SINGULAR, chainId).catch((error) => {
+          logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
+          return null; // Return a value to keep the array's structure consistent
+        });
+      };
 
-        if (arr.length === BATCH_SIZE || (i === nodes.length - 1 && j === jsonData.length - 1)) {
-          const results = await Promise.all(arr);
-          const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
-          if (validResults.length > 0) {
-            const createCommandResponse = await prisma.responseCode.createMany({
-              data: validResults,
-              skipDuplicates: true,
-            });
-            logger.informational(createCommandResponse);
-          }
-          arr = [];
+      const promisesArr = [];
+      for (const [, nodeData] of jsonData.entries()) {
+        const chainId = nodeData.chainId;
+        const nodes = nodeData.nodeList;
+        let chainName = chainIdToNameMap.get(chainId);
+        for (let i = 0; i < nodes.length; i++) {
+          const url = nodes[i] || '';
+          promisesArr.push(handlePing(url, chainId, chainName));
         }
       }
+      const results = await Promise.all(promisesArr);
+      const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
+      if (validResults.length > 0) {
+        await prisma.responseCode.createMany({
+          data: validResults,
+          skipDuplicates: true,
+        });
+      }
+      logger.informational(
+        `Completed an iteration of Individual Node Pinger. Waiting for ${t} ms before the next iteration.`,
+      );
+    } catch (error) {
+      logger.error(`An error occurred during Individual Node Pinger execution: ${error}`);
     }
-    logger.informational(`Waiting for ${t} ms`);
     await sleep({ ms: t });
   }
 }
@@ -85,38 +89,41 @@ async function startEcostakePinger(): Promise<void> {
   const prisma = Container.get(prismaToken);
 
   while (true) {
-    const pinger = Container.get(Pinger.token);
+    try {
+      logger.informational('Starting a new iteration of Ecostake Pinger.');
+      const pinger = Container.get(Pinger.token);
 
-    const handlePing = async (url: string, chainId: string, chainName: string) => {
-      return pinger.ping(url, chainName, Types.ECOSTAKE, chainId).catch((error) => {
-        logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
-        return null;
-      });
-    };
+      const handlePing = async (url: string, chainId: string, chainName: string) => {
+        return pinger.ping(url, chainName, Types.ECOSTAKE, chainId).catch((error) => {
+          logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
+          return null;
+        });
+      };
 
-    for (let i = 0; i < chainNodeList.length; i++) {
-      const chain = chainNodeList[i] as Record<string, any>;
-      const chainRegistryPath = chain?.chainRegistryPath;
-      const url = `https://rest.cosmos.directory/${chainRegistryPath}`;
+      for (let i = 0; i < chainNodeList.length; i++) {
+        const chain = chainNodeList[i] as Record<string, any>;
+        const chainRegistryPath = chain?.chainRegistryPath;
+        const url = `https://rest.cosmos.directory/${chainRegistryPath}`;
 
-      arr.push(handlePing(url, chain.chainName, chain.chainId));
+        arr.push(handlePing(url, chain.chainName, chain.chainId));
 
-      if (arr.length == BATCH_SIZE || i === chainNodeList.length - 1) {
-        const results = await Promise.all(arr);
-        const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
-        if (validResults.length > 0) {
-          const createCommandResponse = await prisma.responseCode.createMany({
-            data: validResults,
-            skipDuplicates: true,
-          });
-          logger.informational(createCommandResponse);
+        if (arr.length == BATCH_SIZE || i === chainNodeList.length - 1) {
+          const results = await Promise.all(arr);
+          const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
+          if (validResults.length > 0) {
+            await prisma.responseCode.createMany({
+              data: validResults,
+              skipDuplicates: true,
+            });
+          }
+          arr = [];
         }
-        arr = [];
       }
+      logger.informational(`Completed an iteration of Ecostake Pinger. Waiting for ${t} ms before the next iteration.`);
+    } catch (error) {
+      logger.error(`An error occurred during Ecostake Pinger execution: ${error}`);
     }
-
     await sleep({ ms: t });
-    logger.informational(`Waiting for ${t} ms`);
   }
 }
 
@@ -129,12 +136,11 @@ async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<{ url: stri
 
   // Check if nodes is null or has no elements
   if (!nodes || nodes.length === 0) {
-    logger.error('Nodes are null or empty, exiting');
     return [];
   }
 
   // Map nodes to URLs with priority, ensuring to handle fewer than 3 nodes gracefully
-  let urls = nodes
+  const urls = nodes
     .map((node: { [x: string]: any }, index: any) => ({
       url: node['nodeUrl'] ?? '',
       priority: index + 1,
@@ -149,6 +155,28 @@ async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<{ url: stri
       logger.error('Invalid nmsRunType, exiting');
       return [];
   }
+}
+
+async function fetchWithRetry(url: string, retries: number = 3, delay: number = 1000): Promise<any> {
+  let lastError;
+  const logger = getLogger(__filename);
+  const fetch = Container.get(fetchToken);
+
+  for (let attempt = 0; attempt < retries; attempt++) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        // Check if response status code is not successful
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response; // Return response if successful
+    } catch (error) {
+      lastError = error;
+      logger.error(`Fetch attempt ${attempt + 1} failed: ${error}. Retrying in ${delay}ms...`);
+      await sleep({ ms: delay }); // Wait for 1 second before retrying
+    }
+  }
+  throw lastError; // Throw the last error after all retries have failed
 }
 
 // @ts-ignore
@@ -166,38 +194,49 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
       logger.error('Invalid nmsRunType, exiting');
       return;
   }
+
+  const FILE_NAME = '/individualChainNodeListV2.json';
+  const jsonData = EnvVars.readUrls2(FILE_NAME);
+  const chainIdToNameMap = new Map(jsonData.map((node) => [node.chainId, node.chainName]));
+
   if (EnvVars.getNodeEnv() === 'test') return;
-  const fetch = Container.get(fetchToken);
   let promisesArr: Promise<Prisma.ResponseCodeCreateInput>[] = [];
   const prisma = Container.get(prismaToken);
   while (true) {
-    const pinger = Container.get(Pinger.token);
-    const response = await fetch(CDNfileName);
-    const jsonData = await response.json();
-    const chainIds = Object.keys(jsonData);
-    for (let i = 0; i < chainIds.length; i++) {
-      const chainId = chainIds[i] || '';
-      const nodes = jsonData[chainId!];
-      const urls = await nmsGetNodeURL(nodes, nmsRunType);
-      urls.forEach(({ url, priority }) => {
-        promisesArr.push(
-          pinger.ping(url, null, nmsRunType, chainId, '/cosmos/base/tendermint/v1beta1/blocks/latest', priority),
-        );
-      });
-
-      if (promisesArr.length == BATCH_SIZE || i === chainIds.length - 1) {
-        const promiseResult = await Promise.all(promisesArr);
-
-        const createCommandResponse = await prisma.responseCode.createMany({
-          data: promiseResult,
-          skipDuplicates: true,
+    try {
+      logger.informational('Starting a new iteration of NMS Pinger . ' + nmsRunType);
+      const pinger = Container.get(Pinger.token);
+      const response = await fetchWithRetry(CDNfileName);
+      const jsonData = await response.json();
+      const chainIds = Object.keys(jsonData);
+      for (let i = 0; i < chainIds.length; i++) {
+        const chainId = chainIds[i] || '';
+        const nodes = jsonData[chainId!];
+        let chainName = chainIdToNameMap.get(chainId);
+        const urls = await nmsGetNodeURL(nodes, nmsRunType);
+        urls.forEach(({ url, priority }) => {
+          promisesArr.push(
+            pinger.ping(url, chainName, nmsRunType, chainId, '/cosmos/base/tendermint/v1beta1/blocks/latest', priority),
+          );
         });
-        logger.informational(createCommandResponse);
-        promisesArr = [];
+
+        if (promisesArr.length == BATCH_SIZE || i === chainIds.length - 1) {
+          const promiseResult = await Promise.all(promisesArr);
+
+          await prisma.responseCode.createMany({
+            data: promiseResult,
+            skipDuplicates: true,
+          });
+          promisesArr = [];
+        }
       }
+      logger.informational(
+        `Completed an iteration of iteration of NMS Pinger ${nmsRunType}. Waiting for ${t} ms before the next iteration.`,
+      );
+    } catch (error) {
+      logger.error(`An error occurred during NMS Pinger execution: ${error}`);
     }
     await sleep({ ms: t });
-    logger.informational(`Waiting for ${t} ms`);
   }
 }
 

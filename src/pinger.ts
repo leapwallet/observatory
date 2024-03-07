@@ -1,5 +1,4 @@
 import { Container, Token } from 'typedi';
-import { getLogger } from './logger';
 import { Response } from 'node-fetch';
 import fetchToken from './fetch-token';
 // import { httpRequestDurationSecondsHistogram, httpRequestsFailedTotal, httpRequestsSucceededTotal } from './metrics';
@@ -14,20 +13,16 @@ export namespace Pinger {
     /** @param url - The REST API base URL of a Cosmos blockchain node. */
     async ping(
       url: string,
-      chainName: string | null,
+      chainName: string | null | undefined = null,
       newType: Types = 'ECOSTAKE',
       chainId: string,
-      endpoint: string = '/cosmos/base/tendermint/v1beta1/blocks/latest',
-      priority: number = 0, // Add priority here with a default value
+      endpoint = '/cosmos/base/tendermint/v1beta1/blocks/latest',
+      priority = 0, // Add priority here with a default value
     ): Promise<Prisma.ResponseCodeCreateInput> {
       // Return prisma write query back from the loop
       // this.type = newType;
-      const logger = getLogger(__filename);
-      let isEcostakeUrl = 0;
-      logger.informational(url);
-      if (url && url.endsWith('.ecostake.com/')) {
-        isEcostakeUrl = 1;
-      }
+      //const logger = getLogger(__filename);
+
       const chainUrl = url;
       //logger.informational(`Pinging ${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}.`);
       const fetch = Container.get(fetchToken);
@@ -48,7 +43,7 @@ export namespace Pinger {
           chainId: chainId,
           priority: priority,
         };
-        logger.error(`Failed to ping:${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}: ${err}`);
+        //logger.error(`Failed to ping:${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}: ${err}`);
         return data;
       }
       const endTime = Date.now();
@@ -73,6 +68,5 @@ export namespace Pinger {
       return data;
     }
   }
-
   export const token = new Token<DefaultApi>('Pinger');
 }
