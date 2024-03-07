@@ -22,9 +22,9 @@ export namespace Pinger {
     ): Promise<Prisma.ResponseCodeCreateInput> {
       // Return prisma write query back from the loop
       // this.type = newType;
-      const logger = getLogger(__filename);
+      //const logger = getLogger(__filename);
       let isEcostakeUrl = 0;
-      logger.informational(url);
+      //logger.informational(url);
       if (url && url.endsWith('.ecostake.com/')) {
         isEcostakeUrl = 1;
       }
@@ -48,7 +48,7 @@ export namespace Pinger {
           chainId: chainId,
           priority: priority,
         };
-        logger.error(`Failed to ping:${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}: ${err}`);
+        //logger.error(`Failed to ping:${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}: ${err}`);
         return data;
       }
       const endTime = Date.now();
