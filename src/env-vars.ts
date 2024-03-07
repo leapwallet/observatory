@@ -48,6 +48,12 @@ export namespace EnvVars {
     return chainNodeListJSON.chainNodeList;
   }
 
+  export function readUrlsV2(fileName = '/chainNodeListV2.json'): any[] {
+    const configFile = fs.readFileSync(__dirname + fileName);
+    const chainNodeListJSON = JSON.parse(configFile.toString());
+    return Object.values(chainNodeListJSON);
+  }
+
   export function readUrls2(fileName = '/chainNodeList.json'): chainNodeList2[] {
     const configFile = fs.readFileSync(__dirname + fileName);
     const chainNodeListJSON = JSON.parse(configFile.toString());

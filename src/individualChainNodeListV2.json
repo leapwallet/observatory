@@ -1,0 +1,1725 @@
+{
+  "chainNodeList": [
+    {
+      "chainId": "acre_9052-1",
+      "nodeList": [
+        "https://lcd-acre.synergynodes.com",
+        "https://acrechain-mainnet-lcd.autostake.com:443",
+        "https://rest.acre.tcnetwork.io",
+        "https://mainnet-acre-api.konsortech.xyz",
+        "https://acred-rest.staketab.org"
+      ]
+    },
+    {
+      "chainId": "agoric-3",
+      "nodeList": [
+        "https://main.api.agoric.net:443",
+        "https://api.agoric.nodestake.top",
+        "https://agoric-api.polkachu.com",
+        "https://agoric.api.kjnodes.com",
+        "https://agoric-mainnet-lcd.autostake.com:443",
+        "https://api-agoric-01.stakeflow.io",
+        "https://agoric-rest.0base.dev",
+        "https://agoric-api.w3coins.io",
+        "https://api.agoric.stakewith.us",
+        "https://api-agoric-ia.cosmosia.notional.ventures",
+        "https://agoric-api.stakeandrelax.net",
+        "https://lcd.agoric.bronbro.io:443"
+      ]
+    },
+    {
+      "chainId": "aioz_168-1",
+      "nodeList": ["https://lcd-dataseed.aioz.network"]
+    },
+    {
+      "chainId": "akashnet-2",
+      "nodeList": [
+        "https://api.akash.forbole.com:443",
+        "https://rest-akash.ecostake.com",
+        "https://akash-api.lavenderfive.com:443",
+        "https://akash-api.polkachu.com",
+        "https://api-akash.cosmos-spaces.cloud",
+        "https://api-akash-ia.cosmosia.notional.ventures",
+        "https://akash.c29r3.xyz:443/api",
+        "https://akash-mainnet-lcd.autostake.com:443",
+        "https://akash-api.kleomedes.network",
+        "https://api-akash-01.stakeflow.io",
+        "https://akash-mainnet-rest.cosmonautstakes.com:443",
+        "https://akash-api.w3coins.io",
+        "https://akash-rest.publicnode.com",
+        "https://akash-api.validatornode.com",
+        "https://lcd-akash.whispernode.com:443",
+        "https://public.stakewolle.com/cosmos/akash/rest"
+      ]
+    },
+    {
+      "chainId": "andromeda-1",
+      "nodeList": [
+        "https://api.andromeda-1.andromeda.aviaone.com/",
+        "https://andromeda.api.kjnodes.com",
+        "https://andromeda.api.nodex.one",
+        "https://andro.api.m.stavr.tech",
+        "https://andromeda-api.lavenderfive.com:443",
+        "https://andromeda-mainnet-lcd.autostake.com:443",
+        "https://andromeda-api.stake-town.com:443",
+        "https://andromeda-rest.stakerhouse.com:443",
+        "https://andromeda-api.highstakes.ch:1317",
+        "https://andromeda-api.genznodes.dev",
+        "https://nibiru.api.kjnodes.com"
+      ]
+    },
+    {
+      "chainId": "archway-1",
+      "nodeList": [
+        "https://api.mainnet.archway.io",
+        "https://archway-api.w3coins.io",
+        "https://m-archway.api.utsa.tech",
+        "https://api-1.archway.nodes.guru",
+        "https://archway.api.silknodes.io/",
+        "https://archway.api.kjnodes.com",
+        "https://api-archway.cosmos-spaces.cloud",
+        "https://api-archway.cryptech.com.ua",
+        "https://api.archway.nodestake.top",
+        "https://rest-archway.theamsolutions.info",
+        "https://lcd-archway.whispernode.com:443",
+        "https://archway-api.lavenderfive.com:443",
+        "https://api-archway.mms.team",
+        "https://api-archway.mzonder.com",
+        "https://rest.archway.lgns.net",
+        "https://archway-api.stake-town.com",
+        "https://archway-rest.0base.dev",
+        "https://archway-mainnet.api.l0vd.com",
+        "https://archway-api.openbitlab.com",
+        "https://api-archway.mainnet.validatrium.club",
+        "https://api.archway.stakeup.tech",
+        "https://archway.api.trivium.network:1317",
+        "https://archway-mainnet-archive.allthatnode.com:1317",
+        "https://archway-api.tienthuattoan.ventures",
+        "https://archway-api.stakeandrelax.net",
+        "https://lcd.archway.bronbro.io:443"
+      ]
+    },
+    {
+      "chainId": "arkh",
+      "nodeList": ["https://asc-blockchain-api.arkhadian.com/"]
+    },
+    {
+      "chainId": "mantle-1",
+      "nodeList": [
+        "https://rest.assetmantle.one",
+        "https://rest-assetmantle.ecostake.com",
+        "https://api.assetmantle.nodestake.top",
+        "https://api-assetmantle-ia.cosmosia.notional.ventures",
+        "https://assetmantle-api.polkachu.com",
+        "https://lcd-assetmantle.whispernode.com:443",
+        "https://api.mantle.paranorm.pro:443",
+        "https://assetmantle-rest.stakerhouse.com",
+        "https://assetmantle-rest.publicnode.com"
+      ]
+    },
+    {
+      "chainId": "xstaxy-1",
+      "nodeList": [
+        "https://lcd.aura.network/",
+        "https://m-aura.api.utsa.tech",
+        "https://aura.api.m.stavr.tech",
+        "https://aura-api.ramuchi.tech",
+        "https://aura.api.kjnodes.com",
+        "https://mainnet-aura-api.konsortech.xyz",
+        "https://aura-api.tienthuattoan.ventures",
+        "https://aura-api.lavenderfive.com",
+        "https://aura-rest.staketab.org",
+        "https://api.aura.safeblock.space",
+        "https://api.aura.silentvalidator.com",
+        "https://api-aura.mms.team",
+        "https://aura-api.stake-town.com",
+        "https://aura-api.palamar.io"
+      ]
+    },
+    {
+      "chainId": "axelar-dojo-1",
+      "nodeList": [
+        "https://lcd-axelar.imperator.co:443",
+        "https://axelar-lcd.quickapi.com:443",
+        "https://api-axelar.cosmos-spaces.cloud",
+        "https://axelar-lcd.qubelabs.io:443",
+        "https://api-1.axelar.nodes.guru:443",
+        "https://api-axelar-ia.cosmosia.notional.ventures/",
+        "https://axelar-api.polkachu.com",
+        "https://axelar.rest.stakin-nodes.com",
+        "https://api.axelar.bh.rocks",
+        "https://axelar-api.validatrium.club",
+        "https://lcd-axelar.whispernode.com:443",
+        "https://axelar-mainnet-lcd.autostake.com:443",
+        "https://axelar-lcd.quantnode.tech/",
+        "https://axelar-api.ibs.team",
+        "https://api-axelar-01.stakeflow.io",
+        "https://axelar-rest.staketab.org",
+        "https://axelar-api.w3coins.io",
+        "https://axelar-rest.publicnode.com"
+      ]
+    },
+    {
+      "chainId": "laozi-mainnet",
+      "nodeList": [
+        "https://laozi1.bandchain.org/api",
+        "https://api-bandchain-ia.cosmosia.notional.ventures/",
+        "https://band-api.ibs.team/",
+        "https://api-band.cosmos-spaces.cloud",
+        "https://band.api.m.stavr.tech",
+        "https://bandchain-mainnet-lcd.autostake.com:443",
+        "https://api-band-01.stakeflow.io",
+        "https://band-api.w3coins.io",
+        "https://bandprotocol-api.highstakes.ch:1317/",
+        "https://band-api.stake-town.com",
+        "https://public.stakewolle.com/cosmos/bandchain/rest",
+        "https://lcd.band.bronbro.io/"
+      ]
+    },
+    {
+      "chainId": "beezee-1",
+      "nodeList": ["https://rest.getbze.com", "https://rest-1.getbze.com", "https://rest-2.getbze.com"]
+    },
+    {
+      "chainId": "bitcanna-1",
+      "nodeList": [
+        "https://lcd.bitcanna.io",
+        "https://bitcanna-api.panthea.eu",
+        "https://api.bitcanna.sgtstake.com/",
+        "https://bitcanna.api.m.stavr.tech",
+        "https://bcna-api.ibs.team/",
+        "https://bitcanna.api.m.anode.team",
+        "https://api-bcna.kjinc.io/",
+        "https://mainnet-bitcanna-api.konsortech.xyz",
+        "https://bitcanna.api.kjnodes.com",
+        "https://bitcanna-api.lavenderfive.com/",
+        "https://bitcanna-api.genznodes.dev",
+        "https://api.bitcanna-1.bitcanna.aviaone.com/",
+        "https://lcd.bitcanna-mainnet.hexnodes.co",
+        "https://bitcanna-mainnet.api.l0vd.com",
+        "https://api-bitcanna-ia.cosmosia.notional.ventures",
+        "https://bitcanna-api.polkachu.com",
+        "https://api.bitcanna.safeblock.space",
+        "https://bitcanna.nodejumper.io:1317",
+        "https://api-bitcanna.mms.team:443",
+        "http://65.108.142.81:1325",
+        "http://93.115.25.15:1317",
+        "https://bitcanna-api.validatornode.com",
+        "https://bcna.api.arcturian.tech/",
+        "https://api.bitcanna.indonode.net/",
+        "https://bitcanna-rest.publicnode.com"
+      ]
+    },
+    {
+      "chainId": "bitsong-2b",
+      "nodeList": [
+        "https://api-bitsong-ia.cosmosia.notional.ventures/",
+        "https://lcd.explorebitsong.com/",
+        "https://bitsong-api.validatrium.club",
+        "https://api.bitsong.quokkastake.io",
+        "http://bitsong.api.nodersteam.com:11017",
+        "https://bitsong-api.lavenderfive.com/",
+        "https://api-bitsong.starsquid.io",
+        "https://rest-bitsong.architectnodes.com",
+        "https://api.bitsong.safeblock.space",
+        "https://bitsong.tdrsys.com",
+        "https://bitsong-api.panthea.eu"
+      ]
+    },
+    {
+      "chainId": "bluzelle-9",
+      "nodeList": [
+        "https://a.client.sentry.net.bluzelle.com:1317",
+        "https://b.client.sentry.net.bluzelle.com:1317",
+        "https://c.client.sentry.net.bluzelle.com:1317",
+        "https://bluzelle-api.genznodes.dev/"
+      ]
+    },
+    {
+      "chainId": "bostrom",
+      "nodeList": [
+        "https://lcd.bostrom.cybernode.ai",
+        "https://api-cyber-ia.cosmosia.notional.ventures/",
+        "https://lcd.cyber.bronbro.io:443"
+      ]
+    },
+    {
+      "chainId": "canto_7700-1",
+      "nodeList": [
+        "https://api.canto.nodestake.top",
+        "https://canto-api.polkachu.com",
+        "https://api.canto.silentvalidator.com/",
+        "https://canto-mainnet-lcd.autostake.com:443"
+      ]
+    },
+    {
+      "chainId": "carbon-1",
+      "nodeList": [
+        "https://api.carbon.network",
+        "https://carbon-api.lavenderfive.com",
+        "https://carbon-mainnet-lcd.autostake.com:443",
+        "https://rest.carbon.blockhunters.org"
+      ]
+    },
+    {
+      "chainId": "celestia",
+      "nodeList": [
+        "https://public-celestia-lcd.numia.xyz",
+        "https://celestia-rest.mesa.newmetric.xyz",
+        "http://celestia.rpc.nodersteam.com:1617",
+        "https://api.lunaroasis.net",
+        "https://api.celestia.nodestake.top",
+        "https://celestia-api.lavenderfive.com:443",
+        "https://api-celestia-01.stakeflow.io",
+        "https://api-celestia.cosmos-spaces.cloud",
+        "https://celestia.rest.interchain.validao.xyz",
+        "https://celestia-rest.publicnode.com",
+        "https://celestia.rest.stakin-nodes.com",
+        "https://celestia.api.kjnodes.com",
+        "https://api-celestia.mzonder.com",
+        "https://celestia-lcd.enigma-validator.com",
+        "https://rest-celestia.theamsolutions.info",
+        "https://api.celestia.validatus.com",
+        "https://celestia-api.sr20de.xyz",
+        "https://celestia-mainnet-lcd.autostake.com:443",
+        "https://api-celestia-full.avril14th.org",
+        "https://celestia.api.cumulo.org.es",
+        "https://celestia-api.stake-town.com",
+        "https://lcd.celestia-app.bronbro.io"
+      ]
+    },
+    {
+      "chainId": "cerberus-chain-1",
+      "nodeList": []
+    },
+    {
+      "chainId": "perun-1",
+      "nodeList": [
+        "https://lcd.c4e.io/",
+        "https://api.c4e.nodestake.top",
+        "https://chain4energy-mainnet-lcd.autostake.com:443",
+        "https://c4e.api.m.stavr.tech",
+        "https://api-c4e.takeshi.team",
+        "https://api-c4e.mzonder.com",
+        "https://rest.cros-nest.com/chain4energy",
+        "https://api.c4e.indonode.net",
+        "https://c4e-api.stake-town.com",
+        "https://api.c4e.silentvalidator.com",
+        "http://api.c4e.stakeup.tech",
+        "http://chain4energy-rpc.stakeangle.com:1317",
+        "https://c4e-api.genznodes.dev",
+        "https://api-c4e.theamsolutions.info",
+        "https://c4e.api.m.anode.team",
+        "http://c4e.api.node75.org:1397",
+        "http://164.68.125.243:1319",
+        "https://c4e-rest.antrixy.org/",
+        "https://c4e-api.kalia.network:443",
+        "http://38.242.220.64:11317",
+        "http://209.182.239.169:1417",
+        "https://api.c4e.validatus.com:443"
+      ]
+    },
+    {
+      "chainId": "cheqd-mainnet-1",
+      "nodeList": [
+        "https://api.cheqd.net",
+        "https://cheqd-api.lavenderfive.com:443",
+        "https://cheqd.api.m.stavr.tech",
+        "https://api-cheqd-ia.cosmosia.notional.ventures/",
+        "https://cheqd-mainnet-lcd.autostake.com:443",
+        "https://api.cheqd.nodestake.top",
+        "https://lcd-cheqd.whispernode.com:443",
+        "https://api-cheqd.blockval.io",
+        "https://public.stakewolle.com/cosmos/cheqd/rest",
+        "https://cheq-api.kleomedes.network"
+      ]
+    },
+    {
+      "chainId": "chihuahua-1",
+      "nodeList": [
+        "https://api.chihuahua.wtf",
+        "https://rest-chihuahua.ecostake.com",
+        "https://api-chihuahua-ia.cosmosia.notional.ventures",
+        "https://chihuahua-api.polkachu.com",
+        "https://chihuahua-api.lavenderfive.com",
+        "https://chihuahua-api.kleomedes.network",
+        "https://api-chihuahua.pupmos.network",
+        "https://chihuahua-mainnet-lcd.autostake.com:443",
+        "https://chihuahua-rest.publicnode.com",
+        "https://api.chihuahua.validatus.com",
+        "https://chihuahua-api.ibs.team"
+      ]
+    },
+    {
+      "chainId": "chimba",
+      "nodeList": ["https://mainnet.chimba.ooo"]
+    },
+    {
+      "chainId": "morocco-1",
+      "nodeList": ["https://api-chronic.zenchainlabs.io/"]
+    },
+    {
+      "chainId": "cifer",
+      "nodeList": []
+    },
+    {
+      "chainId": "comdex-1",
+      "nodeList": [
+        "https://rest.comdex.one",
+        "https://api.comdex.chaintools.tech/",
+        "https://comdex-api.polkachu.com",
+        "https://comdex-api.lavenderfive.com/",
+        "https://api-comdex.cosmos-spaces.cloud",
+        "https://comdex-mainnet-lcd.autostake.com:443",
+        "https://lcd-comdex.whispernode.com:443",
+        "https://comdex-api.w3coins.io",
+        "https://comdex-rest.stakerhouse.com",
+        "https://comdex-rest.publicnode.com",
+        "https://api-comdex-01.stakeflow.io",
+        "https://comdex-api.validatornode.com"
+      ]
+    },
+    {
+      "chainId": "commercio-3",
+      "nodeList": ["https://lcd-mainnet.commercio.network"]
+    },
+    {
+      "chainId": "centauri-1",
+      "nodeList": [
+        "https://api-composable-ia.cosmosia.notional.ventures",
+        "https://composable-mainnet-lcd.autostake.com:443",
+        "https://composable-api.cogwheel.zone:443",
+        "https://composable-api.lavenderfive.com:443",
+        "https://composable-api.genznodes.dev",
+        "https://lcd-composable.whispernode.com:443",
+        "https://composable-api.stake-town.com",
+        "https://composable.api.stakevillage.net",
+        "https://composable-api.stakeandrelax.net",
+        "https://lcd.centauri.bronbro.io:443",
+        "https://composable.api.moonbridge.team"
+      ]
+    },
+    {
+      "chainId": "cvn_2032-1",
+      "nodeList": []
+    },
+    {
+      "chainId": "coreum-mainnet-1",
+      "nodeList": [
+        "https://rest-coreum.ecostake.com",
+        "https://coreum.api.silknodes.io",
+        "https://full-node.mainnet-1.coreum.dev:1317",
+        "https://coreum-rest.publicnode.com",
+        "https://api.m.core.solonation.io",
+        "https://coreum-api.genznodes.dev",
+        "https://coreum-api.ibs.team",
+        "https://public.stakewolle.com/cosmos/coreum/rest"
+      ]
+    },
+    {
+      "chainId": "cosmoshub-4",
+      "nodeList": [
+        "https://cosmos-lcd.quickapi.com:443",
+        "https://rest-cosmoshub.goldenratiostaking.net",
+        "https://cosmoshub-api.lavenderfive.com:443",
+        "https://api-cosmoshub.pupmos.network",
+        "https://api-cosmoshub.cosmos-spaces.cloud",
+        "https://api-cosmoshub-ia.cosmosia.notional.ventures/",
+        "https://cosmos-rest.staketab.org",
+        "https://lcd.cosmos.dragonstake.io",
+        "https://cosmoshub.rest.stakin-nodes.com",
+        "https://rest-cosmoshub.architectnodes.com",
+        "https://rest-cosmoshub.ecostake.com",
+        "https://lcd-cosmoshub.whispernode.com:443",
+        "https://cosmos-lcd.easy2stake.com",
+        "https://api.cosmos.nodestake.top",
+        "https://cosmos.api.silknodes.io",
+        "https://cosmos-rest.publicnode.com",
+        "https://cosmoshub.api.kjnodes.com",
+        "https://api-cosmos-hub-01.stakeflow.io",
+        "https://cosmos-api.w3coins.io",
+        "https://api-cosmoshub.mms.team",
+        "https://cosmos-api.tienthuattoan.ventures",
+        "https://community.nuxian-node.ch:6797/gaia/crpc",
+        "https://cosmos-api.highstakes.ch:1317/",
+        "https://cosmoshub-api.cosmosrescue.dev",
+        "https://cosmos-rest.interstellar-lounge.org",
+        "https://public.stakewolle.com/cosmos/cosmoshub/rest"
+      ]
+    },
+    {
+      "chainId": "coss-1",
+      "nodeList": ["https://coss-rest.coss.ink", "https://coss-rest.cias.network"]
+    },
+    {
+      "chainId": "crescent-1",
+      "nodeList": [
+        "https://mainnet.crescent.network:1317",
+        "https://api-crescent.pupmos.network",
+        "https://crescent-api.polkachu.com",
+        "https://crescent.rest.stakin-nodes.com",
+        "https://api-crescent.cosmos-spaces.cloud",
+        "https://crescent-mainnet-lcd.autostake.com:443",
+        "https://api-crescent-01.stakeflow.io",
+        "https://crescent-api.w3coins.io",
+        "https://lcd.crescent.bronbro.io:443"
+      ]
+    },
+    {
+      "chainId": "cronosmainnet_25-1",
+      "nodeList": ["https://rest.cronos.org/", "https://cronos-rest.publicnode.com"]
+    },
+    {
+      "chainId": "crypto-org-chain-mainnet-1",
+      "nodeList": [
+        "https://rest.mainnet.crypto.org/",
+        "https://api-cryptoorgchain-ia.cosmosia.notional.ventures/",
+        "https://cryptocom-api.polkachu.com",
+        "https://rest-cryptoorgchain.ecostake.com",
+        "https://cryptocom-api.w3coins.io",
+        "https://api-cryptoorg.cosmos-spaces.cloud",
+        "https://cro-chain-rest.publicnode.com"
+      ]
+    },
+    {
+      "chainId": "cudos-1",
+      "nodeList": [
+        "http://mainnet-full-node-01.hosts.cudos.org:1317",
+        "https://mainnet-full-node-02.hosts.cudos.org:31317",
+        "https://cudos-api.kleomedes.network",
+        "https://cudos-mainnet-lcd.autostake.com:443",
+        "https://cudos-api.lavenderfive.com/"
+      ]
+    },
+    {
+      "chainId": "mainnet-3",
+      "nodeList": [
+        "https://rest.mainnet.decentr.xyz",
+        "https://decentr.api.m.stavr.tech",
+        "https://api.decentr.chaintools.tech/",
+        "https://decentr-api.ibs.team/"
+      ]
+    },
+    {
+      "chainId": "desmos-mainnet",
+      "nodeList": [
+        "https://api.mainnet.desmos.network",
+        "https://desmos-api.lavenderfive.com/",
+        "https://desmos-api.ibs.team/",
+        "https://desmos-rest.staketab.org",
+        "https://rest.desmos.tcnetwork.io",
+        "https://lcd.desmos.bronbro.io:443",
+        "https://desmos-api.panthea.eu"
+      ]
+    },
+    {
+      "chainId": "dig-1",
+      "nodeList": ["https://api-1-dig.notional.ventures", "https://api-dig-ia.cosmosia.notional.ventures/"]
+    },
+    {
+      "chainId": "vota-ash",
+      "nodeList": ["https://vota-rest.dorafactory.org", "https://m-dora.api.utsa.tech"]
+    },
+    {
+      "chainId": "dydx-mainnet-1",
+      "nodeList": [
+        "https://community.nuxian-node.ch:6797/dydx/crpc",
+        "https://dydx-dao-api.polkachu.com",
+        "https://dydx-mainnet-full-lcd.public.blastapi.io",
+        "https://dydx-rest.kingnodes.com:443",
+        "https://dydx-api.lavenderfive.com:443",
+        "https://dydx-mainnet-lcd.autostake.com:443",
+        "https://rest-dydx.ecostake.com:443",
+        "https://api-dydx.cosmos-spaces.cloud",
+        "https://api.dydx.nodestake.top:443",
+        "https://dydx-rest.publicnode.com",
+        "https://rest-dydx.cros-nest.com:443",
+        "https://dydx-lcd.enigma-validator.com"
+      ]
+    },
+    {
+      "chainId": "dymension_1100-1",
+      "nodeList": [
+        "https://dym-m-api.agoranodes.com",
+        "https://api.dymension.nodestake.org",
+        "http://dymension.mainnet.api.noders.team:42317",
+        "https://dymension-mainnet-lcd.autostake.com:443",
+        "https://dymension-api.lavenderfive.com:443",
+        "https://dymension-api.kynraze.com",
+        "https://m-dymension.api.utsa.tech",
+        "https://api-dymension.nodeist.net",
+        "https://dymension.api.m.stavr.tech",
+        "https://dym.api-archive.m.stavr.tech",
+        "https://lcd.dymension.hexnodes.co",
+        "https://dymension.api.kjnodes.com:443",
+        "https://dymension-api.stakeandrelax.net",
+        "https://dymension-api.takeshi.team",
+        "https://dymension-rest.publicnode.com",
+        "https://api.dymension.silentvalidator.com:443",
+        "https://api-dymension.whispernode.com:443",
+        "https://community.nuxian-node.ch:6797/dymension/crpc",
+        "https://dymension-lcd.enigma-validator.com",
+        "https://dymension-api.ibs.team",
+        "https://dymension.nodejumper.io:1317",
+        "https://lcd-dymension.hoodrun.io",
+        "https://dymension.0xwave.com",
+        "https://dym.api.cumulo.com.es",
+        "https://rest.dymension.posthuman.digital",
+        "https://api.dymension.node75.org"
+      ]
+    },
+    {
+      "chainId": "dyson-mainnet-01",
+      "nodeList": ["https://dys-api.dysonprotocol.com:443", "https://dyson-api.cogwheel.zone:443"]
+    },
+    {
+      "chainId": "echelon_3000-3",
+      "nodeList": ["https://ech01api.mindheartsoul.org", "https://api.echjoker.lol"]
+    },
+    {
+      "chainId": "emoney-3",
+      "nodeList": [
+        "https://emoney.validator.network/api/",
+        "https://api-emoney-ia.cosmosia.notional.ventures/",
+        "https://api.emoney.bh.rocks"
+      ]
+    },
+    {
+      "chainId": "empowerchain-1",
+      "nodeList": [
+        "https://rest-empowerchain.ecostake.com:443",
+        "https://empowerchain-mainnet-lcd.autostake.com:443",
+        "https://empower.api.liveraven.net",
+        "https://empw.api.m.stavr.tech",
+        "https://empower-api.w3coins.io",
+        "https://lcd-empower.whispernode.com:443",
+        "https://api-empower.vinjan.xyz:443",
+        "https://api.empower.nodestake.top",
+        "https://mainnet-empower-api.konsortech.xyz",
+        "https://empower.api.stakevillage.net",
+        "https://lcd.empowerchain.bronbro.io:443"
+      ]
+    },
+    {
+      "chainId": "ethos_7003-1",
+      "nodeList": ["https://ethos.provable.dev/rest/"]
+    },
+    {
+      "chainId": "evmos_9001-2",
+      "nodeList": [
+        "https://rest.bd.evmos.org:1317",
+        "https://evmos-api.lavenderfive.com:443",
+        "https://api-evmos-ia.cosmosia.notional.ventures/",
+        "https://api.evmos.nodestake.top",
+        "https://evmos-api.polkachu.com",
+        "https://api.evmos.silentvalidator.com/",
+        "https://rest.evmos.tcnetwork.io",
+        "https://evmos.rest.stakin-nodes.com",
+        "https://rest-evmos.architectnodes.com",
+        "https://evmos-api.validatrium.club",
+        "https://rest-evmos.ecostake.com",
+        "https://evmos-rest.publicnode.com",
+        "https://api-evmos-01.stakeflow.io",
+        "https://evmos-api.theamsolutions.info",
+        "https://lcd-evmos.validavia.me",
+        "https://evmos-api.w3coins.io",
+        "https://evmos-api.stake-town.com",
+        "https://evmos.api.liveraven.net",
+        "https://evmos-rest.antrixy.org/",
+        "https://evmos-mainnet.api.stakevillage.net",
+        "https://api.evmos.validatus.com",
+        "https://lcd.evmos.bronbro.io:443"
+      ]
+    },
+    {
+      "chainId": "fetchhub-4",
+      "nodeList": [
+        "https://rest-fetchhub.fetch.ai",
+        "https://api-fetchhub-ia.cosmosia.notional.ventures/",
+        "https://fetch-api.polkachu.com",
+        "https://fetchai-api.kleomedes.network",
+        "https://fetch-rest.antrixy.org",
+        "https://fetchhub-mainnet-lcd.autostake.com:443",
+        "https://rest-fetch.architectnodes.com",
+        "https://fetch-api.ibs.team",
+        "https://fetch-api.cosmosrescue.com",
+        "https://fetch-api.w3coins.io",
+        "https://fetch-rest.publicnode.com",
+        "https://fetch-api.highstakes.ch:1317/",
+        "https://public.stakewolle.com/cosmos/fetchhub/rest"
+      ]
+    },
+    {
+      "chainId": "finschia-2",
+      "nodeList": ["https://finschia-api.finschia.io"]
+    },
+    {
+      "chainId": "colosseum-1",
+      "nodeList": [
+        "https://lcd-mainnet.firmachain.dev:1317",
+        "https://firma.api.m.stavr.tech",
+        "https://api.firmachain.chaintools.tech/",
+        "https://firmachain-api.lavenderfive.com/",
+        "https://firmachain-api.ramuchi.tech"
+      ]
+    },
+    {
+      "chainId": "furya-1",
+      "nodeList": ["https://api.furya.xyz"]
+    },
+    {
+      "chainId": "fxcore",
+      "nodeList": ["https://fx-rest.functionx.io"]
+    },
+    {
+      "chainId": "galaxy-1",
+      "nodeList": []
+    },
+    {
+      "chainId": "wormchain",
+      "nodeList": ["https://tncnt-eu-wormchain-main-01.rpc.p2p.world/lcd/", "https://wormchain-lcd.quickapi.com/"]
+    },
+    {
+      "chainId": "genesis_29-2",
+      "nodeList": ["https://api.genesisl1.org"]
+    },
+    {
+      "chainId": "gitopia",
+      "nodeList": [
+        "https://gitopia-api.polkachu.com:443",
+        "https://gitopia-api.lavenderfive.com",
+        "https://api.gitopia.nodestake.top:443",
+        "https://gitopia-rest.staketab.org",
+        "https://gitopia-mainnet-lcd.autostake.com:443",
+        "https://gitopia-api.ibs.team:443",
+        "https://m-gitopia.api.utsa.tech",
+        "https://gitopia.api.m.stavr.tech",
+        "https://gitopia-api.genznodes.dev",
+        "https://lcd-gitopia.whispernode.com:443",
+        "https://gitopia.api.liveraven.net",
+        "https://gitopia-api.stake-town.com",
+        "https://api.gitopia.silentvalidator.com",
+        "https://gitopia-api.ramuchi.tech",
+        "https://api-gitopia.mzonder.com",
+        "https://gitopia.api.kjnodes.com",
+        "https://api.gitopia.sgtstake.com/",
+        "https://mainnet-gitopia-api.konsortech.xyz",
+        "https://api.gitopia.quokkastake.io",
+        "https://api.gitopia.roomit.xyz",
+        "https://gitopia.api.moonbridge.team",
+        "http://gitopia-rpc.stakeangle.com:41317",
+        "https://gitopia.api.m.anode.team",
+        "https://gitopia.api.stakevillage.net",
+        "https://gitopia-lcd.enigma-validator.com/",
+        "https://rest.gitopia.tcnetwork.io/",
+        "https://gitopia.nodejumper.io:1317",
+        "https://api.gitopia.stakeup.tech/",
+        "https://gitopia-mainnet.api.l0vd.com:443",
+        "https://gitopia-api.tothemars.network:443"
+      ]
+    },
+    {
+      "chainId": "govgen-1",
+      "nodeList": [
+        "https://api.govgen.io/",
+        "https://api-govgen.sg-1.online/",
+        "https://govgen.api.nodeshub.online/",
+        "https://govgen-rest.publicnode.com",
+        "https://rest.govgen.posthuman.digital:443"
+      ]
+    },
+    {
+      "chainId": "gravity-bridge-3",
+      "nodeList": [
+        "https://gravitychain.io:1317",
+        "https://api-gravitybridge-ia.cosmosia.notional.ventures/",
+        "https://gravity-api.polkachu.com",
+        "https://gravitybridge-api.lavenderfive.com/",
+        "https://api.gravity.bh.rocks/",
+        "https://gravity-api.ibs.team",
+        "https://gravity-api.ramuchi.tech",
+        "https://api-gravity-bridge-01.stakeflow.io",
+        "https://gravity-rest.staketab.org",
+        "https://gravity-api.w3coins.io",
+        "https://lcd.g-bridge.bronbro.io:443"
+      ]
+    },
+    {
+      "chainId": "haqq_11235-1",
+      "nodeList": [
+        "https://rest.cosmos.haqq.network",
+        "https://m-s1-sdk.haqq.sh",
+        "https://api.haqq.nodestake.top",
+        "https://haqq-rest.publicnode.com",
+        "https://haqq-api.lavenderfive.com",
+        "https://mainnet-haqq-api.konsortech.xyz",
+        "https://api-haqq.sr20de.xyz",
+        "https://haqq-api.palamar.io"
+      ]
+    },
+    {
+      "chainId": "highbury_710-1",
+      "nodeList": ["https://api-mainnet.furya.io/"]
+    },
+    {
+      "chainId": "humans_1089-1",
+      "nodeList": [
+        "https://api.humans.nodestake.top",
+        "https://humans.api.kjnodes.com",
+        "https://humans.api.nodeshub.online",
+        "https://humans-mainnet-api.itrocket.net",
+        "https://humans-rest.staketab.org",
+        "https://api-humansai.thenop.io:443",
+        "http://humans-rpc.stakeangle.com:41417",
+        "https://mainnet-humans-api.konsortech.xyz",
+        "http://46.4.14.172:16317",
+        "https://api.humans-mainnet.stake-take.com/",
+        "https://rest.humans.posthuman.digital"
+      ]
+    },
+    {
+      "chainId": "Antora",
+      "nodeList": []
+    },
+    {
+      "chainId": "ixo-5",
+      "nodeList": [
+        "https://proxies.sifchain.finance/api/impacthub-3/rest",
+        "https://impacthub.ixo.world/rest/",
+        "https://ixo.api.m.stavr.tech",
+        "https://api-ixo-ia.cosmosia.notional.ventures/",
+        "https://impacthub-api.lavenderfive.com/",
+        "https://ixo-api.ibs.team"
+      ]
+    },
+    {
+      "chainId": "imversed_5555555-1",
+      "nodeList": []
+    },
+    {
+      "chainId": "injective-1",
+      "nodeList": [
+        "https://api-injective-ia.cosmosia.notional.ventures/",
+        "https://injective-api.polkachu.com",
+        "https://injective-api.lavenderfive.com:443",
+        "https://lcd-injective.whispernode.com:443",
+        "https://api-injective-01.stakeflow.io",
+        "https://rest-injective.goldenratiostaking.net",
+        "https://injective-rest.publicnode.com",
+        "injective-mainnet-lcd.autostake.com:443",
+        "https://injective-api.highstakes.ch:1317/",
+        "https://public.stakewolle.com/cosmos/injective/rest",
+        "https://lcd.injective.bronbro.io/"
+      ]
+    },
+    {
+      "chainId": "irishub-1",
+      "nodeList": [
+        "https://api-irisnet-ia.cosmosia.notional.ventures/",
+        "https://api-irisnet-01.stakeflow.io",
+        "https://irisnet-api.w3coins.io",
+        "https://iris-rest.publicnode.com",
+        "https://iris-api.highstakes.ch:1317/",
+        "https://mainnet-iris-api.konsortech.xyz"
+      ]
+    },
+    {
+      "chainId": "jackal-1",
+      "nodeList": [
+        "https://api.jackalprotocol.com",
+        "https://jackal-api.lavenderfive.com:443",
+        "https://jkl.api.m.stavr.tech",
+        "https://api.jackal.nodestake.top",
+        "https://api-jackal.nodeist.net",
+        "https://jackal-api.polkachu.com",
+        "https://m-jackal.api.utsa.tech",
+        "https://jackal-mainnet-lcd.autostake.com:443",
+        "https://lcd-jackal.whispernode.com:443",
+        "https://jackal.api.kjnodes.com",
+        "https://jackal.api.silknodes.io",
+        "https://jackal.api.skynodejs.net",
+        "https://public.stakewolle.com/cosmos/jackal/rest",
+        "https://api.jackal.silentvalidator.com",
+        "https://api.jackal.mathnodes.com",
+        "https://jackal-api.kleomedes.network"
+      ]
+    },
+    {
+      "chainId": "juno-1",
+      "nodeList": [
+        "https://lcd-juno.itastakers.com",
+        "https://rest-juno.ecostake.com",
+        "https://juno-api.lavenderfive.com:443",
+        "https://juno.api.m.stavr.tech",
+        "https://api-juno.pupmos.network",
+        "https://api-juno-ia.cosmosia.notional.ventures/",
+        "https://api.juno.chaintools.tech/",
+        "https://juno-api.polkachu.com",
+        "https://api-juno.cosmos-spaces.cloud",
+        "https://juno-api.kleomedes.network",
+        "https://api.juno.bh.rocks",
+        "https://juno.kingnodes.com",
+        "https://juno-api.stakeandrelax.net",
+        "https://rest-juno.architectnodes.com",
+        "https://api-juno-01.stakeflow.io",
+        "https://lcd-juno.validavia.me",
+        "https://juno-api.w3coins.io",
+        "https://juno-rest.publicnode.com",
+        "https://juno-api.stake-town.com",
+        "https://lcd-juno.whispernode.com:443",
+        "https://juno-api.stakeandrelax.net",
+        "https://api.juno.validatus.com",
+        "https://lcd.juno.bronbro.io:443",
+        "https://juno-api.cogwheel.zone"
+      ]
+    },
+    {
+      "chainId": "kava_2222-10",
+      "nodeList": [
+        "https://api.data.kava.io/",
+        "https://api-kava-ia.cosmosia.notional.ventures/",
+        "https://kava-api.polkachu.com",
+        "https://kava-mainnet-lcd.autostake.com:443",
+        "https://kava-api.ibs.team",
+        "https://api-kava-01.stakeflow.io",
+        "https://kava-rest.publicnode.com"
+      ]
+    },
+    {
+      "chainId": "kichain-2",
+      "nodeList": [
+        "https://api-mainnet.blockchain.ki",
+        "https://api-kichain-ia.cosmosia.notional.ventures/",
+        "https://kichain.api.m.stavr.tech",
+        "https://api.kichain.chaintools.tech/",
+        "https://kichain-mainnet-lcd.autostake.com:443",
+        "http://ki-chain.api.nodersteam.com:14017",
+        "https://kichain-api.polkachu.com",
+        "https://kichain-api.lavenderfive.com/",
+        "https://ki-api.ibs.team/"
+      ]
+    },
+    {
+      "chainId": "darchub",
+      "nodeList": [
+        "https://api-konstellation-ia.cosmosia.notional.ventures/",
+        "https://konstellation-rest.stakerhouse.com"
+      ]
+    },
+    {
+      "chainId": "kaiyo-1",
+      "nodeList": [
+        "https://lcd-kujira.whispernode.com:443",
+        "https://lcd.kaiyo.kujira.setten.io",
+        "https://kujira-api.lavenderfive.com:443",
+        "https://kujira-api.polkachu.com/",
+        "https://rest-kujira.ecostake.com",
+        "https://api-kujira-ia.cosmosia.notional.ventures/",
+        "https://kujira-lcd.wildsage.io/",
+        "https://kujira-api.ibs.team/",
+        "https://api-kujira.starsquid.io",
+        "https://kujira.api.kjnodes.com",
+        "https://kuji-api.kleomedes.network",
+        "https://kujira-mainnet-lcd.autostake.com:443",
+        "https://api.kujira.rektdao.club",
+        "https://kujira-api.theamsolutions.info",
+        "https://kujira-api.w3coins.io",
+        "https://api-kujira.mms.team",
+        "https://kujira-rest.publicnode.com",
+        "https://kujira-rest.interstellar-lounge.org"
+      ]
+    },
+    {
+      "chainId": "kyve-1",
+      "nodeList": [
+        "https://api-eu-1.kyve.network",
+        "https://kyve-api.lavenderfive.com:443",
+        "https://rest-kyve.ecostake.com",
+        "https://lcd-kyve.imperator.co",
+        "https://kyve.api.m.stavr.tech",
+        "https://kyve-api.ibs.team",
+        "https://api.kyve.nodestake.top",
+        "https://kyve.api.liveraven.net",
+        "https://api-kyve.mms.team"
+      ]
+    },
+    {
+      "chainId": "lambda_92000-1",
+      "nodeList": ["https://rest.lambda.im", "https://lambda.api.m.stavr.tech", "https://api.lambda.nodestake.top"]
+    },
+    {
+      "chainId": "likecoin-mainnet-2",
+      "nodeList": [
+        "https://mainnet-node.like.co",
+        "https://like.api.m.stavr.tech",
+        "https://likecoin-node.oldcat.io:443/api/",
+        "https://rest-likecoin-mainnet.pikaser.net"
+      ]
+    },
+    {
+      "chainId": "logos_7002-1",
+      "nodeList": ["https://logos.provable.dev/rest/"]
+    },
+    {
+      "chainId": "loyal-main-02",
+      "nodeList": ["https://lcd-main.joinloyal.io/", "https://loyal-api.polkachu.com"]
+    },
+    {
+      "chainId": "LumenX",
+      "nodeList": [
+        "https://api-lumenx.cryptonet.pl/",
+        "https://api-lumenx.nodine.id/",
+        "https://lcd.lumenx.hexnodes.co/"
+      ]
+    },
+    {
+      "chainId": "lum-network-1",
+      "nodeList": [
+        "https://node0.mainnet.lum.network/rest",
+        "https://lumnetwork-api.lavenderfive.com/",
+        "https://lum.api.m.stavr.tech",
+        "https://lum-api.ibs.team",
+        "https://lum-rest.stakerhouse.com",
+        "https://lum-api.panthea.eu"
+      ]
+    },
+    {
+      "chainId": "mars-1",
+      "nodeList": [
+        "https://rest.marsprotocol.io:443",
+        "https://mars-api.lavenderfive.com:443",
+        "https://mars-mainnet-lcd.autostake.com:443",
+        "https://mars-api.polkachu.com",
+        "https://lcd.expedition-mars.com:443",
+        "https://mars-api.genznodes.dev:443",
+        "https://mars-api.stakeandrelax.net",
+        "https://mars-rest.publicnode.com",
+        "https://mars-api.stakeandrelax.net"
+      ]
+    },
+    {
+      "chainId": "mayachain-mainnet-v1",
+      "nodeList": ["https://mayanode.mayachain.info"]
+    },
+    {
+      "chainId": "medasdigital-1",
+      "nodeList": ["https://lcd.medas-digital.io:1317/"]
+    },
+    {
+      "chainId": "meme-1",
+      "nodeList": [
+        "https://api-meme-1.meme.sx/",
+        "https://meme-api.polkachu.com/",
+        "https://api-meme.pupmos.network/",
+        "https://meme.api.m.anode.team"
+      ]
+    },
+    {
+      "chainId": "migaloo-1",
+      "nodeList": [
+        "https://migaloo-api.polkachu.com:443",
+        "https://migaloo-api.lavenderfive.com",
+        "https://api-migaloo.cosmos-spaces.cloud",
+        "https://migaloo-api.kleomedes.network:443",
+        "https://api.whitewhale.nodestake.top",
+        "https://migaloo.api.kjnodes.com",
+        "https://migaloo-api.cosmosrescue.com"
+      ]
+    },
+    {
+      "chainId": "mainnet",
+      "nodeList": []
+    },
+    {
+      "chainId": "mun-1",
+      "nodeList": [
+        "https://mainnet1.mun.money",
+        "https://mainnet-mun-api.konsortech.xyz",
+        "https://rest.mun.tcnetwork.io"
+      ]
+    },
+    {
+      "chainId": "mythos_7001-1",
+      "nodeList": ["https://mythos.provable.dev/rest/"]
+    },
+    {
+      "chainId": "neutron-1",
+      "nodeList": [
+        "https://api.novel.remedy.tm.p2p.org",
+        "https://neutron-api.lavenderfive.com",
+        "https://lcd-neutron.whispernode.com",
+        "https://api-neutron.cosmos-spaces.cloud",
+        "http://api.neutron.nodestake.top",
+        "https://neutron-rest.publicnode.com",
+        "https://community.nuxian-node.ch:6797/neutron/crpc",
+        "https://lcd.neutron.bronbro.io:443"
+      ]
+    },
+    {
+      "chainId": "cataclysm-1",
+      "nodeList": [
+        "https://lcd.nibiru.fi",
+        "https://nibiru.api.kjnodes.com",
+        "https://api.nibiru.nodestake.org",
+        "https://api.nibiru.silentvalidator.com",
+        "https://nibiru-api.lavenderfive.com:443"
+      ]
+    },
+    {
+      "chainId": "noble-1",
+      "nodeList": ["https://noble-api.polkachu.com", "https://noble-api.lavenderfive.com:443"]
+    },
+    {
+      "chainId": "nois-1",
+      "nodeList": [
+        "https://m-nois.api.utsa.tech",
+        "https://nois-api.lavenderfive.com:443",
+        "https://lcd-nois.ezstaking.dev",
+        "https://lcd-nois.mib.tech/",
+        "https://nois.api.m.stavr.tech",
+        "https://nois-mainnet-api.itrocket.net",
+        "https://api-nois.d-stake.xyz",
+        "https://api-nois.sr20de.xyz",
+        "https://nois-api.polkachu.com",
+        "https://nois.kingnodes.com",
+        "https://nois.api.kjnodes.com",
+        "https://api.nois.silentvalidator.com",
+        "https://nois-api.stakeandrelax.net"
+      ]
+    },
+    {
+      "chainId": "pirin-1",
+      "nodeList": [
+        "https://pirin-cl.nolus.network:1317",
+        "https://nolus-mainnet-lcd.autostake.com:443",
+        "https://nolus-api.lavenderfive.com:443",
+        "https://api-nolus.cosmos-spaces.cloud",
+        "https://nolus.api.liveraven.net",
+        "https://rest-nolus.architectnodes.com",
+        "https://nolus.api.kjnodes.com",
+        "https://nolus-lcd.enigma-validator.com/",
+        "https://nolus-api.w3coins.io",
+        "https://nolus-rest.publicnode.com",
+        "https://nolus-api.ibs.team"
+      ]
+    },
+    {
+      "chainId": "nomic-stakenet-3",
+      "nodeList": ["https://app.nomic.io:8443"]
+    },
+    {
+      "chainId": "nyx",
+      "nodeList": ["https://nym-api.polkachu.com/", "https://api.nyx.nodes.guru/", "https://api.nymtech.net"]
+    },
+    {
+      "chainId": "octa",
+      "nodeList": []
+    },
+    {
+      "chainId": "odin-mainnet-freya",
+      "nodeList": [
+        "https://api.odinprotocol.io",
+        "https://odin.api.m.stavr.tech",
+        "https://odin-api.lavenderfive.com/",
+        "https://odin-mainnet-lcd.autostake.com:443"
+      ]
+    },
+    {
+      "chainId": "odin-mainnet-freya",
+      "nodeList": [
+        "http://34.79.179.216:1317/",
+        "https://odin-api.lavenderfive.com/",
+        "https://odin-mainnet-lcd.autostake.com:443"
+      ]
+    },
+    {
+      "chainId": "exchain-66",
+      "nodeList": []
+    },
+    {
+      "chainId": "omniflixhub-1",
+      "nodeList": [
+        "https://api.omniflix.nodestake.top",
+        "https://api-omniflixhub-ia.cosmosia.notional.ventures/",
+        "https://omniflixhub-api.lavenderfive.com/",
+        "https://api-omniflixhub.cosmos-spaces.cloud",
+        "https://api.omniflix.silentvalidator.com/",
+        "https://omniflix.kingnodes.com",
+        "https://omniflixhub-mainnet-lcd.autostake.com:443",
+        "https://rest-omniflix.architectnodes.com",
+        "https://omniflix-rest.staketab.org",
+        "https://omniflix-api.dakshavalidator.in",
+        "http://omniflix.api.staking-explorer.com",
+        "https://api.omniflix.stakeup.tech",
+        "https://lcd.omniflix.bronbro.io:443",
+        "https://omniflix-rest.publicnode.com"
+      ]
+    },
+    {
+      "chainId": "onomy-mainnet-1",
+      "nodeList": ["https://rest-mainnet.onomy.io"]
+    },
+    {
+      "chainId": "Oraichain",
+      "nodeList": [
+        "http://lcd.orai.io",
+        "https://oraichain-mainnet-lcd.autostake.com:443",
+        "https://api-oraichain.mms.team",
+        "https://api-orai.blockval.io",
+        "https://mainnet-orai-api.konsortech.xyz"
+      ]
+    },
+    {
+      "chainId": "osmosis-1",
+      "nodeList": [
+        "https://lcd.osmosis.zone/",
+        "https://osmosis-lcd.quickapi.com:443",
+        "https://lcd-osmosis.blockapsis.com",
+        "https://osmosis-api.lavenderfive.com:443",
+        "https://rest-osmosis.ecostake.com",
+        "https://api-osmosis-ia.cosmosia.notional.ventures",
+        "https://api-osmosis.cosmos-spaces.cloud",
+        "https://osmosis-api.polkachu.com",
+        "https://osmosis.rest.stakin-nodes.com",
+        "https://osmosis-mainnet-lcd.autostake.com:443",
+        "https://api-osmosis-01.stakeflow.io",
+        "https://osmosis-api.w3coins.io",
+        "https://lcd-osmosis.whispernode.com:443",
+        "https://osmosis-rest.publicnode.com",
+        "https://community.nuxian-node.ch:6797/osmosis/crpc",
+        "https://osmosis-api.stake-town.com",
+        "https://osmosis-api.reece.sh",
+        "https://api.osmosis.validatus.com:443",
+        "https://lcd.osmosis.bronbro.io:443",
+        "https://osmosis-rest.interstellar-lounge.org",
+        "https://public.stakewolle.com/cosmos/osmosis/rest",
+        "https://rest.cros-nest.com/osmosis"
+      ]
+    },
+    {
+      "chainId": "panacea-3",
+      "nodeList": ["https://api.gopanacea.org", "https://panacea-rest.staketab.org"]
+    },
+    {
+      "chainId": "passage-2",
+      "nodeList": [
+        "https://api.passage.vitwit.com",
+        "https://passage-rest.staketab.org",
+        "https://rest-passage.ecostake.com",
+        "https://passage-api.lavenderfive.com:443",
+        "https://api-passage.cosmos-spaces.cloud",
+        "https://api-passage-ia.cosmosia.notional.ventures/",
+        "https://api.passage.nodestake.top",
+        "https://passage-api.polkachu.com",
+        "https://passage-api.ibs.team/",
+        "https://api-passage.d-stake.xyz",
+        "https://passage-mainnet-lcd.autostake.com:443",
+        "https://lcd-passage.whispernode.com:443",
+        "https://passage-rest.stakerhouse.com",
+        "https://passage-rest.publicnode.com",
+        "https://passage-api.stakeandrelax.net",
+        "https://api-passage.mainnet.validatrium.club",
+        "https://api.passage.silentvalidator.com"
+      ]
+    },
+    {
+      "chainId": "core-1",
+      "nodeList": [
+        "https://rest.core.persistence.one",
+        "https://api-persistent-ia.cosmosia.notional.ventures/",
+        "https://persistence-api.polkachu.com",
+        "https://api-persistence.cosmos-spaces.cloud",
+        "https://persistence-api.kleomedes.network",
+        "https://rest-persistence.architectnodes.com",
+        "https://persistence-mainnet-lcd.autostake.com:443",
+        "https://persistence-mainnet-rest.cosmonautstakes.com",
+        "https://persistence-lcd.quantnode.tech",
+        "https://persistence-rest.zenscape.one",
+        "https://persistence-api.stakeandrelax.net",
+        "https://rest.persistence.posthuman.digital:443",
+        "https://api-persistence-01.stakeflow.io",
+        "https://persistence-rest.publicnode.com",
+        "https://persistence-api.highstakes.ch:1317/",
+        "https://persistence-api.stakeandrelax.net",
+        "https://api.persistence.validatus.com",
+        "https://public.stakewolle.com/cosmos/persistence/rest"
+      ]
+    },
+    {
+      "chainId": "planq_7070-2",
+      "nodeList": [
+        "https://rest.planq.network",
+        "https://planq.api.m.stavr.tech",
+        "https://api.planq.nodestake.top",
+        "https://planq-api.kynraze.com",
+        "https://api.planq.indonode.net",
+        "https://api.planq.roomit.xyz",
+        "https://planq-api.genznodes.dev",
+        "https://api.planq.safeblock.space",
+        "https://planq.api.skynodejs.net",
+        "https://planq-api.stake-town.com"
+      ]
+    },
+    {
+      "chainId": "point_10687-1",
+      "nodeList": [
+        "https://rpc-mainnet-1.point.space:1317",
+        "https://point.api.m.stavr.tech",
+        "https://api.point.nodestake.top",
+        "https://api.point.indonode.net"
+      ]
+    },
+    {
+      "chainId": "pio-mainnet-1",
+      "nodeList": [
+        "https://api-provenance.takeshi.team",
+        "https://provenance-mainnet-lcd.autostake.com:443",
+        "https://api.provenance.io",
+        "https://api-provenance-ia.cosmosia.notional.ventures/",
+        "https://provenance-api.ibs.team",
+        "https://provenance-api.highstakes.ch:1317/",
+        "https://api.provenance.blockval.io",
+        "https://provenance-api.panthea.eu"
+      ]
+    },
+    {
+      "chainId": "PUNDIX",
+      "nodeList": ["https://px-rest.pundix.com"]
+    },
+    {
+      "chainId": "pylons-mainnet-1",
+      "nodeList": ["https://rest.nodejumper.io/pylons"]
+    },
+    {
+      "chainId": "quasar-1",
+      "nodeList": [
+        "https://quasar-api.lavenderfive.com:443",
+        "https://quasar-api.polkachu.com",
+        "https://lcd-quasar.whispernode.com:443",
+        "https://api-quasar.cosmos-spaces.cloud",
+        "https://quasar-lcd.enigma-validator.com",
+        "https://quasar-mainnet-lcd.autostake.com:443",
+        "https://quasar.api.kjnodes.com",
+        "https://lcd-quasar.validavia.me",
+        "https://quasar-rest.publicnode.com",
+        "https://quasar-api.stake-town.com",
+        "https://quasar-api.ibs.team",
+        "https://quasar-api.stakeandrelax.net",
+        "https://quasar-api.genznodes.dev"
+      ]
+    },
+    {
+      "chainId": "quicksilver-2",
+      "nodeList": [
+        "https://api-quicksilver.takeshi.team:443",
+        "https://api-quicksilver-ia.cosmosia.notional.ventures:443",
+        "https://quicksilver-api.lavenderfive.com:443",
+        "https://api-quicksilver.cosmos-spaces.cloud",
+        "https://quicksilver-mainnet-lcd.autostake.com:443",
+        "https://m-quicksilver.api.utsa.tech",
+        "https://quick.api.m.stavr.tech",
+        "https://quicksilver.api.kjnodes.com",
+        "https://rest-quicksilver.architectnodes.com",
+        "https://api.quicksilver.indonode.net",
+        "https://quicksilver-rest.staketab.org",
+        "https://quicksilver-api.theamsolutions.info",
+        "https://quicksilver-api.w3coins.io",
+        "https://api-quicksilver.mms.team",
+        "https://quicksilver-rest.publicnode.com",
+        "https://quicksilver-api.stake-town.com",
+        "https://mainnet-quicksilver-api.konsortech.xyz",
+        "https://quicksilver.tdrsys.com",
+        "https://api.quicksilver.validatus.com"
+      ]
+    },
+    {
+      "chainId": "qwoyn-1",
+      "nodeList": [
+        "https://rest-qwoyn.theamsolutions.info:443",
+        "https://qwoyn-rest.staketab.org",
+        "https://qwoyn.api.m.stavr.tech",
+        "https://qwoyn-rest-archive.staketab.org",
+        "https://qwoyn-api.lavenderfive.com",
+        "https://api-qwoyn.mzonder.com",
+        "https://lcd.qwoyn.bronbro.io:443"
+      ]
+    },
+    {
+      "chainId": "realionetwork_3301-1",
+      "nodeList": [
+        "https://realio-api.genznodes.dev",
+        "https://realio.lcd.bccnodes.com/",
+        "https://api-realio-network.nodeist.net",
+        "https://realio.api.m.stavr.tech",
+        "https://api.realio.indonode.net",
+        "https://api-realio.vinjan.xyz",
+        "https://rpc-realio.sr20de.xyz",
+        "https://api.realio.safeblock.space"
+      ]
+    },
+    {
+      "chainId": "reb_1111-1",
+      "nodeList": [
+        "https://api.rebuschain.com:1317/",
+        "https://rebus.api.manticore.team:443/",
+        "https://api.rebus.nodestake.top/",
+        "https://rebus.api.m.stavr.tech",
+        "https://api-1.rebus.nodes.guru",
+        "https://api.mainnet.rebus.money:1317",
+        "https://rebus-rest.brocha.in",
+        "https://rebus-mainnet-lcd.autostake.com:443",
+        "https://rebus.api.liveraven.net",
+        "https://rebus-rest.publicnode.com"
+      ]
+    },
+    {
+      "chainId": "regen-1",
+      "nodeList": [
+        "http://public-rpc.regen.vitwit.com:1317",
+        "https://regen.stakesystems.io",
+        "https://regen.api.m.stavr.tech",
+        "https://api-regen-ia.cosmosia.notional.ventures/",
+        "https://regen-mainnet-lcd.autostake.com:443",
+        "https://rest-regen.ecostake.com",
+        "https://regen-lcd.easy2stake.com",
+        "https://regen-api.theamsolutions.info",
+        "https://regen-api.w3coins.io",
+        "https://regen-rest.publicnode.com"
+      ]
+    },
+    {
+      "chainId": "titan-1",
+      "nodeList": [
+        "https://restapi.rizon.world/",
+        "https://api.rizon.chaintools.tech/",
+        "https://rizon-api.ibs.team/",
+        "https://rizon-rest.publicnode.com"
+      ]
+    },
+    {
+      "chainId": "scorum-1",
+      "nodeList": [
+        "https://scorum-blockchain-mainnet-api-1.scorum.com",
+        "https://scorum-blockchain-mainnet-api-2.scorum.com"
+      ]
+    },
+    {
+      "chainId": "secret-4",
+      "nodeList": [
+        "https://secretnetwork-api.lavenderfive.com:443",
+        "http://secretnetwork-mainnet-lcd.autostake.com:1317",
+        "https://1rpc.io/scrt-lcd",
+        "https://secretnetwork-api.highstakes.ch:1317/",
+        "https://lcd.mainnet.secretsaturn.net",
+        "https://rest-secret.01node.com",
+        "https://public.stakewolle.com/cosmos/secretnetwork/rest"
+      ]
+    },
+    {
+      "chainId": "pacific-1",
+      "nodeList": [
+        "https://sei-api.lavenderfive.com:443",
+        "https://sei-api.polkachu.com/",
+        "https://sei-rest.brocha.in/",
+        "https://api-sei.stingray.plus/",
+        "https://lcd-sei.whispernode.com:443",
+        "https://sei.api.kjnodes.com",
+        "https://sei-rest.publicnode.com"
+      ]
+    },
+    {
+      "chainId": "sentinelhub-2",
+      "nodeList": [
+        "https://api-sentinel.busurnode.com",
+        "https://api-sentinel-ia.cosmosia.notional.ventures/",
+        "https://lcd-sentinel.whispernode.com:443",
+        "https://api.sentinel.quokkastake.io",
+        "https://api.dvpn.roomit.xyz",
+        "https://sentinel-rest.publicnode.com",
+        "https://sentinel-api.validatornode.com",
+        "https://api.trinityvalidator.com",
+        "https://api.sentinelgrowthdao.com",
+        "https://public.stakewolle.com/cosmos/sentinel/rest"
+      ]
+    },
+    {
+      "chainId": "sgenet-1",
+      "nodeList": [
+        "https://sge-api.lavenderfive.com/",
+        "https://sge-api.polkachu.com/",
+        "https://api.sge.nodestake.top/",
+        "https://api-sge.nodeist.net/",
+        "https://sge.api.m.stavr.tech",
+        "https://sge-api.ramuchi.tech/",
+        "https://sge-rest.stakerhouse.com",
+        "https://rest.sge.tcnetwork.io",
+        "https://sge-api.sr20de.xyz",
+        "https://api.sge.safeblock.space",
+        "https://mainnet-sge-api.konsortech.xyz",
+        "https://sge-api.genznodes.dev",
+        "https://api.sge.roomit.xyz/"
+      ]
+    },
+    {
+      "chainId": "ShareRing-VoyagerNet",
+      "nodeList": ["https://lcd.explorer.shareri.ng/"]
+    },
+    {
+      "chainId": "shentu-2.2",
+      "nodeList": [
+        "https://rest.noopsbycertik.com/",
+        "https://shentu-api.polkachu.com",
+        "https://shentu.api.m.stavr.tech",
+        "https://shentu-api.ramuchi.tech",
+        "https://api-shentu-01.stakeflow.io",
+        "https://shentu-api.tienthuattoan.ventures",
+        "https://shentu-rest.publicnode.com",
+        "https://shentu-api.highstakes.ch:1317/",
+        "https://shentu-api.panthea.eu",
+        "https://shentu-api.kleomedes.network"
+      ]
+    },
+    {
+      "chainId": "sifchain-1",
+      "nodeList": [
+        "https://api-sifchain-ia.cosmosia.notional.ventures/",
+        "https://sifchain-api.polkachu.com",
+        "https://sifchain-mainnet-lcd.autostake.com:443",
+        "https://sifchain-rest.publicnode.com"
+      ]
+    },
+    {
+      "chainId": "sixnet",
+      "nodeList": ["https://sixnet-api.sixprotocol.net:443"]
+    },
+    {
+      "chainId": "sommelier-3",
+      "nodeList": [
+        "https://api-sommelier.pupmos.network",
+        "https://sommelier-api.polkachu.com",
+        "https://som.api.m.stavr.tech",
+        "https://sommelier-api.lavenderfive.com/",
+        "https://sommelier-mainnet-lcd.autostake.com:443",
+        "https://somm-api.kleomedes.network"
+      ]
+    },
+    {
+      "chainId": "source-1",
+      "nodeList": [
+        "https://api.source.nodestake.top",
+        "https://api-source.nodeist.net",
+        "https://source.api.m.stavr.tech",
+        "https://source-mainnet-api.itrocket.net:443",
+        "https://source-mainnet-lcd.autostake.com:443",
+        "https://source.api.moonbridge.team/",
+        "https://api-source.sr20de.xyz",
+        "https://source-api.stake-town.com",
+        "https://rest.source.tcnetwork.io",
+        "https://api.source.indonode.net",
+        "https://source.api.nodeshub.online/",
+        "https://api.source.validatus.com",
+        "https://api.source.roomit.xyz",
+        "https://rest.source.posthuman.digital",
+        "http://source.api.staking-explorer.com"
+      ]
+    },
+    {
+      "chainId": "stafihub-1",
+      "nodeList": [
+        "https://public-rest-rpc1.stafihub.io",
+        "https://public-rest-rpc2.stafihub.io",
+        "https://api.stafihub.nodestake.top"
+      ]
+    },
+    {
+      "chainId": "stargaze-1",
+      "nodeList": [
+        "https://rest.stargaze-apis.com/",
+        "https://api-stargaze.pupmos.network",
+        "https://api-stargaze.ezstaking.dev",
+        "https://api-stargaze-ia.cosmosia.notional.ventures/",
+        "https://stargaze.c29r3.xyz:443/api/",
+        "https://stargaze-api.polkachu.com",
+        "https://stargaze-api.ibs.team",
+        "https://api-stargaze.d-stake.xyz",
+        "https://api-stargaze.cosmos-spaces.cloud",
+        "https://api.stargaze.silentvalidator.com/",
+        "https://stargaze-mainnet-lcd.autostake.com:443",
+        "https://lcd-stargaze.whispernode.com:443",
+        "https://stargaze-api.ramuchi.tech",
+        "https://stargaze-rest.staketab.org",
+        "https://stargaze-api.w3coins.io",
+        "https://stargaze-rest.stakerhouse.com",
+        "https://stargaze-rest.publicnode.com",
+        "https://stargaze-api.reece.sh:443",
+        "https://lcd.stargaze.bronbro.io:443",
+        "https://stargaze-api.kleomedes.network"
+      ]
+    },
+    {
+      "chainId": "iov-mainnet-ibc",
+      "nodeList": ["https://api-starname-ia.cosmosia.notional.ventures/", "https://rest.starname.app"]
+    },
+    {
+      "chainId": "stratos-1",
+      "nodeList": ["https://rest.thestratos.org", "https://lcd-stratos.whispernode.com:443"]
+    },
+    {
+      "chainId": "stride-1",
+      "nodeList": [
+        "https://stride-api.polkachu.com/",
+        "https://api-stride.cosmos-spaces.cloud",
+        "https://stride-api.lavenderfive.com/",
+        "https://api.stride.silentvalidator.com/",
+        "https://stride.api.kjnodes.com",
+        "https://api-stride.pupmos.network",
+        "https://stride-mainnet-lcd.autostake.com:443",
+        "https://rest-stride.architectnodes.com",
+        "https://lcd-stride.whispernode.com:443",
+        "https://api-stride-01.stakeflow.io",
+        "https://stride-api.w3coins.io",
+        "https://stride-rest.publicnode.com",
+        "https://community.nuxian-node.ch:6797/stride/crpc",
+        "https://stride-api.stakeandrelax.net",
+        "https://lcd.stride.bronbro.io:443",
+        "https://public.stakewolle.com/cosmos/stride/rest"
+      ]
+    },
+    {
+      "chainId": "tenet_1559-1",
+      "nodeList": ["https://app.rpc.tenet.org", "https://tenet-rest.publicnode.com"]
+    },
+    {
+      "chainId": "teritori-1",
+      "nodeList": [
+        "https://teritori-api.lavenderfive.com:443",
+        "https://teritori-api.polkachu.com",
+        "https://teritori.api.m.stavr.tech",
+        "https://api.teritori.silentvalidator.com/",
+        "https://teritori-api.ibs.team",
+        "https://teritori.api.kjnodes.com",
+        "https://api.tori.bh.rocks",
+        "https://teritori-api.kleomedes.network",
+        "https://m-teritori.api.utsa.tech",
+        "https://api-teritori.pupmos.network",
+        "https://teritori-mainnet-lcd.autostake.com:443",
+        "https://rest-teritori.ecostake.com",
+        "https://teritori-rest.publicnode.com"
+      ]
+    },
+    {
+      "chainId": "morocco-1",
+      "nodeList": [
+        "https://api-terp.zenchainlabs.io:443",
+        "https://terp-mainnet-api.itrocket.net:443",
+        " https://terp.api.nodex.one:443"
+      ]
+    },
+    {
+      "chainId": "columbus-5",
+      "nodeList": [
+        "https://terra-classic-lcd.publicnode.com",
+        "https://api-terra-ia.cosmosia.notional.ventures/",
+        "https://terraclassic-mainnet-lcd.autostake.com:443",
+        "https://terraclassic-lcd-server-01.stakely.io"
+      ]
+    },
+    {
+      "chainId": "phoenix-1",
+      "nodeList": [
+        "https://lcd-terra.wildsage.io",
+        "https://phoenix-lcd.terra.dev:443",
+        "https://api-terra.cosmos-spaces.cloud",
+        "https://terra-rest.publicnode.com",
+        "https://api-terra-01.stakeflow.io",
+        "https://terra-phoenix-api.highstakes.ch:1317/",
+        "https://terra-rest.interstellar-lounge.org",
+        "https://terra2.tdrsys.com",
+        "https://terra-api.cosmosrescue.dev:8443"
+      ]
+    },
+    {
+      "chainId": "tgrade-mainnet-1",
+      "nodeList": ["https://api.mainnet-1.tgrade.confio.run", "https://lcd.tgrade.posthuman.digital"]
+    },
+    {
+      "chainId": "thorchain-mainnet-v1",
+      "nodeList": []
+    },
+    {
+      "chainId": "umee-1",
+      "nodeList": [
+        "https://api-umee-ia.cosmosia.notional.ventures/",
+        "https://umee.api.m.stavr.tech",
+        "https://umee-mainnet-lcd.autostake.com:443",
+        "https://umee-api.polkachu.com",
+        "https://umee-lcd.quantnode.tech",
+        "https://umee-api.tienthuattoan.ventures",
+        "https://api-umee-01.stakeflow.io",
+        "https://umee-rest.staketab.org",
+        "https://umee-api.theamsolutions.info",
+        "https://umee.api.kjnodes.com",
+        "https://umee-api.w3coins.io",
+        "https://api-umee.mms.team",
+        "https://api-umee.mzonder.com",
+        "https://umee-api.stake-town.com",
+        "https://umee-api.highstakes.ch:1317/",
+        "https://umee.api.stakevillage.net"
+      ]
+    },
+    {
+      "chainId": "FUND-MainNet-2",
+      "nodeList": ["https://rest.unification.io", "https://rest.unification.chainmasters.ninja/"]
+    },
+    {
+      "chainId": "ununifi-beta-v1",
+      "nodeList": [
+        "https://a.lcd.ununifi.cauchye.net:1318",
+        "https://b.lcd.ununifi.cauchye.net:1318",
+        "https://api.ununifi.nodestake.top",
+        "https://ununifi-api.lavenderfive.com:443",
+        "https://ununifi-api.genznodes.dev"
+      ]
+    },
+    {
+      "chainId": "uptick_117-1",
+      "nodeList": [
+        "https://uptick-rest.brocha.in:443",
+        "https://api.uptick.nodestake.top",
+        "https://uptick.api.kjnodes.com",
+        "https://uptick.api.m.stavr.tech",
+        "https://m-uptick.api.utsa.tech",
+        "https://uptick-mainnet-api.itrocket.net:443",
+        "https://uptick.api.liveraven.net",
+        "https://uptick-rest.staketab.org",
+        "https://uptick-rest.stakerhouse.com",
+        "https://rest-uptick.cakralabs.site",
+        "https://api-uptick.sr20de.xyz"
+      ]
+    },
+    {
+      "chainId": "vidulum-1",
+      "nodeList": [
+        "https://mainnet-lcd.vidulum.app",
+        "https://api-vidulum-ia.cosmosia.notional.ventures/",
+        "https://vidulum.api.m.stavr.tech",
+        "https://api-vdl.nodine.id/"
+      ]
+    },
+    {
+      "chainId": "dimension_37-1",
+      "nodeList": [
+        "https://dimension-lcd.xpla.io",
+        "https://dimension-lcd.xpla.dev",
+        "https://xpla-api.lavenderfive.com:443"
+      ]
+    },
+    {
+      "chainId": "zetachain_7000-1",
+      "nodeList": [
+        "https://zetachain.blockpi.network/lcd/v1/public",
+        "https://zetachain-mainnet-archive.allthatnode.com:1317"
+      ]
+    }
+  ]
+}
