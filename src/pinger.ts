@@ -1,5 +1,4 @@
 import { Container, Token } from 'typedi';
-import { getLogger } from './logger';
 import { Response } from 'node-fetch';
 import fetchToken from './fetch-token';
 // import { httpRequestDurationSecondsHistogram, httpRequestsFailedTotal, httpRequestsSucceededTotal } from './metrics';
@@ -17,17 +16,13 @@ export namespace Pinger {
       chainName: string | null,
       newType: Types = 'ECOSTAKE',
       chainId: string,
-      endpoint: string = '/cosmos/base/tendermint/v1beta1/blocks/latest',
-      priority: number = 0, // Add priority here with a default value
+      endpoint = '/cosmos/base/tendermint/v1beta1/blocks/latest',
+      priority = 0, // Add priority here with a default value
     ): Promise<Prisma.ResponseCodeCreateInput> {
       // Return prisma write query back from the loop
       // this.type = newType;
       //const logger = getLogger(__filename);
-      let isEcostakeUrl = 0;
-      //logger.informational(url);
-      if (url && url.endsWith('.ecostake.com/')) {
-        isEcostakeUrl = 1;
-      }
+
       const chainUrl = url;
       //logger.informational(`Pinging ${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}.`);
       const fetch = Container.get(fetchToken);

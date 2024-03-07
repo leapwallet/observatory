@@ -49,7 +49,6 @@ async function startIndividualNodePinger(): Promise<void> {
       for (let i = 0; i < nodes.length; i++) {
         const url = nodes[i] || '';
         arr.push(handlePing(url, chainId));
-        
 
         if (arr.length === BATCH_SIZE || (i === nodes.length - 1 && j === jsonData.length - 1)) {
           const results = await Promise.all(arr);
@@ -134,7 +133,7 @@ async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<{ url: stri
   }
 
   // Map nodes to URLs with priority, ensuring to handle fewer than 3 nodes gracefully
-  let urls = nodes
+  const urls = nodes
     .map((node: { [x: string]: any }, index: any) => ({
       url: node['nodeUrl'] ?? '',
       priority: index + 1,
