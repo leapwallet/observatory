@@ -8,15 +8,11 @@ import healthRouter from './routes/health';
 import metricsRouter from './routes/metrics';
 import './cron/db-cleanup';
 import { Pinger } from './pinger';
-// import { CosmosPinger } from './blockchain-node-urls/pinger';
-// import { HealthyNodes } from './blockchain-node-urls/healthyNodes';
-// import { BlockchainNodeUrlGetter } from './blockchain-node-urls/getter';
 import sleep from './sleep';
 import prometheus from 'prom-client';
-import { CosmosBlockchain } from './types';
 import prismaToken from './db/prisma-token';
 import fetchToken from './fetch-token';
-import { Types } from '@prisma/client';
+import { Prisma, Types } from '@prisma/client';
 
 function setUpHttpLogging(app: Express): void {
   const logger = getLogger('Express.js');
@@ -26,55 +22,28 @@ function setUpHttpLogging(app: Express): void {
   app.use(handler);
 }
 
-// @ts-ignore
-// async function startPinger(): Promise<void> {
-//   if (EnvVars.getNodeEnv() === 'test') return;
-//   const pinger = Container.get(Pinger.token);
-//   const chainNodeList = EnvVars.readUrls();
-//   while (true) {
-//     for (const chainNodeMap of chainNodeList) {
-//       for (const nodeUrl of chainNodeMap.nodeList) {
-//         pinger.ping(nodeUrl, chainNodeMap.chainName);//not sure of type of node
-//       }
-//     }
-//     await sleep({ ms: 60_000 });
-//   }
-// }
-
 let BATCH_SIZE = 20;
 const t = 60_000;
+
+// @ts-ignore
 async function startIndividualNodePinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
-  // const fetch = Container.get(fetchToken);
-  // const ecostakeChains = chainNodeList.filter((chain) => chain.isEcostakeChain);
   const logger = getLogger(__filename);
   let arr = [];
   const prisma = Container.get(prismaToken);
-  const FILE_NAME = '/individualChainNodeList.json';
+  const FILE_NAME = '/individualChainNodeListV2.json';
   const jsonData = EnvVars.readUrls2(FILE_NAME);
   while (true) {
     const pinger = Container.get(Pinger.token);
-    // const response = await fetch(s3File);
-    // const jsonData = await response.json();
-    // const promises = []
-    // for (let j=0;j<jsonData.length;j++){
     for (const [j, nodeData] of jsonData.entries()) {
-      // for (let i = 0; i < chainIds.length; i++) {
       const chainId = nodeData.chainId;
       const nodes = nodeData.nodeList;
       for (let i = 0; i < nodes.length; i++) {
-        // const chainId = node["chainId"]
-        // const nodeList = node["nodeList"]
-
-        // for (const nodeUrl of nodeList){
-        // for(let i=0;i<nodeList.length;i++){
         const url = nodes[i] || '';
         const resp = pinger.ping(url, null, Types.SINGULAR, chainId);
         arr.push(resp);
         if (arr.length === BATCH_SIZE || (i === nodes.length - 1 && j === jsonData.length - 1)) {
-          // await for promises to complete
           const result = await Promise.all(arr);
-
           const createCommandResponse = await prisma.responseCode.createMany({ data: result, skipDuplicates: true });
           logger.informational(createCommandResponse);
           arr = [];
@@ -88,31 +57,34 @@ async function startIndividualNodePinger(): Promise<void> {
 
 BATCH_SIZE = 20;
 60_000;
+
+// @ts-ignore
 async function startEcostakePinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
-  const chainNodeList = EnvVars.readUrls();
-  const ecostakeChains = chainNodeList.filter((chain) => chain.isEcostakeChain);
+
+  // Use the readUrlsV2 function to read the new configuration file
+  const chainNodeList = EnvVars.readUrlsV2();
+
   const logger = getLogger(__filename);
   let arr = [];
   const prisma = Container.get(prismaToken);
+
   while (true) {
     const pinger = Container.get(Pinger.token);
-    for (let i = 0; i < ecostakeChains.length; i++) {
-      const chain = ecostakeChains[i];
-      const chainName = chain?.chainName as CosmosBlockchain;
-      const chainId = chain?.chainId as string;
-      // const url = `https://rest-${chain.toLowerCase()}.ecostake.com/`
-      const url = `https://rest.cosmos.directory/${chainName.toLowerCase()}`;
-      // console.log(url)
-      const resp = pinger.ping(url, chainName, Types.ECOSTAKE, chainId);
+    for (let i = 0; i < chainNodeList.length; i++) {
+      const chain = chainNodeList[i] as Record<string, any>; 
+      const chainRegistryPath = chain?.chainRegistryPath;
+      const url = `https://rest.cosmos.directory/${chainRegistryPath}`;
+      const resp = pinger.ping(url, chain.chainName, Types.ECOSTAKE, chain.chainId);
       arr.push(resp);
-      if (arr.length == BATCH_SIZE || i === ecostakeChains.length - 1) {
+      if (arr.length == BATCH_SIZE || i === chainNodeList.length - 1) {
         const result = await Promise.all(arr);
         const createCommandResponse = await prisma.responseCode.createMany({ data: result, skipDuplicates: true });
         logger.informational(createCommandResponse);
         arr = [];
       }
     }
+
     await sleep({ ms: t });
     logger.informational(`Waiting for ${t} ms`);
   }
@@ -120,46 +92,36 @@ async function startEcostakePinger(): Promise<void> {
 
 const NMS_URL = 'https://assets.leapwallet.io/cosmos-registry/v1/node-management-service/';
 const REST_CDN_URL = `${NMS_URL}nms-REST.json`;
-// const RPC_CDN_URL = `${NMS_URL}nms-RPC.json`;
-const REST_STAGING_CDN_URL = `${NMS_URL}staging-nms-REST.json`;
-const REST_STAGING_DASHBOARD = `${NMS_URL}tenants/nms-staging-REST-dashboard.json`;
-// const RPC_STAGING_CDN_URL = `${NMS_URL}nms-staging-RPC.json`;
+const REST_DASHBOARD = `${NMS_URL}tenants/nms-REST-dashboard.json`;
 
-async function custom1Filter(nodes: any): Promise<string> {
-  for (const node of nodes) {
-    if (
-      node.nodeUrl.startsWith('https://leap-node-proxy.numia.xyz') ||
-      node.nodeUrl.startsWith('https://rpc.cosmos.directory/')
-    ) {
-      continue;
-    }
+async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<{ url: string; priority: number }[]> {
+  const logger = getLogger(__filename);
 
-    return node.nodeUrl;
+  // Check if nodes is null or has no elements
+  if (!nodes || nodes.length === 0) {
+    logger.error('Nodes are null or empty, exiting');
+    return [];
   }
 
-  return '';
-}
+  // Map nodes to URLs with priority, ensuring to handle fewer than 3 nodes gracefully
+  let urls = nodes
+    .map((node: { [x: string]: any }, index: any) => ({
+      url: node['nodeUrl'] ?? '',
+      priority: index + 1,
+    }))
+    .slice(0, 3); // Ensures we take at most the first three
 
-async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<string> {
-  const logger = getLogger(__filename);
-  const url = nodes[0] ? nodes[0]['nodeUrl'] : '';
   switch (nmsRunType) {
     case Types.NMS:
-      return url;
-    case Types.NMS_CUSTOM1:
-      return custom1Filter(nodes);
-    case Types.NMS_STAGING:
-      return url;
-    case Types.NMS_STAGING_CUSTOM1:
-      return custom1Filter(nodes);
-    case Types.NMS_STAGING_DASHBOARD:
-      return url;
+    case Types.NMS_DASHBOARD:
+      return urls;
     default:
       logger.error('Invalid nmsRunType, exiting');
-      return '';
+      return [];
   }
 }
 
+// @ts-ignore
 async function startNMSPinger(nmsRunType: Types): Promise<void> {
   const logger = getLogger(__filename);
   let CDNfileName = '';
@@ -167,17 +129,8 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
     case Types.NMS:
       CDNfileName = REST_CDN_URL;
       break;
-    case Types.NMS_CUSTOM1:
-      CDNfileName = REST_CDN_URL;
-      break;
-    case Types.NMS_STAGING:
-      CDNfileName = REST_STAGING_CDN_URL;
-      break;
-    case Types.NMS_STAGING_CUSTOM1:
-      CDNfileName = REST_STAGING_CDN_URL;
-      break;
-    case Types.NMS_STAGING_DASHBOARD:
-      CDNfileName = REST_STAGING_DASHBOARD;
+    case Types.NMS_DASHBOARD:
+      CDNfileName = REST_DASHBOARD;
       break;
     default:
       logger.error('Invalid nmsRunType, exiting');
@@ -185,10 +138,7 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
   }
   if (EnvVars.getNodeEnv() === 'test') return;
   const fetch = Container.get(fetchToken);
-  // const ecostakeChains = chainNodeList.filter((chain) => chain.isEcostakeChain);
-
-  // let arr = [];
-  let promisesArr = [];
+  let promisesArr: Promise<Prisma.ResponseCodeCreateInput>[] = [];
   const prisma = Container.get(prismaToken);
   while (true) {
     const pinger = Container.get(Pinger.token);
@@ -198,11 +148,13 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
     for (let i = 0; i < chainIds.length; i++) {
       const chainId = chainIds[i] || '';
       const nodes = jsonData[chainId!];
-      // const url = nodes[0] ? nodes[0]['nodeUrl'] : '';
-      const url = await nmsGetNodeURL(nodes, nmsRunType);
-      // const resp = await pinger.ping(url, null, nmsRunType, chainId);
-      // arr.push(resp);
-      promisesArr.push(pinger.ping(url, null, nmsRunType, chainId));
+      const urls = await nmsGetNodeURL(nodes, nmsRunType);
+      urls.forEach(({ url, priority }) => {
+        promisesArr.push(
+          pinger.ping(url, null, nmsRunType, chainId, '/cosmos/base/tendermint/v1beta1/blocks/latest', priority),
+        );
+      });
+
       if (promisesArr.length == BATCH_SIZE || i === chainIds.length - 1) {
         const promiseResult = await Promise.all(promisesArr);
 
@@ -219,40 +171,16 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
   }
 }
 
-// async function startCosmosPinger(): Promise<void> {
-//   if (EnvVars.getNodeEnv() === 'test') return;
-//   const healthyNodesFetcher = Container.get(HealthyNodes.token);
-//   const chainNodeList = EnvVars.readUrls();
-//   healthyNodesFetcher.startHealthyNodeFetcher(chainNodeList);
-
-//   const pinger = Container.get(CosmosPinger.token);
-//   const blockchainNodeUrlGetter = Container.get(BlockchainNodeUrlGetter.token);
-//   blockchainNodeUrlGetter.setUrlIndices(chainNodeList);
-//   const logger = getLogger(__filename);
-//   while (true) {
-//     for (const chainNodeMap of chainNodeList) {
-//       pinger.ping(chainNodeMap.chainName as CosmosBlockchain);
-//     }
-//     const t = 60_000;
-//     await sleep({ ms: t });
-//     logger.informational(`Waiting for ${t} ms`);
-//   }
-// }
-
 Container.set(ProcessEnvVars.token, new ProcessEnvVars.DefaultApi());
 const app = express();
-setUpHttpLogging(app); // Set up HTTP logging ASAP so that requests get loggedd.
+setUpHttpLogging(app);
 app.use(cors());
 app.use('/health', healthRouter);
 app.use('/metrics', metricsRouter);
-// startPinger();
+
 startEcostakePinger();
-// startCosmosPinger();
 startNMSPinger(Types.NMS);
-startNMSPinger(Types.NMS_CUSTOM1);
-startNMSPinger(Types.NMS_STAGING_DASHBOARD);
-// startNMSPinger(Types.NMS_STAGING);
-// startNMSPinger(Types.NMS_STAGING_CUSTOM1);
+startNMSPinger(Types.NMS_DASHBOARD);
 startIndividualNodePinger();
 prometheus.collectDefaultMetrics();
 export default app;

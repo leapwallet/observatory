@@ -17,6 +17,8 @@ model ResponseCode {
   url              String
   responseTime     Int?
   chainId          String?  @map("chain_id")
+  priority         Int?     @default(0)
+  endpointType      EndpointType @default(latest_block)
 
   @@index([chainName, type])
   @@index([createdAt])
@@ -24,6 +26,9 @@ model ResponseCode {
   @@index([type])
   @@index([httpResponseCode])
   @@index([responseTime])
+  @@index([url])
+  @@index([priority])
+  @@index([endpointType])
   @@map("response_codes")
 }
 
@@ -39,6 +44,11 @@ enum Types {
   NMS_STAGING_DASHBOARD @map("nms(staging)_dashboard")
   NMS_DASHBOARD         @map("nms_dashboard")
   SINGULAR              @map("singular")
-
+  SINGULAR_PAID         @map("singular_paid")
   @@map("types")
+}
+
+enum EndpointType {
+  latest_block
+  balance
 }
