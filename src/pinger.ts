@@ -73,6 +73,5 @@ export namespace Pinger {
       return data;
     }
   }
-
   export const token = new Token<DefaultApi>('Pinger');
 }
