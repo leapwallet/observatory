@@ -51,9 +51,6 @@ async function startIndividualNodePinger(): Promise<void> {
         const chainId = nodeData.chainId;
         const nodes = nodeData.nodeList;
         let chainName = chainIdToNameMap.get(chainId);
-        if (!chainName) {
-          logger.error(`No chainName found for chainId ${chainId}, skipping.`);
-        }
         for (let i = 0; i < nodes.length; i++) {
           const url = nodes[i] || '';
           promisesArr.push(handlePing(url, chainId, chainName));
@@ -216,9 +213,6 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
         const chainId = chainIds[i] || '';
         const nodes = jsonData[chainId!];
         let chainName = chainIdToNameMap.get(chainId);
-        if (!chainName) {
-          logger.error(`No chainName found for chainId ${chainId}, skipping.`);
-        }
         const urls = await nmsGetNodeURL(nodes, nmsRunType);
         urls.forEach(({ url, priority }) => {
           promisesArr.push(
