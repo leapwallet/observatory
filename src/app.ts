@@ -159,6 +159,29 @@ async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<{ url: stri
   }
 }
 
+async function fetchWithRetry(url: string, retries: number = 3, delay: number = 1000): Promise<any> {
+  let lastError;
+  const logger = getLogger(__filename);
+  const fetch = Container.get(fetchToken);
+
+  for (let attempt = 0; attempt < retries; attempt++) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        // Check if response status code is not successful
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response; // Return response if successful
+    } catch (error) {
+      lastError = error;
+      logger.error(`Fetch attempt ${attempt + 1} failed: ${error}. Retrying in ${delay}ms...`);
+      await sleep({ ms: delay }); // Wait for 1 second before retrying
+    }
+  }
+  throw lastError; // Throw the last error after all retries have failed
+}
+
+
 // @ts-ignore
 async function startNMSPinger(nmsRunType: Types): Promise<void> {
   const logger = getLogger(__filename);
@@ -175,14 +198,13 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
       return;
   }
   if (EnvVars.getNodeEnv() === 'test') return;
-  const fetch = Container.get(fetchToken);
   let promisesArr: Promise<Prisma.ResponseCodeCreateInput>[] = [];
   const prisma = Container.get(prismaToken);
   while (true) {
     try {
       logger.informational('Starting a new iteration of NMS Pinger . ' + nmsRunType);
       const pinger = Container.get(Pinger.token);
-      const response = await fetch(CDNfileName);
+      const response = await fetchWithRetry(CDNfileName);
       const jsonData = await response.json();
       const chainIds = Object.keys(jsonData);
       for (let i = 0; i < chainIds.length; i++) {
