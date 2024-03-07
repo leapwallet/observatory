@@ -50,7 +50,7 @@ async function startIndividualNodePinger(): Promise<void> {
       for (const [, nodeData] of jsonData.entries()) {
         const chainId = nodeData.chainId;
         const nodes = nodeData.nodeList;
-        let chainName = chainIdToNameMap.get(chainId);
+        const chainName = chainIdToNameMap.get(chainId);
         for (let i = 0; i < nodes.length; i++) {
           const url = nodes[i] || '';
           promisesArr.push(handlePing(url, chainId, chainName));
@@ -157,7 +157,7 @@ async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<{ url: stri
   }
 }
 
-async function fetchWithRetry(url: string, retries: number = 3, delay: number = 1000): Promise<any> {
+async function fetchWithRetry(url: string, retries = 3, delay = 1000): Promise<any> {
   let lastError;
   const logger = getLogger(__filename);
   const fetch = Container.get(fetchToken);
@@ -212,7 +212,7 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
       for (let i = 0; i < chainIds.length; i++) {
         const chainId = chainIds[i] || '';
         const nodes = jsonData[chainId!];
-        let chainName = chainIdToNameMap.get(chainId);
+        const chainName = chainIdToNameMap.get(chainId);
         const urls = await nmsGetNodeURL(nodes, nmsRunType);
         urls.forEach(({ url, priority }) => {
           promisesArr.push(
