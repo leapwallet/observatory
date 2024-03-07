@@ -13,7 +13,7 @@ export namespace Pinger {
     /** @param url - The REST API base URL of a Cosmos blockchain node. */
     async ping(
       url: string,
-      chainName: string | null,
+      chainName: string | null | undefined = null,
       newType: Types = 'ECOSTAKE',
       chainId: string,
       endpoint = '/cosmos/base/tendermint/v1beta1/blocks/latest',

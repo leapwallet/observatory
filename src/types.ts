@@ -8,6 +8,7 @@ export type chainNodeList = {
 
 export type chainNodeList2 = {
   chainId: string;
+  chainName: string;
   nodeList: string[];
 };
 

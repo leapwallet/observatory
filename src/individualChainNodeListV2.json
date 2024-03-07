@@ -1,6 +1,7 @@
 {
   "chainNodeList": [
     {
+      "chainName": "acrechain",
       "chainId": "acre_9052-1",
       "nodeList": [
         "https://lcd-acre.synergynodes.com",
@@ -11,6 +12,7 @@
       ]
     },
     {
+      "chainName": "agoric",
       "chainId": "agoric-3",
       "nodeList": [
         "https://main.api.agoric.net:443",
@@ -28,10 +30,12 @@
       ]
     },
     {
+      "chainName": "aioz",
       "chainId": "aioz_168-1",
       "nodeList": ["https://lcd-dataseed.aioz.network"]
     },
     {
+      "chainName": "akash",
       "chainId": "akashnet-2",
       "nodeList": [
         "https://api.akash.forbole.com:443",
@@ -53,6 +57,7 @@
       ]
     },
     {
+      "chainName": "andromeda",
       "chainId": "andromeda-1",
       "nodeList": [
         "https://api.andromeda-1.andromeda.aviaone.com/",
@@ -69,6 +74,7 @@
       ]
     },
     {
+      "chainName": "archway",
       "chainId": "archway-1",
       "nodeList": [
         "https://api.mainnet.archway.io",
@@ -100,10 +106,12 @@
       ]
     },
     {
+      "chainName": "arkh",
       "chainId": "arkh",
       "nodeList": ["https://asc-blockchain-api.arkhadian.com/"]
     },
     {
+      "chainName": "assetmantle",
       "chainId": "mantle-1",
       "nodeList": [
         "https://rest.assetmantle.one",
@@ -118,6 +126,7 @@
       ]
     },
     {
+      "chainName": "aura",
       "chainId": "xstaxy-1",
       "nodeList": [
         "https://lcd.aura.network/",
@@ -137,6 +146,7 @@
       ]
     },
     {
+      "chainName": "axelar",
       "chainId": "axelar-dojo-1",
       "nodeList": [
         "https://lcd-axelar.imperator.co:443",
@@ -160,6 +170,7 @@
       ]
     },
     {
+      "chainName": "bandchain",
       "chainId": "laozi-mainnet",
       "nodeList": [
         "https://laozi1.bandchain.org/api",
@@ -177,10 +188,12 @@
       ]
     },
     {
+      "chainName": "beezee",
       "chainId": "beezee-1",
       "nodeList": ["https://rest.getbze.com", "https://rest-1.getbze.com", "https://rest-2.getbze.com"]
     },
     {
+      "chainName": "bitcanna",
       "chainId": "bitcanna-1",
       "nodeList": [
         "https://lcd.bitcanna.io",
@@ -211,6 +224,7 @@
       ]
     },
     {
+      "chainName": "bitsong",
       "chainId": "bitsong-2b",
       "nodeList": [
         "https://api-bitsong-ia.cosmosia.notional.ventures/",
@@ -227,6 +241,7 @@
       ]
     },
     {
+      "chainName": "bluzelle",
       "chainId": "bluzelle-9",
       "nodeList": [
         "https://a.client.sentry.net.bluzelle.com:1317",
@@ -236,6 +251,7 @@
       ]
     },
     {
+      "chainName": "bostrom",
       "chainId": "bostrom",
       "nodeList": [
         "https://lcd.bostrom.cybernode.ai",
@@ -244,6 +260,7 @@
       ]
     },
     {
+      "chainName": "canto",
       "chainId": "canto_7700-1",
       "nodeList": [
         "https://api.canto.nodestake.top",
@@ -253,6 +270,7 @@
       ]
     },
     {
+      "chainName": "carbon",
       "chainId": "carbon-1",
       "nodeList": [
         "https://api.carbon.network",
@@ -262,6 +280,7 @@
       ]
     },
     {
+      "chainName": "celestia",
       "chainId": "celestia",
       "nodeList": [
         "https://public-celestia-lcd.numia.xyz",
@@ -289,10 +308,12 @@
       ]
     },
     {
+      "chainName": "cerberus",
       "chainId": "cerberus-chain-1",
       "nodeList": []
     },
     {
+      "chainName": "chain4energy",
       "chainId": "perun-1",
       "nodeList": [
         "https://lcd.c4e.io/",
@@ -320,6 +341,7 @@
       ]
     },
     {
+      "chainName": "cheqd",
       "chainId": "cheqd-mainnet-1",
       "nodeList": [
         "https://api.cheqd.net",
@@ -335,6 +357,7 @@
       ]
     },
     {
+      "chainName": "chihuahua",
       "chainId": "chihuahua-1",
       "nodeList": [
         "https://api.chihuahua.wtf",
@@ -351,18 +374,22 @@
       ]
     },
     {
+      "chainName": "chimba",
       "chainId": "chimba",
       "nodeList": ["https://mainnet.chimba.ooo"]
     },
     {
+      "chainName": "chronicnetwork",
       "chainId": "morocco-1",
       "nodeList": ["https://api-chronic.zenchainlabs.io/"]
     },
     {
+      "chainName": "cifer",
       "chainId": "cifer",
       "nodeList": []
     },
     {
+      "chainName": "comdex",
       "chainId": "comdex-1",
       "nodeList": [
         "https://rest.comdex.one",
@@ -380,10 +407,12 @@
       ]
     },
     {
+      "chainName": "commercionetwork",
       "chainId": "commercio-3",
       "nodeList": ["https://lcd-mainnet.commercio.network"]
     },
     {
+      "chainName": "composable",
       "chainId": "centauri-1",
       "nodeList": [
         "https://api-composable-ia.cosmosia.notional.ventures",
@@ -400,10 +429,12 @@
       ]
     },
     {
+      "chainName": "conscious",
       "chainId": "cvn_2032-1",
       "nodeList": []
     },
     {
+      "chainName": "coreum",
       "chainId": "coreum-mainnet-1",
       "nodeList": [
         "https://rest-coreum.ecostake.com",
@@ -417,6 +448,7 @@
       ]
     },
     {
+      "chainName": "cosmoshub",
       "chainId": "cosmoshub-4",
       "nodeList": [
         "https://cosmos-lcd.quickapi.com:443",
@@ -448,10 +480,12 @@
       ]
     },
     {
+      "chainName": "coss",
       "chainId": "coss-1",
       "nodeList": ["https://coss-rest.coss.ink", "https://coss-rest.cias.network"]
     },
     {
+      "chainName": "crescent",
       "chainId": "crescent-1",
       "nodeList": [
         "https://mainnet.crescent.network:1317",
@@ -466,10 +500,12 @@
       ]
     },
     {
+      "chainName": "cronos",
       "chainId": "cronosmainnet_25-1",
       "nodeList": ["https://rest.cronos.org/", "https://cronos-rest.publicnode.com"]
     },
     {
+      "chainName": "cryptoorgchain",
       "chainId": "crypto-org-chain-mainnet-1",
       "nodeList": [
         "https://rest.mainnet.crypto.org/",
@@ -482,6 +518,7 @@
       ]
     },
     {
+      "chainName": "cudos",
       "chainId": "cudos-1",
       "nodeList": [
         "http://mainnet-full-node-01.hosts.cudos.org:1317",
@@ -492,6 +529,7 @@
       ]
     },
     {
+      "chainName": "decentr",
       "chainId": "mainnet-3",
       "nodeList": [
         "https://rest.mainnet.decentr.xyz",
@@ -501,6 +539,7 @@
       ]
     },
     {
+      "chainName": "desmos",
       "chainId": "desmos-mainnet",
       "nodeList": [
         "https://api.mainnet.desmos.network",
@@ -513,14 +552,17 @@
       ]
     },
     {
+      "chainName": "dig",
       "chainId": "dig-1",
       "nodeList": ["https://api-1-dig.notional.ventures", "https://api-dig-ia.cosmosia.notional.ventures/"]
     },
     {
+      "chainName": "doravota",
       "chainId": "vota-ash",
       "nodeList": ["https://vota-rest.dorafactory.org", "https://m-dora.api.utsa.tech"]
     },
     {
+      "chainName": "dydx",
       "chainId": "dydx-mainnet-1",
       "nodeList": [
         "https://community.nuxian-node.ch:6797/dydx/crpc",
@@ -538,6 +580,7 @@
       ]
     },
     {
+      "chainName": "dymension",
       "chainId": "dymension_1100-1",
       "nodeList": [
         "https://dym-m-api.agoranodes.com",
@@ -569,14 +612,17 @@
       ]
     },
     {
+      "chainName": "dyson",
       "chainId": "dyson-mainnet-01",
       "nodeList": ["https://dys-api.dysonprotocol.com:443", "https://dyson-api.cogwheel.zone:443"]
     },
     {
+      "chainName": "echelon",
       "chainId": "echelon_3000-3",
       "nodeList": ["https://ech01api.mindheartsoul.org", "https://api.echjoker.lol"]
     },
     {
+      "chainName": "emoney",
       "chainId": "emoney-3",
       "nodeList": [
         "https://emoney.validator.network/api/",
@@ -585,6 +631,7 @@
       ]
     },
     {
+      "chainName": "empowerchain",
       "chainId": "empowerchain-1",
       "nodeList": [
         "https://rest-empowerchain.ecostake.com:443",
@@ -601,10 +648,12 @@
       ]
     },
     {
+      "chainName": "ethos",
       "chainId": "ethos_7003-1",
       "nodeList": ["https://ethos.provable.dev/rest/"]
     },
     {
+      "chainName": "evmos",
       "chainId": "evmos_9001-2",
       "nodeList": [
         "https://rest.bd.evmos.org:1317",
@@ -632,6 +681,7 @@
       ]
     },
     {
+      "chainName": "fetchhub",
       "chainId": "fetchhub-4",
       "nodeList": [
         "https://rest-fetchhub.fetch.ai",
@@ -650,10 +700,12 @@
       ]
     },
     {
+      "chainName": "finschia",
       "chainId": "finschia-2",
       "nodeList": ["https://finschia-api.finschia.io"]
     },
     {
+      "chainName": "firmachain",
       "chainId": "colosseum-1",
       "nodeList": [
         "https://lcd-mainnet.firmachain.dev:1317",
@@ -664,26 +716,32 @@
       ]
     },
     {
+      "chainName": "furya",
       "chainId": "furya-1",
       "nodeList": ["https://api.furya.xyz"]
     },
     {
+      "chainName": "fxcore",
       "chainId": "fxcore",
       "nodeList": ["https://fx-rest.functionx.io"]
     },
     {
+      "chainName": "galaxy",
       "chainId": "galaxy-1",
       "nodeList": []
     },
     {
+      "chainName": "gateway",
       "chainId": "wormchain",
       "nodeList": ["https://tncnt-eu-wormchain-main-01.rpc.p2p.world/lcd/", "https://wormchain-lcd.quickapi.com/"]
     },
     {
+      "chainName": "genesisl1",
       "chainId": "genesis_29-2",
       "nodeList": ["https://api.genesisl1.org"]
     },
     {
+      "chainName": "gitopia",
       "chainId": "gitopia",
       "nodeList": [
         "https://gitopia-api.polkachu.com:443",
@@ -719,6 +777,7 @@
       ]
     },
     {
+      "chainName": "govgen",
       "chainId": "govgen-1",
       "nodeList": [
         "https://api.govgen.io/",
@@ -729,6 +788,7 @@
       ]
     },
     {
+      "chainName": "gravitybridge",
       "chainId": "gravity-bridge-3",
       "nodeList": [
         "https://gravitychain.io:1317",
@@ -745,6 +805,7 @@
       ]
     },
     {
+      "chainName": "haqq",
       "chainId": "haqq_11235-1",
       "nodeList": [
         "https://rest.cosmos.haqq.network",
@@ -758,10 +819,12 @@
       ]
     },
     {
+      "chainName": "highbury",
       "chainId": "highbury_710-1",
       "nodeList": ["https://api-mainnet.furya.io/"]
     },
     {
+      "chainName": "humans",
       "chainId": "humans_1089-1",
       "nodeList": [
         "https://api.humans.nodestake.top",
@@ -778,10 +841,12 @@
       ]
     },
     {
+      "chainName": "idep",
       "chainId": "Antora",
       "nodeList": []
     },
     {
+      "chainName": "impacthub",
       "chainId": "ixo-5",
       "nodeList": [
         "https://proxies.sifchain.finance/api/impacthub-3/rest",
@@ -793,10 +858,12 @@
       ]
     },
     {
+      "chainName": "imversed",
       "chainId": "imversed_5555555-1",
       "nodeList": []
     },
     {
+      "chainName": "injective",
       "chainId": "injective-1",
       "nodeList": [
         "https://api-injective-ia.cosmosia.notional.ventures/",
@@ -813,6 +880,7 @@
       ]
     },
     {
+      "chainName": "irisnet",
       "chainId": "irishub-1",
       "nodeList": [
         "https://api-irisnet-ia.cosmosia.notional.ventures/",
@@ -824,6 +892,7 @@
       ]
     },
     {
+      "chainName": "jackal",
       "chainId": "jackal-1",
       "nodeList": [
         "https://api.jackalprotocol.com",
@@ -845,6 +914,7 @@
       ]
     },
     {
+      "chainName": "juno",
       "chainId": "juno-1",
       "nodeList": [
         "https://lcd-juno.itastakers.com",
@@ -874,6 +944,7 @@
       ]
     },
     {
+      "chainName": "kava",
       "chainId": "kava_2222-10",
       "nodeList": [
         "https://api.data.kava.io/",
@@ -886,6 +957,7 @@
       ]
     },
     {
+      "chainName": "kichain",
       "chainId": "kichain-2",
       "nodeList": [
         "https://api-mainnet.blockchain.ki",
@@ -900,6 +972,7 @@
       ]
     },
     {
+      "chainName": "konstellation",
       "chainId": "darchub",
       "nodeList": [
         "https://api-konstellation-ia.cosmosia.notional.ventures/",
@@ -907,6 +980,7 @@
       ]
     },
     {
+      "chainName": "kujira",
       "chainId": "kaiyo-1",
       "nodeList": [
         "https://lcd-kujira.whispernode.com:443",
@@ -930,6 +1004,7 @@
       ]
     },
     {
+      "chainName": "kyve",
       "chainId": "kyve-1",
       "nodeList": [
         "https://api-eu-1.kyve.network",
@@ -944,10 +1019,12 @@
       ]
     },
     {
+      "chainName": "lambda",
       "chainId": "lambda_92000-1",
       "nodeList": ["https://rest.lambda.im", "https://lambda.api.m.stavr.tech", "https://api.lambda.nodestake.top"]
     },
     {
+      "chainName": "likecoin",
       "chainId": "likecoin-mainnet-2",
       "nodeList": [
         "https://mainnet-node.like.co",
@@ -957,14 +1034,17 @@
       ]
     },
     {
+      "chainName": "logos",
       "chainId": "logos_7002-1",
       "nodeList": ["https://logos.provable.dev/rest/"]
     },
     {
+      "chainName": "loyal",
       "chainId": "loyal-main-02",
       "nodeList": ["https://lcd-main.joinloyal.io/", "https://loyal-api.polkachu.com"]
     },
     {
+      "chainName": "lumenx",
       "chainId": "LumenX",
       "nodeList": [
         "https://api-lumenx.cryptonet.pl/",
@@ -973,6 +1053,7 @@
       ]
     },
     {
+      "chainName": "lumnetwork",
       "chainId": "lum-network-1",
       "nodeList": [
         "https://node0.mainnet.lum.network/rest",
@@ -984,6 +1065,7 @@
       ]
     },
     {
+      "chainName": "mars",
       "chainId": "mars-1",
       "nodeList": [
         "https://rest.marsprotocol.io:443",
@@ -998,14 +1080,17 @@
       ]
     },
     {
+      "chainName": "mayachain",
       "chainId": "mayachain-mainnet-v1",
       "nodeList": ["https://mayanode.mayachain.info"]
     },
     {
+      "chainName": "medasdigital",
       "chainId": "medasdigital-1",
       "nodeList": ["https://lcd.medas-digital.io:1317/"]
     },
     {
+      "chainName": "meme",
       "chainId": "meme-1",
       "nodeList": [
         "https://api-meme-1.meme.sx/",
@@ -1015,6 +1100,7 @@
       ]
     },
     {
+      "chainName": "migaloo",
       "chainId": "migaloo-1",
       "nodeList": [
         "https://migaloo-api.polkachu.com:443",
@@ -1027,10 +1113,12 @@
       ]
     },
     {
+      "chainName": "mises",
       "chainId": "mainnet",
       "nodeList": []
     },
     {
+      "chainName": "mun",
       "chainId": "mun-1",
       "nodeList": [
         "https://mainnet1.mun.money",
@@ -1039,10 +1127,12 @@
       ]
     },
     {
+      "chainName": "mythos",
       "chainId": "mythos_7001-1",
       "nodeList": ["https://mythos.provable.dev/rest/"]
     },
     {
+      "chainName": "neutron",
       "chainId": "neutron-1",
       "nodeList": [
         "https://api.novel.remedy.tm.p2p.org",
@@ -1056,6 +1146,7 @@
       ]
     },
     {
+      "chainName": "nibiru",
       "chainId": "cataclysm-1",
       "nodeList": [
         "https://lcd.nibiru.fi",
@@ -1066,10 +1157,12 @@
       ]
     },
     {
+      "chainName": "noble",
       "chainId": "noble-1",
       "nodeList": ["https://noble-api.polkachu.com", "https://noble-api.lavenderfive.com:443"]
     },
     {
+      "chainName": "nois",
       "chainId": "nois-1",
       "nodeList": [
         "https://m-nois.api.utsa.tech",
@@ -1088,6 +1181,7 @@
       ]
     },
     {
+      "chainName": "nolus",
       "chainId": "pirin-1",
       "nodeList": [
         "https://pirin-cl.nolus.network:1317",
@@ -1104,18 +1198,22 @@
       ]
     },
     {
+      "chainName": "nomic",
       "chainId": "nomic-stakenet-3",
       "nodeList": ["https://app.nomic.io:8443"]
     },
     {
+      "chainName": "nyx",
       "chainId": "nyx",
       "nodeList": ["https://nym-api.polkachu.com/", "https://api.nyx.nodes.guru/", "https://api.nymtech.net"]
     },
     {
+      "chainName": "octa",
       "chainId": "octa",
       "nodeList": []
     },
     {
+      "chainName": "odin",
       "chainId": "odin-mainnet-freya",
       "nodeList": [
         "https://api.odinprotocol.io",
@@ -1125,6 +1223,7 @@
       ]
     },
     {
+      "chainName": "odin",
       "chainId": "odin-mainnet-freya",
       "nodeList": [
         "http://34.79.179.216:1317/",
@@ -1133,10 +1232,12 @@
       ]
     },
     {
+      "chainName": "okexchain",
       "chainId": "exchain-66",
       "nodeList": []
     },
     {
+      "chainName": "omniflixhub",
       "chainId": "omniflixhub-1",
       "nodeList": [
         "https://api.omniflix.nodestake.top",
@@ -1156,10 +1257,12 @@
       ]
     },
     {
+      "chainName": "onomy",
       "chainId": "onomy-mainnet-1",
       "nodeList": ["https://rest-mainnet.onomy.io"]
     },
     {
+      "chainName": "oraichain",
       "chainId": "Oraichain",
       "nodeList": [
         "http://lcd.orai.io",
@@ -1170,6 +1273,7 @@
       ]
     },
     {
+      "chainName": "osmosis",
       "chainId": "osmosis-1",
       "nodeList": [
         "https://lcd.osmosis.zone/",
@@ -1197,10 +1301,12 @@
       ]
     },
     {
+      "chainName": "panacea",
       "chainId": "panacea-3",
       "nodeList": ["https://api.gopanacea.org", "https://panacea-rest.staketab.org"]
     },
     {
+      "chainName": "passage",
       "chainId": "passage-2",
       "nodeList": [
         "https://api.passage.vitwit.com",
@@ -1223,6 +1329,7 @@
       ]
     },
     {
+      "chainName": "persistence",
       "chainId": "core-1",
       "nodeList": [
         "https://rest.core.persistence.one",
@@ -1246,6 +1353,7 @@
       ]
     },
     {
+      "chainName": "planq",
       "chainId": "planq_7070-2",
       "nodeList": [
         "https://rest.planq.network",
@@ -1261,6 +1369,7 @@
       ]
     },
     {
+      "chainName": "point",
       "chainId": "point_10687-1",
       "nodeList": [
         "https://rpc-mainnet-1.point.space:1317",
@@ -1270,6 +1379,7 @@
       ]
     },
     {
+      "chainName": "provenance",
       "chainId": "pio-mainnet-1",
       "nodeList": [
         "https://api-provenance.takeshi.team",
@@ -1283,14 +1393,17 @@
       ]
     },
     {
+      "chainName": "pundix",
       "chainId": "PUNDIX",
       "nodeList": ["https://px-rest.pundix.com"]
     },
     {
+      "chainName": "pylons",
       "chainId": "pylons-mainnet-1",
       "nodeList": ["https://rest.nodejumper.io/pylons"]
     },
     {
+      "chainName": "quasar",
       "chainId": "quasar-1",
       "nodeList": [
         "https://quasar-api.lavenderfive.com:443",
@@ -1309,6 +1422,7 @@
       ]
     },
     {
+      "chainName": "quicksilver",
       "chainId": "quicksilver-2",
       "nodeList": [
         "https://api-quicksilver.takeshi.team:443",
@@ -1333,6 +1447,7 @@
       ]
     },
     {
+      "chainName": "qwoyn",
       "chainId": "qwoyn-1",
       "nodeList": [
         "https://rest-qwoyn.theamsolutions.info:443",
@@ -1345,6 +1460,7 @@
       ]
     },
     {
+      "chainName": "realio",
       "chainId": "realionetwork_3301-1",
       "nodeList": [
         "https://realio-api.genznodes.dev",
@@ -1358,6 +1474,7 @@
       ]
     },
     {
+      "chainName": "rebus",
       "chainId": "reb_1111-1",
       "nodeList": [
         "https://api.rebuschain.com:1317/",
@@ -1373,6 +1490,7 @@
       ]
     },
     {
+      "chainName": "regen",
       "chainId": "regen-1",
       "nodeList": [
         "http://public-rpc.regen.vitwit.com:1317",
@@ -1388,6 +1506,7 @@
       ]
     },
     {
+      "chainName": "rizon",
       "chainId": "titan-1",
       "nodeList": [
         "https://restapi.rizon.world/",
@@ -1397,6 +1516,7 @@
       ]
     },
     {
+      "chainName": "scorum",
       "chainId": "scorum-1",
       "nodeList": [
         "https://scorum-blockchain-mainnet-api-1.scorum.com",
@@ -1404,6 +1524,7 @@
       ]
     },
     {
+      "chainName": "secretnetwork",
       "chainId": "secret-4",
       "nodeList": [
         "https://secretnetwork-api.lavenderfive.com:443",
@@ -1416,6 +1537,7 @@
       ]
     },
     {
+      "chainName": "sei",
       "chainId": "pacific-1",
       "nodeList": [
         "https://sei-api.lavenderfive.com:443",
@@ -1428,6 +1550,7 @@
       ]
     },
     {
+      "chainName": "sentinel",
       "chainId": "sentinelhub-2",
       "nodeList": [
         "https://api-sentinel.busurnode.com",
@@ -1443,6 +1566,7 @@
       ]
     },
     {
+      "chainName": "sge",
       "chainId": "sgenet-1",
       "nodeList": [
         "https://sge-api.lavenderfive.com/",
@@ -1461,10 +1585,12 @@
       ]
     },
     {
+      "chainName": "shareledger",
       "chainId": "ShareRing-VoyagerNet",
       "nodeList": ["https://lcd.explorer.shareri.ng/"]
     },
     {
+      "chainName": "shentu",
       "chainId": "shentu-2.2",
       "nodeList": [
         "https://rest.noopsbycertik.com/",
@@ -1480,6 +1606,7 @@
       ]
     },
     {
+      "chainName": "sifchain",
       "chainId": "sifchain-1",
       "nodeList": [
         "https://api-sifchain-ia.cosmosia.notional.ventures/",
@@ -1489,10 +1616,12 @@
       ]
     },
     {
+      "chainName": "six",
       "chainId": "sixnet",
       "nodeList": ["https://sixnet-api.sixprotocol.net:443"]
     },
     {
+      "chainName": "sommelier",
       "chainId": "sommelier-3",
       "nodeList": [
         "https://api-sommelier.pupmos.network",
@@ -1504,6 +1633,7 @@
       ]
     },
     {
+      "chainName": "source",
       "chainId": "source-1",
       "nodeList": [
         "https://api.source.nodestake.top",
@@ -1524,6 +1654,7 @@
       ]
     },
     {
+      "chainName": "stafihub",
       "chainId": "stafihub-1",
       "nodeList": [
         "https://public-rest-rpc1.stafihub.io",
@@ -1532,6 +1663,7 @@
       ]
     },
     {
+      "chainName": "stargaze",
       "chainId": "stargaze-1",
       "nodeList": [
         "https://rest.stargaze-apis.com/",
@@ -1557,14 +1689,17 @@
       ]
     },
     {
+      "chainName": "starname",
       "chainId": "iov-mainnet-ibc",
       "nodeList": ["https://api-starname-ia.cosmosia.notional.ventures/", "https://rest.starname.app"]
     },
     {
+      "chainName": "stratos",
       "chainId": "stratos-1",
       "nodeList": ["https://rest.thestratos.org", "https://lcd-stratos.whispernode.com:443"]
     },
     {
+      "chainName": "stride",
       "chainId": "stride-1",
       "nodeList": [
         "https://stride-api.polkachu.com/",
@@ -1586,10 +1721,12 @@
       ]
     },
     {
+      "chainName": "tenet",
       "chainId": "tenet_1559-1",
       "nodeList": ["https://app.rpc.tenet.org", "https://tenet-rest.publicnode.com"]
     },
     {
+      "chainName": "teritori",
       "chainId": "teritori-1",
       "nodeList": [
         "https://teritori-api.lavenderfive.com:443",
@@ -1608,6 +1745,7 @@
       ]
     },
     {
+      "chainName": "terpnetwork",
       "chainId": "morocco-1",
       "nodeList": [
         "https://api-terp.zenchainlabs.io:443",
@@ -1616,6 +1754,7 @@
       ]
     },
     {
+      "chainName": "terra",
       "chainId": "columbus-5",
       "nodeList": [
         "https://terra-classic-lcd.publicnode.com",
@@ -1625,6 +1764,7 @@
       ]
     },
     {
+      "chainName": "terra2",
       "chainId": "phoenix-1",
       "nodeList": [
         "https://lcd-terra.wildsage.io",
@@ -1639,14 +1779,17 @@
       ]
     },
     {
+      "chainName": "tgrade",
       "chainId": "tgrade-mainnet-1",
       "nodeList": ["https://api.mainnet-1.tgrade.confio.run", "https://lcd.tgrade.posthuman.digital"]
     },
     {
+      "chainName": "thorchain",
       "chainId": "thorchain-mainnet-v1",
       "nodeList": []
     },
     {
+      "chainName": "umee",
       "chainId": "umee-1",
       "nodeList": [
         "https://api-umee-ia.cosmosia.notional.ventures/",
@@ -1668,10 +1811,12 @@
       ]
     },
     {
+      "chainName": "unification",
       "chainId": "FUND-MainNet-2",
       "nodeList": ["https://rest.unification.io", "https://rest.unification.chainmasters.ninja/"]
     },
     {
+      "chainName": "ununifi",
       "chainId": "ununifi-beta-v1",
       "nodeList": [
         "https://a.lcd.ununifi.cauchye.net:1318",
@@ -1682,6 +1827,7 @@
       ]
     },
     {
+      "chainName": "uptick",
       "chainId": "uptick_117-1",
       "nodeList": [
         "https://uptick-rest.brocha.in:443",
@@ -1698,6 +1844,7 @@
       ]
     },
     {
+      "chainName": "vidulum",
       "chainId": "vidulum-1",
       "nodeList": [
         "https://mainnet-lcd.vidulum.app",
@@ -1707,6 +1854,7 @@
       ]
     },
     {
+      "chainName": "xpla",
       "chainId": "dimension_37-1",
       "nodeList": [
         "https://dimension-lcd.xpla.io",
@@ -1715,6 +1863,7 @@
       ]
     },
     {
+      "chainName": "zetachain",
       "chainId": "zetachain_7000-1",
       "nodeList": [
         "https://zetachain.blockpi.network/lcd/v1/public",
