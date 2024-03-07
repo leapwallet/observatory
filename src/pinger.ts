@@ -29,13 +29,13 @@ export namespace Pinger {
         isEcostakeUrl = 1;
       }
       const chainUrl = url;
-      logger.informational(`Pinging ${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}.`);
+      //logger.informational(`Pinging ${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}.`);
       const fetch = Container.get(fetchToken);
       let response: Response;
       const startTime = Date.now();
       try {
         response = await fetch(`${url}${endpoint}`);
-        logger.debug(`Successful ping:${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}`);
+        //logger.debug(`Successful ping:${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}`);
       } catch (err) {
         const endTime = Date.now();
         const responseCode = 0;
@@ -61,7 +61,7 @@ export namespace Pinger {
         chainId: chainId,
         priority: priority,
       };
-      if (response.status === 200) {
+      /*if (response.status === 200) {
         logger.debug(
           `OK HTTP status code (${response.status}) returned on ${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}.`,
         );
@@ -69,7 +69,7 @@ export namespace Pinger {
         logger.error(
           `Non-OK HTTP status code (${response.status}) returned on ${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}.`,
         );
-      }
+      }*/
       return data;
     }
   }
