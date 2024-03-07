@@ -35,38 +35,42 @@ async function startIndividualNodePinger(): Promise<void> {
   const jsonData = EnvVars.readUrls2(FILE_NAME);
 
   while (true) {
-    logger.informational('Starting a new iteration of Individual Node Pinger.');
-    const pinger = Container.get(Pinger.token);
+    try {
+      logger.informational('Starting a new iteration of Individual Node Pinger.');
+      const pinger = Container.get(Pinger.token);
 
-    const handlePing = async (url: string, chainId: string) => {
-      return pinger.ping(url, null, Types.SINGULAR, chainId).catch((error) => {
-        logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
-        return null; // Return a value to keep the array's structure consistent
-      });
-    };
-    for (const [j, nodeData] of jsonData.entries()) {
-      const chainId = nodeData.chainId;
-      const nodes = nodeData.nodeList;
-      for (let i = 0; i < nodes.length; i++) {
-        const url = nodes[i] || '';
-        arr.push(handlePing(url, chainId));
+      const handlePing = async (url: string, chainId: string) => {
+        return pinger.ping(url, null, Types.SINGULAR, chainId).catch((error) => {
+          logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
+          return null; // Return a value to keep the array's structure consistent
+        });
+      };
+      for (const [j, nodeData] of jsonData.entries()) {
+        const chainId = nodeData.chainId;
+        const nodes = nodeData.nodeList;
+        for (let i = 0; i < nodes.length; i++) {
+          const url = nodes[i] || '';
+          arr.push(handlePing(url, chainId));
 
-        if (arr.length === BATCH_SIZE || (i === nodes.length - 1 && j === jsonData.length - 1)) {
-          const results = await Promise.all(arr);
-          const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
-          if (validResults.length > 0) {
-            await prisma.responseCode.createMany({
-              data: validResults,
-              skipDuplicates: true,
-            });
+          if (arr.length === BATCH_SIZE || (i === nodes.length - 1 && j === jsonData.length - 1)) {
+            const results = await Promise.all(arr);
+            const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
+            if (validResults.length > 0) {
+              await prisma.responseCode.createMany({
+                data: validResults,
+                skipDuplicates: true,
+              });
+            }
+            arr = [];
           }
-          arr = [];
         }
       }
+      logger.informational(
+        `Completed an iteration of Individual Node Pinger. Waiting for ${t} ms before the next iteration.`,
+      );
+    } catch (error) {
+      logger.error(`An error occurred during Individual Node Pinger execution: ${error}`);
     }
-    logger.informational(
-      `Completed an iteration of Individual Node Pinger. Waiting for ${t} ms before the next iteration.`,
-    );
     await sleep({ ms: t });
   }
 }
@@ -86,37 +90,40 @@ async function startEcostakePinger(): Promise<void> {
   const prisma = Container.get(prismaToken);
 
   while (true) {
-    logger.informational('Starting a new iteration of Ecostake Pinger.');
-    const pinger = Container.get(Pinger.token);
+    try {
+      logger.informational('Starting a new iteration of Ecostake Pinger.');
+      const pinger = Container.get(Pinger.token);
 
-    const handlePing = async (url: string, chainId: string, chainName: string) => {
-      return pinger.ping(url, chainName, Types.ECOSTAKE, chainId).catch((error) => {
-        logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
-        return null;
-      });
-    };
+      const handlePing = async (url: string, chainId: string, chainName: string) => {
+        return pinger.ping(url, chainName, Types.ECOSTAKE, chainId).catch((error) => {
+          logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
+          return null;
+        });
+      };
 
-    for (let i = 0; i < chainNodeList.length; i++) {
-      const chain = chainNodeList[i] as Record<string, any>;
-      const chainRegistryPath = chain?.chainRegistryPath;
-      const url = `https://rest.cosmos.directory/${chainRegistryPath}`;
+      for (let i = 0; i < chainNodeList.length; i++) {
+        const chain = chainNodeList[i] as Record<string, any>;
+        const chainRegistryPath = chain?.chainRegistryPath;
+        const url = `https://rest.cosmos.directory/${chainRegistryPath}`;
 
-      arr.push(handlePing(url, chain.chainName, chain.chainId));
+        arr.push(handlePing(url, chain.chainName, chain.chainId));
 
-      if (arr.length == BATCH_SIZE || i === chainNodeList.length - 1) {
-        const results = await Promise.all(arr);
-        const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
-        if (validResults.length > 0) {
-          await prisma.responseCode.createMany({
-            data: validResults,
-            skipDuplicates: true,
-          });
+        if (arr.length == BATCH_SIZE || i === chainNodeList.length - 1) {
+          const results = await Promise.all(arr);
+          const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
+          if (validResults.length > 0) {
+            await prisma.responseCode.createMany({
+              data: validResults,
+              skipDuplicates: true,
+            });
+          }
+          arr = [];
         }
-        arr = [];
       }
+      logger.informational(`Completed an iteration of Ecostake Pinger. Waiting for ${t} ms before the next iteration.`);
+    } catch (error) {
+      logger.error(`An error occurred during Ecostake Pinger execution: ${error}`);
     }
-
-    logger.informational(`Completed an iteration of Ecostake Pinger. Waiting for ${t} ms before the next iteration.`);
     await sleep({ ms: t });
   }
 }
@@ -172,34 +179,38 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
   let promisesArr: Promise<Prisma.ResponseCodeCreateInput>[] = [];
   const prisma = Container.get(prismaToken);
   while (true) {
-    logger.informational('Starting a new iteration of NMS Pinger . ' + nmsRunType);
-    const pinger = Container.get(Pinger.token);
-    const response = await fetch(CDNfileName);
-    const jsonData = await response.json();
-    const chainIds = Object.keys(jsonData);
-    for (let i = 0; i < chainIds.length; i++) {
-      const chainId = chainIds[i] || '';
-      const nodes = jsonData[chainId!];
-      const urls = await nmsGetNodeURL(nodes, nmsRunType);
-      urls.forEach(({ url, priority }) => {
-        promisesArr.push(
-          pinger.ping(url, null, nmsRunType, chainId, '/cosmos/base/tendermint/v1beta1/blocks/latest', priority),
-        );
-      });
-
-      if (promisesArr.length == BATCH_SIZE || i === chainIds.length - 1) {
-        const promiseResult = await Promise.all(promisesArr);
-
-        await prisma.responseCode.createMany({
-          data: promiseResult,
-          skipDuplicates: true,
+    try {
+      logger.informational('Starting a new iteration of NMS Pinger . ' + nmsRunType);
+      const pinger = Container.get(Pinger.token);
+      const response = await fetch(CDNfileName);
+      const jsonData = await response.json();
+      const chainIds = Object.keys(jsonData);
+      for (let i = 0; i < chainIds.length; i++) {
+        const chainId = chainIds[i] || '';
+        const nodes = jsonData[chainId!];
+        const urls = await nmsGetNodeURL(nodes, nmsRunType);
+        urls.forEach(({ url, priority }) => {
+          promisesArr.push(
+            pinger.ping(url, null, nmsRunType, chainId, '/cosmos/base/tendermint/v1beta1/blocks/latest', priority),
+          );
         });
-        promisesArr = [];
+
+        if (promisesArr.length == BATCH_SIZE || i === chainIds.length - 1) {
+          const promiseResult = await Promise.all(promisesArr);
+
+          await prisma.responseCode.createMany({
+            data: promiseResult,
+            skipDuplicates: true,
+          });
+          promisesArr = [];
+        }
       }
+      logger.informational(
+        `Completed an iteration of iteration of NMS Pinger ${nmsRunType}. Waiting for ${t} ms before the next iteration.`,
+      );
+    } catch (error) {
+      logger.error(`An error occurred during NMS Pinger execution: ${error}`);
     }
-    logger.informational(
-      `Completed an iteration of iteration of NMS Pinger ${nmsRunType}. Waiting for ${t} ms before the next iteration.`,
-    );
     await sleep({ ms: t });
   }
 }
