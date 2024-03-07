@@ -35,6 +35,7 @@ async function startIndividualNodePinger(): Promise<void> {
   const jsonData = EnvVars.readUrls2(FILE_NAME);
 
   while (true) {
+    logger.informational('Starting a new iteration of Individual Node Pinger.');
     const pinger = Container.get(Pinger.token);
 
     const handlePing = async (url: string, chainId: string) => {
@@ -54,17 +55,18 @@ async function startIndividualNodePinger(): Promise<void> {
           const results = await Promise.all(arr);
           const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
           if (validResults.length > 0) {
-            const createCommandResponse = await prisma.responseCode.createMany({
+            await prisma.responseCode.createMany({
               data: validResults,
               skipDuplicates: true,
             });
-            logger.informational(createCommandResponse);
           }
           arr = [];
         }
       }
     }
-    logger.informational(`Waiting for ${t} ms`);
+    logger.informational(
+      `Completed an iteration of Individual Node Pinger. Waiting for ${t} ms before the next iteration.`,
+    );
     await sleep({ ms: t });
   }
 }
@@ -84,6 +86,7 @@ async function startEcostakePinger(): Promise<void> {
   const prisma = Container.get(prismaToken);
 
   while (true) {
+    logger.informational('Starting a new iteration of Ecostake Pinger.');
     const pinger = Container.get(Pinger.token);
 
     const handlePing = async (url: string, chainId: string, chainName: string) => {
@@ -104,18 +107,17 @@ async function startEcostakePinger(): Promise<void> {
         const results = await Promise.all(arr);
         const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
         if (validResults.length > 0) {
-          const createCommandResponse = await prisma.responseCode.createMany({
+          await prisma.responseCode.createMany({
             data: validResults,
             skipDuplicates: true,
           });
-          logger.informational(createCommandResponse);
         }
         arr = [];
       }
     }
 
+    logger.informational(`Completed an iteration of Ecostake Pinger. Waiting for ${t} ms before the next iteration.`);
     await sleep({ ms: t });
-    logger.informational(`Waiting for ${t} ms`);
   }
 }
 
@@ -170,6 +172,7 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
   let promisesArr: Promise<Prisma.ResponseCodeCreateInput>[] = [];
   const prisma = Container.get(prismaToken);
   while (true) {
+    logger.informational('Starting a new iteration of NMS Pinger . ' + nmsRunType);
     const pinger = Container.get(Pinger.token);
     const response = await fetch(CDNfileName);
     const jsonData = await response.json();
@@ -187,16 +190,17 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
       if (promisesArr.length == BATCH_SIZE || i === chainIds.length - 1) {
         const promiseResult = await Promise.all(promisesArr);
 
-        const createCommandResponse = await prisma.responseCode.createMany({
+        await prisma.responseCode.createMany({
           data: promiseResult,
           skipDuplicates: true,
         });
-        logger.informational(createCommandResponse);
         promisesArr = [];
       }
     }
+    logger.informational(
+      `Completed an iteration of iteration of NMS Pinger ${nmsRunType}. Waiting for ${t} ms before the next iteration.`,
+    );
     await sleep({ ms: t });
-    logger.informational(`Waiting for ${t} ms`);
   }
 }
 
