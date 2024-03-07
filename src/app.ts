@@ -33,19 +33,34 @@ async function startIndividualNodePinger(): Promise<void> {
   const prisma = Container.get(prismaToken);
   const FILE_NAME = '/individualChainNodeListV2.json';
   const jsonData = EnvVars.readUrls2(FILE_NAME);
+
   while (true) {
     const pinger = Container.get(Pinger.token);
+
+    const handlePing = async (url: string, chainId: string) => {
+      return pinger.ping(url, null, Types.SINGULAR, chainId).catch((error) => {
+        logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
+        return null; // Return a value to keep the array's structure consistent
+      });
+    };
     for (const [j, nodeData] of jsonData.entries()) {
       const chainId = nodeData.chainId;
       const nodes = nodeData.nodeList;
       for (let i = 0; i < nodes.length; i++) {
         const url = nodes[i] || '';
-        const resp = pinger.ping(url, null, Types.SINGULAR, chainId);
-        arr.push(resp);
+        arr.push(handlePing(url, chainId));
+        
+
         if (arr.length === BATCH_SIZE || (i === nodes.length - 1 && j === jsonData.length - 1)) {
-          const result = await Promise.all(arr);
-          const createCommandResponse = await prisma.responseCode.createMany({ data: result, skipDuplicates: true });
-          logger.informational(createCommandResponse);
+          const results = await Promise.all(arr);
+          const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
+          if (validResults.length > 0) {
+            const createCommandResponse = await prisma.responseCode.createMany({
+              data: validResults,
+              skipDuplicates: true,
+            });
+            logger.informational(createCommandResponse);
+          }
           arr = [];
         }
       }
@@ -71,16 +86,31 @@ async function startEcostakePinger(): Promise<void> {
 
   while (true) {
     const pinger = Container.get(Pinger.token);
+
+    const handlePing = async (url: string, chainId: string, chainName: string) => {
+      return pinger.ping(url, chainName, Types.ECOSTAKE, chainId).catch((error) => {
+        logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
+        return null;
+      });
+    };
+
     for (let i = 0; i < chainNodeList.length; i++) {
-      const chain = chainNodeList[i] as Record<string, any>; 
+      const chain = chainNodeList[i] as Record<string, any>;
       const chainRegistryPath = chain?.chainRegistryPath;
       const url = `https://rest.cosmos.directory/${chainRegistryPath}`;
-      const resp = pinger.ping(url, chain.chainName, Types.ECOSTAKE, chain.chainId);
-      arr.push(resp);
+
+      arr.push(handlePing(url, chain.chainName, chain.chainId));
+
       if (arr.length == BATCH_SIZE || i === chainNodeList.length - 1) {
-        const result = await Promise.all(arr);
-        const createCommandResponse = await prisma.responseCode.createMany({ data: result, skipDuplicates: true });
-        logger.informational(createCommandResponse);
+        const results = await Promise.all(arr);
+        const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
+        if (validResults.length > 0) {
+          const createCommandResponse = await prisma.responseCode.createMany({
+            data: validResults,
+            skipDuplicates: true,
+          });
+          logger.informational(createCommandResponse);
+        }
         arr = [];
       }
     }
