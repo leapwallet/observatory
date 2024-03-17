@@ -52,3 +52,13 @@ enum EndpointType {
   latest_block
   balance
 }
+
+model Meta {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique
+  value     String
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+
+  @@map("meta")
+}

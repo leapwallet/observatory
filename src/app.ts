@@ -7,6 +7,8 @@ import cors from 'cors';
 import healthRouter from './routes/health';
 import metricsRouter from './routes/metrics';
 import './cron/db-cleanup';
+import './cron/singular-update';
+import './cron/ecostake-update';
 import { Pinger } from './pinger';
 import sleep from './sleep';
 import prometheus from 'prom-client';
@@ -30,47 +32,68 @@ async function startIndividualNodePinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
   const logger = getLogger(__filename);
   const prisma = Container.get(prismaToken);
-  const FILE_NAME = '/individualChainNodeListV2.json';
-  const jsonData = EnvVars.readUrls2(FILE_NAME);
-  const chainIdToNameMap = new Map(jsonData.map((node) => [node.chainId, node.chainName]));
+  try {
+    const meta = await prisma.meta.findUnique({
+      where: {
+        key: 'singular_chain_data',
+      },
+    });
 
-  while (true) {
-    try {
-      logger.informational('Starting a new iteration of Individual Node Pinger.');
-      const pinger = Container.get(Pinger.token);
-
-      const handlePing = async (url: string, chainId: string, chainName: string | undefined) => {
-        return pinger.ping(url, chainName, Types.SINGULAR, chainId).catch((error) => {
-          logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
-          return null; // Return a value to keep the array's structure consistent
-        });
-      };
-
-      const promisesArr = [];
-      for (const [, nodeData] of jsonData.entries()) {
-        const chainId = nodeData.chainId;
-        const nodes = nodeData.nodeList;
-        const chainName = chainIdToNameMap.get(chainId);
-        for (let i = 0; i < nodes.length; i++) {
-          const url = nodes[i] || '';
-          promisesArr.push(handlePing(url, chainId, chainName));
-        }
-      }
-      const results = await Promise.all(promisesArr);
-      const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
-      if (validResults.length > 0) {
-        await prisma.responseCode.createMany({
-          data: validResults,
-          skipDuplicates: true,
-        });
-      }
-      logger.informational(
-        `Completed an iteration of Individual Node Pinger. Waiting for ${t} ms before the next iteration.`,
-      );
-    } catch (error) {
-      logger.error(`An error occurred during Individual Node Pinger execution: ${error}`);
+    if (!meta) {
+      logger.error('singular_chain_data not found or is empty.');
+      return;
     }
-    await sleep({ ms: t });
+
+    const jsonData = JSON.parse(meta.value)['chainNodeList'];
+    if (!Array.isArray(jsonData) || jsonData.length === 0) {
+      logger.error('Parsed singular_chain_data is empty or not an array.');
+      return;
+    }
+
+    const chainIdToNameMap = new Map(
+      jsonData.map((node: { chainId: string; chainName: string }) => [node.chainId, node.chainName]),
+    );
+
+    while (true) {
+      try {
+        logger.informational('Starting a new iteration of Individual Node Pinger.');
+        const pinger = Container.get(Pinger.token);
+
+        const handlePing = async (url: string, chainId: string, chainName: string | undefined) => {
+          return pinger.ping(url, chainName, Types.SINGULAR, chainId).catch((error) => {
+            logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
+            return null; // Return a value to keep the array's structure consistent
+          });
+        };
+
+        const promisesArr = [];
+        for (const [, nodeData] of jsonData.entries()) {
+          const chainId = nodeData.chainId;
+          const nodes = nodeData.nodeList;
+          const chainName = chainIdToNameMap.get(chainId);
+          for (let i = 0; i < nodes.length; i++) {
+            const url = nodes[i] || '';
+            promisesArr.push(handlePing(url, chainId, chainName));
+          }
+        }
+        const results = await Promise.all(promisesArr);
+        const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
+        if (validResults.length > 0) {
+          await prisma.responseCode.createMany({
+            data: validResults,
+            skipDuplicates: true,
+          });
+        }
+        logger.informational(
+          `Completed an iteration of Individual Node Pinger. Waiting for ${t} ms before the next iteration.`,
+        );
+      } catch (error) {
+        logger.error(`An error occurred during Individual Node Pinger execution: ${error}`);
+      }
+      await sleep({ ms: t });
+    }
+  } catch (error) {
+    logger.error(`Failed to fetch singular_chain_data: ${error}`);
   }
 }
 
@@ -81,12 +104,27 @@ BATCH_SIZE = 20;
 async function startEcostakePinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
 
-  // Use the readUrlsV2 function to read the new configuration file
-  const chainNodeList = EnvVars.readUrlsV2();
-
-  const logger = getLogger(__filename);
-  let arr = [];
   const prisma = Container.get(prismaToken);
+
+  const meta = await prisma.meta.findUnique({
+    where: {
+      key: 'ecostake_chain_data',
+    },
+  });
+  const logger = getLogger(__filename);
+
+  if (!meta) {
+    logger.error('ecostake_chain_data not found or is empty.');
+    return;
+  }
+  const chainNodeList = JSON.parse(meta.value);
+
+  if (typeof chainNodeList !== 'object' || chainNodeList === null || Object.keys(chainNodeList).length === 0) {
+    logger.error('Parsed ecostake_chain_data is empty or not an object.');
+    return;
+  }
+
+  let arr = [];
 
   while (true) {
     try {
@@ -100,14 +138,12 @@ async function startEcostakePinger(): Promise<void> {
         });
       };
 
-      for (let i = 0; i < chainNodeList.length; i++) {
-        const chain = chainNodeList[i] as Record<string, any>;
-        const chainRegistryPath = chain?.chainRegistryPath;
-        const url = `https://rest.cosmos.directory/${chainRegistryPath}`;
+      for (const [chainKey, chainDetails] of Object.entries(chainNodeList)) {
+        const details = chainDetails as any;
+        const url = `https://rest.cosmos.directory/${details.chainRegistryPath}`;
+        arr.push(handlePing(url, details.chainName, details.chainId));
 
-        arr.push(handlePing(url, chain.chainName, chain.chainId));
-
-        if (arr.length == BATCH_SIZE || i === chainNodeList.length - 1) {
+        if (arr.length === BATCH_SIZE || chainKey === Object.keys(chainNodeList).pop()) {
           const results = await Promise.all(arr);
           const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
           if (validResults.length > 0) {
@@ -195,13 +231,31 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
       return;
   }
 
-  const FILE_NAME = '/individualChainNodeListV2.json';
-  const jsonData = EnvVars.readUrls2(FILE_NAME);
-  const chainIdToNameMap = new Map(jsonData.map((node) => [node.chainId, node.chainName]));
+  const prisma = Container.get(prismaToken);
+
+  const meta = await prisma.meta.findUnique({
+    where: {
+      key: 'singular_chain_data',
+    },
+  });
+
+  if (!meta) {
+    logger.error('singular_chain_data not found or is empty.');
+    return;
+  }
+
+  const jsonData = JSON.parse(meta.value)['chainNodeList'];
+  if (!Array.isArray(jsonData) || jsonData.length === 0) {
+    logger.error('Parsed singular_chain_data is empty or not an array.');
+    return;
+  }
+
+  const chainIdToNameMap = new Map(
+    jsonData.map((node: { chainId: string; chainName: string }) => [node.chainId, node.chainName]),
+  );
 
   if (EnvVars.getNodeEnv() === 'test') return;
   let promisesArr: Promise<Prisma.ResponseCodeCreateInput>[] = [];
-  const prisma = Container.get(prismaToken);
   while (true) {
     try {
       logger.informational('Starting a new iteration of NMS Pinger . ' + nmsRunType);
