@@ -5,6 +5,12 @@ jest.mock('node-cron', () => ({ schedule: jest.fn() }));
 jest.mock('../../src/cron/db-cleanup', () => ({
   deletionTask: jest.fn(),
 }));
+jest.mock('../../src/cron/ecostake-update', () => ({
+  deletionTask: jest.fn(),
+}));
+jest.mock('../../src/cron/singular-update', () => ({
+  deletionTask: jest.fn(),
+}));
 
 describe('HTTP GET /health', () => {
   it('must respond with the health check', async () => {

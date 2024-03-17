@@ -1,6 +1,5 @@
 import { Container, Token } from 'typedi';
-import fs from 'fs';
-import { chainNodeList, chainNodeList2 } from './types';
+
 export namespace ProcessEnvVars {
   /** Must be retrieved from the {@link Container}, and not instantiated directly. */
   export class DefaultApi {
@@ -40,24 +39,6 @@ export namespace EnvVars {
   export function getUrls(): string[] {
     const value = getEnvVar('URLS');
     return isUnset(value) ? [] : value.split(',');
-  }
-
-  export function readUrls(fileName = '/chainNodeList.json'): chainNodeList[] {
-    const configFile = fs.readFileSync(__dirname + fileName);
-    const chainNodeListJSON = JSON.parse(configFile.toString());
-    return chainNodeListJSON.chainNodeList;
-  }
-
-  export function readUrlsV2(fileName = '/chainNodeListV2.json'): any[] {
-    const configFile = fs.readFileSync(__dirname + fileName);
-    const chainNodeListJSON = JSON.parse(configFile.toString());
-    return Object.values(chainNodeListJSON);
-  }
-
-  export function readUrls2(fileName = '/chainNodeList.json'): chainNodeList2[] {
-    const configFile = fs.readFileSync(__dirname + fileName);
-    const chainNodeListJSON = JSON.parse(configFile.toString());
-    return chainNodeListJSON.chainNodeList;
   }
 
   export function getDeleteResponseDataAfterDays(): number {
