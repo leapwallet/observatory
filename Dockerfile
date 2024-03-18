@@ -20,6 +20,7 @@ COPY --from=observatory /app/src/chainNodeList.json ./dist/
 COPY --from=observatory /app/src/chainNodeListV2.json ./dist/
 COPY --from=observatory /app/src/individualChainNodeList.json ./dist/
 COPY --from=observatory /app/src/individualChainNodeListV2.json ./dist/
+COPY --from=observatory /app/src/singularPaidNodes.json ./dist/
 COPY --from=observatory /app/prisma prisma
 COPY grafana-agent.yaml .
 COPY --from=grafana-agent /app/agent-linux-amd64 .

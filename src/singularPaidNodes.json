@@ -1,0 +1,807 @@
+{
+  "chainNodeList": [
+    {
+      "chainName": "dYdX",
+      "chainId": "dydx-mainnet-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/dydx-rpc", "https://leap-node-proxy.numia.xyz/dydx-lcd"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://dydx-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://dydx-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Celestia",
+      "chainId": "celestia",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/celestia-rpc",
+            "https://leap-node-proxy.numia.xyz/celestia-lcd"
+          ]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://celestia-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://celestia-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Coreum",
+      "chainId": "coreum-mainnet-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/coreum-rpc", "https://leap-node-proxy.numia.xyz/coreum-lcd"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://coreum-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://coreum-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Akash",
+      "chainId": "akashnet-2",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/akash-lcd", "https://leap-node-proxy.numia.xyz/akash-rpc"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://akash-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://akash-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Assetmantle",
+      "chainId": "mantle-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/assetmantle-lcd",
+            "https://leap-node-proxy.numia.xyz/assetmantle-rpc"
+          ]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://asset-mantle-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://asset-mantle-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Axelar",
+      "chainId": "axelar-dojo-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/axelar-lcd", "https://leap-node-proxy.numia.xyz/axelar-rpc"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://axelar-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://axelar-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "BitCanna",
+      "chainId": "bitcanna-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/bitcanna-lcd",
+            "https://leap-node-proxy.numia.xyz/bitcanna-rpc"
+          ]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://bitcanna-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://bitcanna-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "BitSong",
+      "chainId": "bitsong-2b",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/bitsong-rpc", "https://leap-node-proxy.numia.xyz/bitsong-lcd"]
+        }
+      ]
+    },
+    {
+      "chainName": "Canto",
+      "chainId": "canto_7700-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/canto-rpc", "https://leap-node-proxy.numia.xyz/canto-lcd"]
+        }
+      ]
+    },
+    {
+      "chainName": "Chain4Energy",
+      "chainId": "perun-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/chain4energy-rpc",
+            "https://leap-node-proxy.numia.xyz/chain4energy-lcd"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "cheqd",
+      "chainId": "cheqd-mainnet-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/cheqd-lcd", "https://leap-node-proxy.numia.xyz/cheqd-rpc"]
+        }
+      ]
+    },
+    {
+      "chainName": "Chihuahua",
+      "chainId": "chihuahua-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/chihuahua-lcd",
+            "https://leap-node-proxy.numia.xyz/chihuahua-rpc"
+          ]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://chihuahua-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://chihuahua-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Comdex",
+      "chainId": "comdex-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/comdex-lcd", "https://leap-node-proxy.numia.xyz/comdex-rpc"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://comdex-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://comdex-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Crescent",
+      "chainId": "crescent-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/crescent-lcd",
+            "https://leap-node-proxy.numia.xyz/crescent-rpc"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Cudos",
+      "chainId": "cudos-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/cudos-rpc", "https://leap-node-proxy.numia.xyz/cudos-lcd"]
+        }
+      ]
+    },
+    {
+      "chainName": "Decentr",
+      "chainId": "mainnet-3",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/decentr-lcd", "https://leap-node-proxy.numia.xyz/decentr-rpc"]
+        }
+      ]
+    },
+    {
+      "chainName": "Evmos",
+      "chainId": "evmos_9001-2",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/evmos-lcd", "https://leap-node-proxy.numia.xyz/evmos-rpc"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://evmos-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://evmos-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Fetch.ai",
+      "chainId": "fetchhub-4",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/fetchhub-lcd",
+            "https://leap-node-proxy.numia.xyz/fetchhub-rpc"
+          ]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://fetch-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://fetch-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Gitopia",
+      "chainId": "gitopia",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/gitopia-rpc", "https://leap-node-proxy.numia.xyz/gitopia-lcd"]
+        }
+      ]
+    },
+    {
+      "chainName": "Injective",
+      "chainId": "injective-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/injective-lcd",
+            "https://leap-node-proxy.numia.xyz/injective-rpc"
+          ]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://injective-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://injective-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "IRISnet",
+      "chainId": "irishub-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/irisnet-rpc", "https://leap-node-proxy.numia.xyz/irisnet-lcd"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://iris-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://iris-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Jackal",
+      "chainId": "jackal-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/jackal-rpc", "https://leap-node-proxy.numia.xyz/jackal-lcd"]
+        }
+      ]
+    },
+    {
+      "chainName": "Juno",
+      "chainId": "juno-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/juno-rpc", "https://leap-node-proxy.numia.xyz/juno-lcd"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://juno-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://juno-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Kava",
+      "chainId": "kava_2222-10",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/kava-rpc", "https://leap-node-proxy.numia.xyz/kava-lcd"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://kava-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://kava-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Kujira",
+      "chainId": "kaiyo-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/kujira-rpc", "https://leap-node-proxy.numia.xyz/kujira-lcd"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://kujira-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://kujira-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "LikeCoin",
+      "chainId": "likecoin-mainnet-2",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/likecoin-rpc",
+            "https://leap-node-proxy.numia.xyz/likecoin-lcd"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Mars",
+      "chainId": "mars-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/mars-lcd", "https://leap-node-proxy.numia.xyz/mars-rpc"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://mars-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://mars-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Neutron",
+      "chainId": "neutron-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/neutron-rpc", "https://leap-node-proxy.numia.xyz/neutron-lcd"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://neutron-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://neutron-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Nolus",
+      "chainId": "pirin-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/nolus-lcd", "https://leap-node-proxy.numia.xyz/nolus-rpc"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://nolus-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://nolus-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "OmniFlix",
+      "chainId": "omniflixhub-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/omniflixhub-rpc",
+            "https://leap-node-proxy.numia.xyz/omniflixhub-lcd"
+          ]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://omniflix-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://omniflix-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Osmosis",
+      "chainId": "osmosis-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/osmosis-lcd", "https://leap-node-proxy.numia.xyz/osmosis-rpc"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://osmosis-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://osmosis-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Persistence (Old)",
+      "chainId": "core-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/persistence-rpc",
+            "https://leap-node-proxy.numia.xyz/persistence-lcd"
+          ]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://persistence-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://persistence-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Planq",
+      "chainId": "planq_7070-2",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/planq-rpc", "https://leap-node-proxy.numia.xyz/planq-lcd"]
+        }
+      ]
+    },
+    {
+      "chainName": "Quasar",
+      "chainId": "quasar-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/quasar-rpc", "https://leap-node-proxy.numia.xyz/quasar-lcd"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://quasar-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://quasar-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Quicksilver",
+      "chainId": "quicksilver-2",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/quicksilver-lcd",
+            "https://leap-node-proxy.numia.xyz/quicksilver-rpc"
+          ]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://quicksilver-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://quicksilver-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Secret Network",
+      "chainId": "secret-4",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/secretnetwork-lcd",
+            "https://leap-node-proxy.numia.xyz/secretnetwork-rpc"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Stargaze",
+      "chainId": "stargaze-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/stargaze-rpc",
+            "https://leap-node-proxy.numia.xyz/stargaze-lcd"
+          ]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://stargaze-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://stargaze-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Stride",
+      "chainId": "stride-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/stride-lcd", "https://leap-node-proxy.numia.xyz/stride-rpc"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://stride-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://stride-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Teritori",
+      "chainId": "teritori-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/teritori-lcd",
+            "https://leap-node-proxy.numia.xyz/teritori-rpc"
+          ]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://teritori-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://teritori-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Terra 2.0",
+      "chainId": "phoenix-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/terra2-lcd", "https://leap-node-proxy.numia.xyz/terra2-rpc"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://terra-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://terra-lcd.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "umee",
+      "chainId": "umee-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/umee-rpc", "https://leap-node-proxy.numia.xyz/umee-lcd"]
+        }
+      ]
+    },
+    {
+      "chainName": "Cosmos Hub",
+      "chainId": "cosmoshub-4",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/cosmos-rpc", "https://leap-node-proxy.numia.xyz/cosmos-lcd"]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://cosmos-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://cosmos-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Agoric",
+      "chainId": "agoric-3",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/agoric-rpc", "https://leap-node-proxy.numia.xyz/agoric-lcd"]
+        }
+      ]
+    },
+    {
+      "chainName": "Archway",
+      "chainId": "archway-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/archway-rpc", "https://leap-node-proxy.numia.xyz/archway-lcd"]
+        }
+      ]
+    },
+    {
+      "chainName": "Dymension",
+      "chainId": "dymension_1100-1",
+      "details": [
+        {
+          "provider": "numia",
+          "nodeList": [
+            "https://leap-node-proxy.numia.xyz/dymension-lcd",
+            "https://leap-node-proxy.numia.xyz/dymension-rpc"
+          ]
+        },
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://dymension-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://dymension-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Crypto.org",
+      "chainId": "crypto-org-chain-mainnet-1",
+      "details": [
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://cro-chain-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://cro-chain-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Nibiru chain",
+      "chainId": "cataclysm-1",
+      "details": [
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://nibiru-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://nibiru-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Passage",
+      "chainId": "passage-2",
+      "details": [
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://passage-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://passage-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Sei",
+      "chainId": "pacific-1",
+      "details": [
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://sei-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://sei-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        },
+        {
+          "provider": "numia",
+          "nodeList": ["https://leap-node-proxy.numia.xyz/sei-rpc", "https://leap-node-proxy.numia.xyz/sei-lcd"]
+        }
+      ]
+    },
+    {
+      "chainName": "Sentinel",
+      "chainId": "sentinelhub-2",
+      "details": [
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://sentinel-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://sentinel-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Sifchain",
+      "chainId": "sifchain-1",
+      "details": [
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://sifchain-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://sifchain-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    },
+    {
+      "chainName": "Terra classic",
+      "chainId": "columbus-5",
+      "details": [
+        {
+          "provider": "all_nodes",
+          "nodeList": [
+            "https://terra-classic-lcd.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
+            "https://terra-classic-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+          ]
+        }
+      ]
+    }
+  ]
+}
