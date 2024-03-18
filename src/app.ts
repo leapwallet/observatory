@@ -97,11 +97,11 @@ async function startIndividualNodePinger(): Promise<void> {
   }
 }
 
-  export function readSingularPaidUrls(fileName = '/singularPaidNodes.json'): any[] {
-    const configFile = fs.readFileSync(__dirname + fileName);
-    const chainNodeListJSON = JSON.parse(configFile.toString());
-    return chainNodeListJSON.chainNodeList;
-  }
+export function readSingularPaidUrls(fileName = '/singularPaidNodes.json'): any[] {
+  const configFile = fs.readFileSync(__dirname + fileName);
+  const chainNodeListJSON = JSON.parse(configFile.toString());
+  return chainNodeListJSON.chainNodeList;
+}
 
 async function startSingularPaidNodePinger(): Promise<void> {
   const logger = getLogger(__filename);
@@ -179,7 +179,6 @@ async function startSingularPaidNodePinger(): Promise<void> {
     await sleep({ ms: t });
   }
 }
-
 
 BATCH_SIZE = 20;
 60_000;
