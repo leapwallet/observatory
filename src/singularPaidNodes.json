@@ -6,13 +6,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/dydx-rpc", "https://leap-node-proxy.numia.xyz/dydx-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/dydx-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://dydx-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://dydx-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://dydx-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -23,15 +22,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/celestia-rpc",
-            "https://leap-node-proxy.numia.xyz/celestia-lcd"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/celestia-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://celestia-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://celestia-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -43,12 +38,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/coreum-rpc", "https://leap-node-proxy.numia.xyz/coreum-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/coreum-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://coreum-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://coreum-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -60,13 +54,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/akash-lcd", "https://leap-node-proxy.numia.xyz/akash-rpc"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/akash-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://akash-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://akash-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://akash-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -77,16 +70,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/assetmantle-lcd",
-            "https://leap-node-proxy.numia.xyz/assetmantle-rpc"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/assetmantle-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://asset-mantle-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://asset-mantle-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://asset-mantle-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -97,13 +86,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/axelar-lcd", "https://leap-node-proxy.numia.xyz/axelar-rpc"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/axelar-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://axelar-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://axelar-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://axelar-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -114,16 +102,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/bitcanna-lcd",
-            "https://leap-node-proxy.numia.xyz/bitcanna-rpc"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/bitcanna-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://bitcanna-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://bitcanna-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://bitcanna-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -134,7 +118,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/bitsong-rpc", "https://leap-node-proxy.numia.xyz/bitsong-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/bitsong-lcd"]
         }
       ]
     },
@@ -144,7 +128,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/canto-rpc", "https://leap-node-proxy.numia.xyz/canto-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/canto-lcd"]
         }
       ]
     },
@@ -154,10 +138,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/chain4energy-rpc",
-            "https://leap-node-proxy.numia.xyz/chain4energy-lcd"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/chain4energy-lcd"]
         }
       ]
     },
@@ -167,7 +148,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/cheqd-lcd", "https://leap-node-proxy.numia.xyz/cheqd-rpc"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/cheqd-lcd"]
         }
       ]
     },
@@ -177,16 +158,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/chihuahua-lcd",
-            "https://leap-node-proxy.numia.xyz/chihuahua-rpc"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/chihuahua-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://chihuahua-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://chihuahua-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://chihuahua-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -197,13 +174,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/comdex-lcd", "https://leap-node-proxy.numia.xyz/comdex-rpc"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/comdex-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://comdex-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://comdex-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://comdex-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -214,10 +190,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/crescent-lcd",
-            "https://leap-node-proxy.numia.xyz/crescent-rpc"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/crescent-lcd"]
         }
       ]
     },
@@ -227,7 +200,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/cudos-rpc", "https://leap-node-proxy.numia.xyz/cudos-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/cudos-lcd"]
         }
       ]
     },
@@ -237,7 +210,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/decentr-lcd", "https://leap-node-proxy.numia.xyz/decentr-rpc"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/decentr-lcd"]
         }
       ]
     },
@@ -247,12 +220,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/evmos-lcd", "https://leap-node-proxy.numia.xyz/evmos-rpc"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/evmos-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://evmos-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://evmos-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -264,15 +236,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/fetchhub-lcd",
-            "https://leap-node-proxy.numia.xyz/fetchhub-rpc"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/fetchhub-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://fetch-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://fetch-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -284,7 +252,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/gitopia-rpc", "https://leap-node-proxy.numia.xyz/gitopia-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/gitopia-lcd"]
         }
       ]
     },
@@ -294,15 +262,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/injective-lcd",
-            "https://leap-node-proxy.numia.xyz/injective-rpc"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/injective-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://injective-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://injective-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -314,13 +278,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/irisnet-rpc", "https://leap-node-proxy.numia.xyz/irisnet-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/irisnet-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://iris-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://iris-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://iris-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -331,7 +294,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/jackal-rpc", "https://leap-node-proxy.numia.xyz/jackal-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/jackal-lcd"]
         }
       ]
     },
@@ -341,13 +304,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/juno-rpc", "https://leap-node-proxy.numia.xyz/juno-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/juno-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://juno-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://juno-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://juno-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -358,13 +320,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/kava-rpc", "https://leap-node-proxy.numia.xyz/kava-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/kava-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://kava-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://kava-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://kava-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -375,12 +336,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/kujira-rpc", "https://leap-node-proxy.numia.xyz/kujira-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/kujira-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://kujira-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://kujira-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -392,10 +352,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/likecoin-rpc",
-            "https://leap-node-proxy.numia.xyz/likecoin-lcd"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/likecoin-lcd"]
         }
       ]
     },
@@ -405,12 +362,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/mars-lcd", "https://leap-node-proxy.numia.xyz/mars-rpc"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/mars-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://mars-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://mars-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -422,12 +378,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/neutron-rpc", "https://leap-node-proxy.numia.xyz/neutron-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/neutron-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://neutron-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://neutron-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -439,13 +394,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/nolus-lcd", "https://leap-node-proxy.numia.xyz/nolus-rpc"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/nolus-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://nolus-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://nolus-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://nolus-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -456,16 +410,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/omniflixhub-rpc",
-            "https://leap-node-proxy.numia.xyz/omniflixhub-lcd"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/omniflixhub-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://omniflix-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://omniflix-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://omniflix-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -476,12 +426,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/osmosis-lcd", "https://leap-node-proxy.numia.xyz/osmosis-rpc"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/osmosis-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://osmosis-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://osmosis-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -493,16 +442,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/persistence-rpc",
-            "https://leap-node-proxy.numia.xyz/persistence-lcd"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/persistence-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://persistence-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://persistence-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://persistence-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -513,7 +458,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/planq-rpc", "https://leap-node-proxy.numia.xyz/planq-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/planq-lcd"]
         }
       ]
     },
@@ -523,13 +468,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/quasar-rpc", "https://leap-node-proxy.numia.xyz/quasar-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/quasar-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://quasar-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://quasar-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://quasar-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -540,15 +484,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/quicksilver-lcd",
-            "https://leap-node-proxy.numia.xyz/quicksilver-rpc"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/quicksilver-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://quicksilver-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://quicksilver-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -560,10 +500,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/secretnetwork-lcd",
-            "https://leap-node-proxy.numia.xyz/secretnetwork-rpc"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/secretnetwork-lcd"]
         }
       ]
     },
@@ -573,15 +510,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/stargaze-rpc",
-            "https://leap-node-proxy.numia.xyz/stargaze-lcd"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/stargaze-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://stargaze-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://stargaze-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -593,12 +526,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/stride-lcd", "https://leap-node-proxy.numia.xyz/stride-rpc"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/stride-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://stride-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://stride-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -610,16 +542,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/teritori-lcd",
-            "https://leap-node-proxy.numia.xyz/teritori-rpc"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/teritori-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://teritori-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://teritori-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://teritori-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -630,12 +558,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/terra2-lcd", "https://leap-node-proxy.numia.xyz/terra2-rpc"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/terra2-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://terra-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://terra-lcd.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -647,7 +574,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/umee-rpc", "https://leap-node-proxy.numia.xyz/umee-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/umee-lcd"]
         }
       ]
     },
@@ -657,12 +584,11 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/cosmos-rpc", "https://leap-node-proxy.numia.xyz/cosmos-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/cosmos-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://cosmos-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://cosmos-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -674,7 +600,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/agoric-rpc", "https://leap-node-proxy.numia.xyz/agoric-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/agoric-lcd"]
         }
       ]
     },
@@ -684,7 +610,7 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/archway-rpc", "https://leap-node-proxy.numia.xyz/archway-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/archway-lcd"]
         }
       ]
     },
@@ -694,16 +620,12 @@
       "details": [
         {
           "provider": "numia",
-          "nodeList": [
-            "https://leap-node-proxy.numia.xyz/dymension-lcd",
-            "https://leap-node-proxy.numia.xyz/dymension-rpc"
-          ]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/dymension-lcd"]
         },
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://dymension-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://dymension-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://dymension-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -715,7 +637,6 @@
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://cro-chain-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://cro-chain-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -728,8 +649,7 @@
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://nibiru-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://nibiru-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://nibiru-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -741,8 +661,7 @@
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://passage-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://passage-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://passage-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -754,13 +673,12 @@
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://sei-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://sei-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         },
         {
           "provider": "numia",
-          "nodeList": ["https://leap-node-proxy.numia.xyz/sei-rpc", "https://leap-node-proxy.numia.xyz/sei-lcd"]
+          "nodeList": ["https://leap-node-proxy.numia.xyz/sei-lcd"]
         }
       ]
     },
@@ -771,7 +689,6 @@
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://sentinel-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
             "https://sentinel-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
@@ -784,8 +701,7 @@
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://sifchain-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://sifchain-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://sifchain-rest.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
@@ -797,8 +713,7 @@
         {
           "provider": "all_nodes",
           "nodeList": [
-            "https://terra-classic-lcd.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6",
-            "https://terra-classic-rpc.publicnode.com:443/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
+            "https://terra-classic-lcd.publicnode.com/9a353f27b9e92ea909491d7ae2102facbd105fb06ff969932dd19cb31d93d0a6"
           ]
         }
       ]
