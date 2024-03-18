@@ -18,11 +18,11 @@ export namespace Pinger {
       chainId: string,
       endpoint = '/cosmos/base/tendermint/v1beta1/blocks/latest',
       priority = 0, // Add priority here with a default value
+      provider: string | null = null, // Add provider here as an optional parameter
     ): Promise<Prisma.ResponseCodeCreateInput> {
       // Return prisma write query back from the loop
       // this.type = newType;
       //const logger = getLogger(__filename);
-
       const chainUrl = url;
       //logger.informational(`Pinging ${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}.`);
       const fetch = Container.get(fetchToken);
@@ -42,6 +42,7 @@ export namespace Pinger {
           responseTime: endTime - startTime,
           chainId: chainId,
           priority: priority,
+          provider: provider, // Include the provider in the result, even on failure
         };
         //logger.error(`Failed to ping:${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}: ${err}`);
         return data;
@@ -55,6 +56,7 @@ export namespace Pinger {
         responseTime: endTime - startTime,
         chainId: chainId,
         priority: priority,
+        provider: provider,
       };
       /*if (response.status === 200) {
         logger.debug(

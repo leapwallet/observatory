@@ -15,7 +15,7 @@ import prometheus from 'prom-client';
 import prismaToken from './db/prisma-token';
 import fetchToken from './fetch-token';
 import { Prisma, Types } from '@prisma/client';
-
+import fs from 'fs';
 function setUpHttpLogging(app: Express): void {
   const logger = getLogger('Express.js');
   const handler = morgan('combined', {
@@ -96,6 +96,90 @@ async function startIndividualNodePinger(): Promise<void> {
     logger.error(`Failed to fetch singular_chain_data: ${error}`);
   }
 }
+
+  export function readSingularPaidUrls(fileName = '/singularPaidNodes.json'): any[] {
+    const configFile = fs.readFileSync(__dirname + fileName);
+    const chainNodeListJSON = JSON.parse(configFile.toString());
+    return chainNodeListJSON.chainNodeList;
+  }
+
+async function startSingularPaidNodePinger(): Promise<void> {
+  const logger = getLogger(__filename);
+  const jsonData = readSingularPaidUrls('/singularPaidNodes.json');
+  const prisma = Container.get(prismaToken);
+
+  if (!Array.isArray(jsonData) || jsonData.length === 0) {
+    logger.error('Parsed singular_chain_data is empty or not an array.');
+    return;
+  }
+
+  const chainIdToNameMap = new Map(
+    jsonData.map((node: { chainId: string; chainName: string }) => [node.chainId, node.chainName]),
+  );
+
+  while (true) {
+    try {
+      logger.informational('Starting a new iteration of Singular Paid Node Pinger.');
+      const pinger = Container.get(Pinger.token); // Assuming Pinger is set up in Container
+
+      const handlePing = async (url: string, chainId: string, chainName: string, provider: string | null) => {
+        return pinger
+          .ping(
+            url,
+            chainName,
+            Types.SINGULAR_PAID,
+            chainId,
+            '/cosmos/base/tendermint/v1beta1/blocks/latest',
+            0,
+            provider,
+          )
+          .catch((error) => {
+            logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
+            return null;
+          });
+      };
+
+      const promisesArr = [];
+      for (const nodeData of jsonData) {
+        const chainId = nodeData.chainId;
+        for (const detail of nodeData.details) {
+          const provider = detail.provider; // This variable is unused but you might need it later
+          const nodes = detail.nodeList;
+
+          // Here's the critical check
+          if (!Array.isArray(nodes)) {
+            logger.error(
+              `Node list for provider "${provider}" in chain "${nodeData.chainName}" (${chainId}) is not an array.`,
+            );
+            continue; // Skip this iteration
+          }
+
+          const chainName = chainIdToNameMap.get(chainId);
+          for (const url of nodes) {
+            promisesArr.push(handlePing(url, chainId, chainName!, provider));
+          }
+        }
+      }
+
+      const results = await Promise.all(promisesArr);
+      const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
+      if (validResults.length > 0) {
+        await prisma.responseCode.createMany({
+          data: validResults,
+          skipDuplicates: true,
+        });
+      }
+
+      logger.informational(
+        `Completed an iteration of Singular Paid Node Pinger. Waiting for ${t} ms before the next iteration.`,
+      );
+    } catch (error) {
+      logger.error(`An error occurred during Singular Paid Node Pinger execution: ${error}`);
+    }
+    await sleep({ ms: t });
+  }
+}
+
 
 BATCH_SIZE = 20;
 60_000;
@@ -305,5 +389,6 @@ startEcostakePinger();
 startNMSPinger(Types.NMS);
 startNMSPinger(Types.NMS_DASHBOARD);
 startIndividualNodePinger();
+startSingularPaidNodePinger();
 prometheus.collectDefaultMetrics();
 export default app;

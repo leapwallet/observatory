@@ -19,6 +19,7 @@ model ResponseCode {
   chainId          String?  @map("chain_id")
   priority         Int?     @default(0)
   endpointType      EndpointType @default(latest_block)
+  provider         String?
 
   @@index([chainName, type])
   @@index([createdAt])
