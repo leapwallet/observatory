@@ -30,6 +30,7 @@ model ResponseCode {
   @@index([url])
   @@index([priority])
   @@index([endpointType])
+  @@index([provider])
   @@map("response_codes")
 }
 
