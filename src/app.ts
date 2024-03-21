@@ -103,6 +103,7 @@ export function readSingularPaidUrls(fileName = '/singularPaidNodes.json'): any[
   return chainNodeListJSON.chainNodeList;
 }
 
+// @ts-ignore
 async function startSingularPaidNodePinger(): Promise<void> {
   const logger = getLogger(__filename);
   const jsonData = readSingularPaidUrls('/singularPaidNodes.json');
@@ -224,7 +225,7 @@ async function startEcostakePinger(): Promise<void> {
       for (const [chainKey, chainDetails] of Object.entries(chainNodeList)) {
         const details = chainDetails as any;
         const url = `https://rest.cosmos.directory/${details.chainRegistryPath}`;
-        arr.push(handlePing(url, details.chainName, details.chainId));
+        arr.push(handlePing(url, details.chainId, details.chainName));
 
         if (arr.length === BATCH_SIZE || chainKey === Object.keys(chainNodeList).pop()) {
           const results = await Promise.all(arr);
