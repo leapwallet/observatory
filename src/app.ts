@@ -55,6 +55,7 @@ async function startIndividualNodePinger(): Promise<void> {
     );
 
     while (true) {
+      const startTime = Date.now();
       try {
         logger.informational('Starting a new iteration of Individual Node Pinger.');
         const pinger = Container.get(Pinger.token);
@@ -84,8 +85,14 @@ async function startIndividualNodePinger(): Promise<void> {
             skipDuplicates: true,
           });
         }
+
+        const endTime = Date.now(); // Capture the end time of the iteration
+        const iterationTimeSeconds = (endTime - startTime) / 1000; // Calculate the duration in seconds
+
         logger.informational(
-          `Completed an iteration of Individual Node Pinger. Waiting for ${t} ms before the next iteration.`,
+          `Completed an iteration of Individual Node Pinger. Waiting for ${t} ms before the next iteration. Time taken: ${iterationTimeSeconds.toFixed(
+            2,
+          )} seconds.`,
         );
       } catch (error) {
         logger.error(`An error occurred during Individual Node Pinger execution: ${error}`);
@@ -120,6 +127,7 @@ async function startSingularPaidNodePinger(): Promise<void> {
 
   while (true) {
     try {
+      const startTime = Date.now();
       logger.informational('Starting a new iteration of Singular Paid Node Pinger.');
       const pinger = Container.get(Pinger.token); // Assuming Pinger is set up in Container
 
@@ -171,8 +179,13 @@ async function startSingularPaidNodePinger(): Promise<void> {
         });
       }
 
+      const endTime = Date.now(); // Capture the end time of the iteration
+      const iterationTimeSeconds = (endTime - startTime) / 1000; // Calculate the duration in seconds
+
       logger.informational(
-        `Completed an iteration of Singular Paid Node Pinger. Waiting for ${t} ms before the next iteration.`,
+        `Completed an iteration of Singular Paid Node Pinger. Waiting for ${t} ms before the next iteration. Time taken: ${iterationTimeSeconds.toFixed(
+          2,
+        )} seconds.`,
       );
     } catch (error) {
       logger.error(`An error occurred during Singular Paid Node Pinger execution: ${error}`);
@@ -212,6 +225,8 @@ async function startEcostakePinger(): Promise<void> {
 
   while (true) {
     try {
+      const startTime = Date.now();
+
       logger.informational('Starting a new iteration of Ecostake Pinger.');
       const pinger = Container.get(Pinger.token);
 
@@ -239,7 +254,14 @@ async function startEcostakePinger(): Promise<void> {
           arr = [];
         }
       }
-      logger.informational(`Completed an iteration of Ecostake Pinger. Waiting for ${t} ms before the next iteration.`);
+      const endTime = Date.now(); // Capture the end time of the iteration
+      const iterationTimeSeconds = (endTime - startTime) / 1000; // Calculate the duration in seconds
+
+      logger.informational(
+        `Completed an iteration of Ecostake Pinger. Waiting for ${t} ms before the next iteration. Time taken: ${iterationTimeSeconds.toFixed(
+          2,
+        )} seconds.`,
+      );
     } catch (error) {
       logger.error(`An error occurred during Ecostake Pinger execution: ${error}`);
     }
@@ -342,6 +364,7 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
   let promisesArr: Promise<Prisma.ResponseCodeCreateInput>[] = [];
   while (true) {
     try {
+      const startTime = Date.now();
       logger.informational('Starting a new iteration of NMS Pinger . ' + nmsRunType);
       const pinger = Container.get(Pinger.token);
       const response = await fetchWithRetry(CDNfileName);
@@ -368,8 +391,13 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
           promisesArr = [];
         }
       }
+      const endTime = Date.now(); // Capture the end time of the iteration
+      const iterationTimeSeconds = (endTime - startTime) / 1000; // Calculate the duration in seconds
+
       logger.informational(
-        `Completed an iteration of iteration of NMS Pinger ${nmsRunType}. Waiting for ${t} ms before the next iteration.`,
+        `Completed an iteration of NMS Pinger ${nmsRunType}. Waiting for ${t} ms before the next iteration. Time taken: ${iterationTimeSeconds.toFixed(
+          2,
+        )} seconds.`,
       );
     } catch (error) {
       logger.error(`An error occurred during NMS Pinger execution: ${error}`);
