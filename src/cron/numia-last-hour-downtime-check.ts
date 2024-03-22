@@ -113,7 +113,7 @@ async function lastHourDowntimeCheck() {
       console.error('Failed to send message to Slack:', error.response ? error.response.data : error.message);
     }
   } else {
-    console.log('No downtime detected in the last hour.');
+    console.log('No Numia downtime detected in the last hour.');
   }
 }
 

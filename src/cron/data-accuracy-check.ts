@@ -121,6 +121,8 @@ async function dataAccuracyCheck() {
           return; // Exit the function if the Slack URL is null
         }
 
+        console.log('slackChannelUrl : ' + slackChannelUrl);
+
         const response = await axios.post(slackChannelUrl, message, {
           headers: { 'Content-Type': 'application/json' },
         });
@@ -136,7 +138,7 @@ async function dataAccuracyCheck() {
     }
   } else {
     console.log(
-      `Data accuracy check complete. ${(rawData as any[]).length} records found with data percentage below 80%.`,
+      `Data accuracy check passed. ${(rawData as any[]).length} records found with data percentage below 80%.`,
     );
   }
 }
