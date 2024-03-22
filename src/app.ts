@@ -55,6 +55,7 @@ async function startIndividualNodePinger(): Promise<void> {
     );
 
     while (true) {
+      const startTime = Date.now();
       try {
         logger.informational('Starting a new iteration of Individual Node Pinger.');
         const pinger = Container.get(Pinger.token);
@@ -84,8 +85,15 @@ async function startIndividualNodePinger(): Promise<void> {
             skipDuplicates: true,
           });
         }
+
+        const endTime = Date.now(); // Capture end time of the iteration
+        const iterationDurationMs = endTime - startTime;
+        const waitTimeMs = Math.max(60000 - iterationDurationMs, 0); // Ensure at least 0ms wait
+
         logger.informational(
-          `Completed an iteration of Individual Node Pinger. Waiting for ${t} ms before the next iteration.`,
+          `Completed an iteration of Individual Paid Node Pinger. Time taken: ${(iterationDurationMs / 1000).toFixed(
+            2,
+          )} seconds. Waiting for ${(waitTimeMs / 1000).toFixed(2)} seconds before the next iteration.`,
         );
       } catch (error) {
         logger.error(`An error occurred during Individual Node Pinger execution: ${error}`);
@@ -120,6 +128,7 @@ async function startSingularPaidNodePinger(): Promise<void> {
 
   while (true) {
     try {
+      const startTime = Date.now();
       logger.informational('Starting a new iteration of Singular Paid Node Pinger.');
       const pinger = Container.get(Pinger.token); // Assuming Pinger is set up in Container
 
@@ -171,8 +180,14 @@ async function startSingularPaidNodePinger(): Promise<void> {
         });
       }
 
+      const endTime = Date.now(); // Capture end time of the iteration
+      const iterationDurationMs = endTime - startTime;
+      const waitTimeMs = Math.max(60000 - iterationDurationMs, 0); // Ensure at least 0ms wait
+
       logger.informational(
-        `Completed an iteration of Singular Paid Node Pinger. Waiting for ${t} ms before the next iteration.`,
+        `Completed an iteration of Singular Paid Node Pinger. Time taken: ${(iterationDurationMs / 1000).toFixed(
+          2,
+        )} seconds. Waiting for ${(waitTimeMs / 1000).toFixed(2)} seconds before the next iteration.`,
       );
     } catch (error) {
       logger.error(`An error occurred during Singular Paid Node Pinger execution: ${error}`);
@@ -189,13 +204,13 @@ async function startEcostakePinger(): Promise<void> {
   if (EnvVars.getNodeEnv() === 'test') return;
 
   const prisma = Container.get(prismaToken);
+  const logger = getLogger(__filename);
 
   const meta = await prisma.meta.findUnique({
     where: {
       key: 'ecostake_chain_data',
     },
   });
-  const logger = getLogger(__filename);
 
   if (!meta) {
     logger.error('ecostake_chain_data not found or is empty.');
@@ -208,28 +223,28 @@ async function startEcostakePinger(): Promise<void> {
     return;
   }
 
-  let arr = [];
-
   while (true) {
+    const startTime = Date.now(); // Capture start time of the iteration
+
     try {
       logger.informational('Starting a new iteration of Ecostake Pinger.');
       const pinger = Container.get(Pinger.token);
-
-      const handlePing = async (url: string, chainId: string, chainName: string) => {
-        return pinger.ping(url, chainName, Types.ECOSTAKE, chainId).catch((error) => {
-          logger.error(`Error pinging ${url} for chainId ${chainId}: ${error.message}`);
-          return null;
-        });
-      };
+      let arr = [];
 
       for (const [chainKey, chainDetails] of Object.entries(chainNodeList)) {
         const details = chainDetails as any;
         const url = `https://rest.cosmos.directory/${details.chainRegistryPath}`;
-        arr.push(handlePing(url, details.chainId, details.chainName));
+        arr.push(
+          pinger.ping(url, details.chainName, Types.ECOSTAKE, details.chainId).catch((error) => {
+            logger.error(`Error pinging ${url} for chainId ${details.chainId}: ${error.message}`);
+            return null;
+          }),
+        );
 
         if (arr.length === BATCH_SIZE || chainKey === Object.keys(chainNodeList).pop()) {
           const results = await Promise.all(arr);
           const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
+
           if (validResults.length > 0) {
             await prisma.responseCode.createMany({
               data: validResults,
@@ -239,11 +254,21 @@ async function startEcostakePinger(): Promise<void> {
           arr = [];
         }
       }
-      logger.informational(`Completed an iteration of Ecostake Pinger. Waiting for ${t} ms before the next iteration.`);
     } catch (error) {
       logger.error(`An error occurred during Ecostake Pinger execution: ${error}`);
     }
-    await sleep({ ms: t });
+
+    const endTime = Date.now(); // Capture end time of the iteration
+    const iterationDurationMs = endTime - startTime;
+    const waitTimeMs = Math.max(60000 - iterationDurationMs, 0); // Ensure at least 0ms wait
+
+    logger.informational(
+      `Completed an iteration of Ecostake Pinger. Time taken: ${(iterationDurationMs / 1000).toFixed(
+        2,
+      )} seconds. Waiting for ${(waitTimeMs / 1000).toFixed(2)} seconds before the next iteration.`,
+    );
+
+    await sleep({ ms: waitTimeMs });
   }
 }
 
@@ -342,6 +367,7 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
   let promisesArr: Promise<Prisma.ResponseCodeCreateInput>[] = [];
   while (true) {
     try {
+      const startTime = Date.now();
       logger.informational('Starting a new iteration of NMS Pinger . ' + nmsRunType);
       const pinger = Container.get(Pinger.token);
       const response = await fetchWithRetry(CDNfileName);
@@ -368,8 +394,15 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
           promisesArr = [];
         }
       }
+
+      const endTime = Date.now(); // Capture end time of the iteration
+      const iterationDurationMs = endTime - startTime;
+      const waitTimeMs = Math.max(60000 - iterationDurationMs, 0); // Ensure at least 0ms wait
+
       logger.informational(
-        `Completed an iteration of iteration of NMS Pinger ${nmsRunType}. Waiting for ${t} ms before the next iteration.`,
+        `Completed an iteration of NMS Pinger. Time taken: ${(iterationDurationMs / 1000).toFixed(
+          2,
+        )} seconds. Waiting for ${(waitTimeMs / 1000).toFixed(2)} seconds before the next iteration.`,
       );
     } catch (error) {
       logger.error(`An error occurred during NMS Pinger execution: ${error}`);
