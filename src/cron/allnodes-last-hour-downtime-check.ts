@@ -90,16 +90,19 @@ async function lastHourDowntimeCheck() {
       ],
     };
 
+    const slackChannelUrl = EnvVars.getSlackChannelUrl();
+
+    if (!slackChannelUrl) {
+      console.log('Slack channel URL not configured. Skipping Slack notification.');
+      return; // Exit the function if the Slack URL is null
+    }
+
     try {
       console.log('Env: ' + EnvVars.getNodeEnv());
       if (EnvVars.getNodeEnv() === 'prod') {
-        const response = await axios.post(
-          'https://hooks.slack.com/services/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',
-          message,
-          {
-            headers: { 'Content-Type': 'application/json' },
-          },
-        );
+        const response = await axios.post(slackChannelUrl, message, {
+          headers: { 'Content-Type': 'application/json' },
+        });
 
         if (response.status !== 200) {
           console.error('Failed to send message to Slack:', response.data);

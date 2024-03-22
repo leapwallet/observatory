@@ -45,4 +45,9 @@ export namespace EnvVars {
     const value = getEnvVar('DELETE_RESPONSE_DATA_AFTER_DAYS');
     return isUnset(value) ? 30 : Number(value);
   }
+
+   export function getSlackChannelUrl(): string | null {
+     const value = getEnvVar('SLACK_CHANNEL_URL');
+     return isUnset(value) ? null : value;
+   }
 }
