@@ -254,7 +254,3 @@ cron.schedule('0 * * * *', () => {
   console.log('Running scheduled task for NMS Last One Hour Downtime P1 Chains Check...');
   lastHourDowntimeP1ChainsCheck();
 });
-
-// Initial call
-lastHourDowntimeP0ChainsCheck();
-lastHourDowntimeP1ChainsCheck();
