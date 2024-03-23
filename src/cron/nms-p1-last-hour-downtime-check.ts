@@ -31,7 +31,7 @@ async function lastHourDowntimeP0ChainsCheck() {
         failed_requests,
         (failed_requests::FLOAT / total_requests) * 100 AS failure_rate_percent,
         CASE
-          WHEN (failed_requests::FLOAT / total_requests) * 100 > 5 THEN 'Yes'
+          WHEN (failed_requests::FLOAT / total_requests) * 100 > 10 THEN 'Yes'
           ELSE 'No'
         END AS is_downtime_hour
       FROM
@@ -152,7 +152,7 @@ async function lastHourDowntimeP1ChainsCheck() {
         failed_requests,
         (failed_requests::FLOAT / total_requests) * 100 AS failure_rate_percent,
         CASE
-          WHEN (failed_requests::FLOAT / total_requests) * 100 > 10 THEN 'Yes'
+          WHEN (failed_requests::FLOAT / total_requests) * 100 > 20 THEN 'Yes'
           ELSE 'No'
         END AS is_downtime_hour
       FROM
