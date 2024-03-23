@@ -292,7 +292,7 @@ async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<{ url: stri
   const urls = nodes
     .map((node: { [x: string]: any }, index: any) => ({
       url: node['nodeUrl'] ?? '',
-      priority: index + 1,
+      priority: index,
     }))
     .slice(0, 3); // Ensures we take at most the first three
 

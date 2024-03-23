@@ -10,7 +10,7 @@ export namespace Pinger {
       newType: Types = 'ECOSTAKE',
       chainId: string,
       endpoint = '/cosmos/base/tendermint/v1beta1/blocks/latest',
-      priority = 0,
+      priority = -1,
       provider: string | null = null,
     ): Promise<Prisma.ResponseCodeCreateInput> {
       const highPriorityChains = [
