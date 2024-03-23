@@ -46,8 +46,8 @@ export namespace EnvVars {
     return isUnset(value) ? 30 : Number(value);
   }
 
-   export function getSlackChannelUrl(): string | null {
-     const value = getEnvVar('SLACK_CHANNEL_URL');
-     return isUnset(value) ? null : value;
-   }
+  export function getSlackChannelUrl(): string | null {
+    const value = getEnvVar('SLACK_CHANNEL_URL');
+    return isUnset(value) ? null : value;
+  }
 }

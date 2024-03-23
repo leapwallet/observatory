@@ -49,6 +49,10 @@ async function lastHourDowntimeP0ChainsCheck() {
   `) as any[];
 
   if (rawData.some((d) => d.is_downtime_hour === 'Yes')) {
+    const affectedChains = rawData
+      .filter((d) => d.is_downtime_hour === 'Yes')
+      .map((d) => d.chain_id)
+      .join(', ');
     const message = {
       blocks: [
         {
@@ -62,7 +66,7 @@ async function lastHourDowntimeP0ChainsCheck() {
           type: 'section',
           text: {
             type: 'mrkdwn',
-            text: 'At least one chain has experienced downtime in the last hour. Immediate attention required.',
+            text: `At least one chain has experienced downtime in the last hour. Immediate attention required. Affected chains: ${affectedChains}`,
           },
         },
         {
@@ -163,6 +167,10 @@ async function lastHourDowntimeP1ChainsCheck() {
   `) as any[];
 
   if (rawData.some((d) => d.is_downtime_hour === 'Yes')) {
+    const affectedChains = rawData
+      .filter((d) => d.is_downtime_hour === 'Yes')
+      .map((d) => d.chain_id)
+      .join(', ');
     const message = {
       blocks: [
         {
@@ -176,7 +184,7 @@ async function lastHourDowntimeP1ChainsCheck() {
           type: 'section',
           text: {
             type: 'mrkdwn',
-            text: 'At least one chain has experienced downtime in the last hour. Immediate attention required.',
+            text: `At least one chain has experienced downtime in the last hour. Immediate attention required. Affected chains: ${affectedChains}`,
           },
         },
         {
