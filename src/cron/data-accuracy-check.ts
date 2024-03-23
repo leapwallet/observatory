@@ -75,14 +75,14 @@ async function dataAccuracyCheck() {
           type: 'section',
           text: {
             type: 'mrkdwn',
-            text: '*NMS P1 Last One Hour Downtime Alert*',
+            text: '*Data Accuracy Check Alert*',
           },
         },
         {
           type: 'section',
           text: {
             type: 'mrkdwn',
-            text: 'At least one chain has experienced downtime in the last hour. Immediate attention required.',
+            text: 'Data collection less than 80 % threshold for more than 100 chains. Immediate attention required.',
           },
         },
         {
@@ -148,6 +148,3 @@ cron.schedule('0 0 * * *', () => {
   console.log('Running scheduled task to verify data accuracy...');
   dataAccuracyCheck();
 });
-
-// Initial call or you can remove it if you want to strictly follow the schedule
-dataAccuracyCheck();
