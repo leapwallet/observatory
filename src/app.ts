@@ -20,6 +20,7 @@ import prismaToken from './db/prisma-token';
 import fetchToken from './fetch-token';
 import { Prisma, Types } from '@prisma/client';
 import fs from 'fs';
+import axios from 'axios';
 function setUpHttpLogging(app: Express): void {
   const logger = getLogger('Express.js');
   const handler = morgan('combined', {
@@ -305,6 +306,7 @@ async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<{ url: stri
   }
 }
 
+// @ts-ignore
 async function fetchWithRetry(url: string, retries = 3, delay = 5000): Promise<any> {
   let lastError;
   const logger = getLogger(__filename);
@@ -373,8 +375,8 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
       const startTime = Date.now();
       logger.informational('Starting a new iteration of NMS Pinger . ' + nmsRunType);
       const pinger = Container.get(Pinger.token);
-      const response = await fetchWithRetry(CDNfileName, 10);
-      const jsonData = await response.json();
+      const response = await axios.get(CDNfileName);
+      const jsonData = await response.data;
       const chainIds = Object.keys(jsonData);
       for (let i = 0; i < chainIds.length; i++) {
         const chainId = chainIds[i] || '';

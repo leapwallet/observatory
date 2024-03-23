@@ -13,6 +13,25 @@ export namespace Pinger {
       priority = 0,
       provider: string | null = null,
     ): Promise<Prisma.ResponseCodeCreateInput> {
+      const highPriorityChains = [
+        'injective',
+        'cosmos_hub',
+        'osmosis',
+        'celestia',
+        'sei',
+        'nibiru',
+        'dymension',
+        'kujira',
+        'coreum',
+        'axelar',
+        'neutron',
+        'stargaze',
+        'stride',
+      ];
+
+      // Determine the priority based on the chainId
+      const chainPriority = highPriorityChains.includes(chainId) ? 0 : 1;
+
       const chainUrl = url;
 
       let responseCode: number;
@@ -20,7 +39,7 @@ export namespace Pinger {
       const startTime = Date.now();
       try {
         const response = await axios.get(`${url}${endpoint}`, {
-          timeout: 20000
+          timeout: 20000,
         });
         responseCode = response.status;
       } catch (err: any) {
@@ -44,7 +63,8 @@ export namespace Pinger {
         chainId: chainId,
         priority: priority,
         provider: provider,
-        errorMessage: errorMessage
+        errorMessage: errorMessage,
+        chainPriority: chainPriority,
       };
       return data;
     }
