@@ -20,6 +20,8 @@ model ResponseCode {
   priority         Int?     @default(0)
   endpointType      EndpointType @default(latest_block)
   provider         String?
+  errorMessage     String?
+  chainPriority    Int    @default(1)
 
   @@index([chainName, type])
   @@index([createdAt])
@@ -31,6 +33,7 @@ model ResponseCode {
   @@index([priority])
   @@index([endpointType])
   @@index([provider])
+  @@index([chainPriority])
   @@map("response_codes")
 }
 

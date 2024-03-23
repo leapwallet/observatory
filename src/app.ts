@@ -54,10 +54,6 @@ async function startIndividualNodePinger(): Promise<void> {
       return;
     }
 
-    const chainIdToNameMap = new Map(
-      jsonData.map((node: { chainId: string; chainName: string }) => [node.chainId, node.chainName]),
-    );
-
     while (true) {
       const startTime = Date.now();
       try {
@@ -72,16 +68,19 @@ async function startIndividualNodePinger(): Promise<void> {
         };
 
         const promisesArr = [];
-        for (const [, nodeData] of jsonData.entries()) {
+
+        for (const nodeData of jsonData) {
           const chainId = nodeData.chainId;
+          const chainName = nodeData.chainName;
           const nodes = nodeData.nodeList;
-          const chainName = chainIdToNameMap.get(chainId);
-          for (let i = 0; i < nodes.length; i++) {
-            const url = nodes[i] || '';
+
+          for (const url of nodes) {
             promisesArr.push(handlePing(url, chainId, chainName));
           }
         }
+
         const results = await Promise.all(promisesArr);
+
         const validResults = results.filter((result): result is Prisma.ResponseCodeCreateInput => result !== null);
         if (validResults.length > 0) {
           await prisma.responseCode.createMany({
@@ -306,7 +305,7 @@ async function nmsGetNodeURL(nodes: any, nmsRunType: Types): Promise<{ url: stri
   }
 }
 
-async function fetchWithRetry(url: string, retries = 3, delay = 1000): Promise<any> {
+async function fetchWithRetry(url: string, retries = 3, delay = 5000): Promise<any> {
   let lastError;
   const logger = getLogger(__filename);
   const fetch = Container.get(fetchToken);
@@ -374,7 +373,7 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
       const startTime = Date.now();
       logger.informational('Starting a new iteration of NMS Pinger . ' + nmsRunType);
       const pinger = Container.get(Pinger.token);
-      const response = await fetchWithRetry(CDNfileName);
+      const response = await fetchWithRetry(CDNfileName, 10);
       const jsonData = await response.json();
       const chainIds = Object.keys(jsonData);
       for (let i = 0; i < chainIds.length; i++) {
@@ -404,7 +403,7 @@ async function startNMSPinger(nmsRunType: Types): Promise<void> {
       const waitTimeMs = Math.max(60000 - iterationDurationMs, 0); // Ensure at least 0ms wait
 
       logger.informational(
-        `Completed an iteration of NMS Pinger. Time taken: ${(iterationDurationMs / 1000).toFixed(
+        `Completed an iteration of NMS Pinger ${nmsRunType}. Time taken: ${(iterationDurationMs / 1000).toFixed(
           2,
         )} seconds. Waiting for ${(waitTimeMs / 1000).toFixed(2)} seconds before the next iteration.`,
       );
@@ -425,7 +424,7 @@ app.use('/metrics', metricsRouter);
 startEcostakePinger();
 startNMSPinger(Types.NMS);
 startNMSPinger(Types.NMS_DASHBOARD);
-startIndividualNodePinger();
 startSingularPaidNodePinger();
+startIndividualNodePinger();
 prometheus.collectDefaultMetrics();
 export default app;

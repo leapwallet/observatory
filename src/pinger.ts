@@ -1,72 +1,51 @@
-import { Container, Token } from 'typedi';
-import { Response } from 'node-fetch';
-import fetchToken from './fetch-token';
-// import { httpRequestDurationSecondsHistogram, httpRequestsFailedTotal, httpRequestsSucceededTotal } from './metrics';
 import { Types, Prisma } from '@prisma/client';
-// import prismaToken from './db/prisma-token';
+import axios from 'axios';
+import { Token } from 'typedi';
 
 export namespace Pinger {
-  // interface responseObject  {chainName:string, responseCode: number, responseType:Types, chainUrl:string, duration:number}
-  /** Must be retrieved from the {@link Container}, and not instantiated directly. */
   export class DefaultApi {
-    // private type: Types = 'ECOSTAKE';
-    /** @param url - The REST API base URL of a Cosmos blockchain node. */
     async ping(
       url: string,
       chainName: string | null | undefined = null,
       newType: Types = 'ECOSTAKE',
       chainId: string,
       endpoint = '/cosmos/base/tendermint/v1beta1/blocks/latest',
-      priority = 0, // Add priority here with a default value
-      provider: string | null = null, // Add provider here as an optional parameter
+      priority = 0,
+      provider: string | null = null,
     ): Promise<Prisma.ResponseCodeCreateInput> {
-      // Return prisma write query back from the loop
-      // this.type = newType;
-      //const logger = getLogger(__filename);
       const chainUrl = url;
-      //logger.informational(`Pinging ${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}.`);
-      const fetch = Container.get(fetchToken);
-      let response: Response;
+
+      let responseCode: number;
+      let errorMessage: string | null = null;
       const startTime = Date.now();
       try {
-        response = await fetch(`${url}${endpoint}`);
-        //logger.debug(`Successful ping:${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}`);
-      } catch (err) {
-        const endTime = Date.now();
-        const responseCode = 0;
-        const data: Prisma.ResponseCodeCreateInput = {
-          type: newType,
-          chainName: chainName,
-          httpResponseCode: responseCode,
-          url: chainUrl,
-          responseTime: endTime - startTime,
-          chainId: chainId,
-          priority: priority,
-          provider: provider, // Include the provider in the result, even on failure
-        };
-        //logger.error(`Failed to ping:${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}: ${err}`);
-        return data;
+        const response = await axios.get(`${url}${endpoint}`, {
+          timeout: 20000
+        });
+        responseCode = response.status;
+      } catch (err: any) {
+        if (err.response) {
+          responseCode = err.response.status;
+        } else if (err.code === 'ECONNABORTED') {
+          responseCode = 0;
+          errorMessage = 'Connection aborted due to timeout.';
+        } else {
+          responseCode = 0;
+          errorMessage = err.message ? err.message : err.toString();
+        }
       }
       const endTime = Date.now();
       const data: Prisma.ResponseCodeCreateInput = {
         type: newType,
         chainName: chainName,
-        httpResponseCode: response.status,
+        httpResponseCode: responseCode,
         url: chainUrl,
         responseTime: endTime - startTime,
         chainId: chainId,
         priority: priority,
         provider: provider,
+        errorMessage: errorMessage
       };
-      /*if (response.status === 200) {
-        logger.debug(
-          `OK HTTP status code (${response.status}) returned on ${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}.`,
-        );
-      } else {
-        logger.error(
-          `Non-OK HTTP status code (${response.status}) returned on ${chainName}: ${chainId}: ${isEcostakeUrl}: ${url}.`,
-        );
-      }*/
       return data;
     }
   }
